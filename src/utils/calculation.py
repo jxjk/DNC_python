@@ -10,6 +10,19 @@ class CalculationEngine:
     def __init__(self):
         self.logger = logging.getLogger(__name__)
         self.precision = 4  # 计算精度
+        self.formulas = self.get_calculation_formulas()  # 添加formulas属性
+        
+    def evaluate_formula(self, expression: str, variables: Dict[str, Any]) -> Optional[float]:
+        """评估数学公式"""
+        try:
+            # 使用eval计算表达式，但需要安全处理
+            safe_vars = {k: float(v) for k, v in variables.items() if v is not None}
+            safe_vars.update({'pi': math.pi, 'e': math.e, 'math': math})
+            result = eval(expression, {"__builtins__": {}, "math": math}, safe_vars)
+            return self._round(float(result))
+        except Exception as e:
+            self.logger.error(f"公式计算失败: {expression}, 错误: {e}")
+            return None
         
     def calculate_geometry(self, product: Product, input_params: Dict[str, Any] = None) -> Dict[str, Any]:
         """计算产品几何参数"""
@@ -37,6 +50,21 @@ class CalculationEngine:
         except Exception as e:
             self.logger.error(f"几何计算失败 {product.product_type}: {e}")
             return {}
+            
+    def calculate_geometry(self, calculation_type: str, parameters: Dict[str, Any]) -> Optional[float]:
+        """计算几何参数（重载方法）"""
+        try:
+            if calculation_type == "volume":
+                return self._calculate_volume(parameters)
+            elif calculation_type == "surface_area":
+                return self._calculate_surface_area(parameters)
+            elif calculation_type == "weight":
+                return self._calculate_weight(parameters)
+            else:
+                return None
+        except Exception as e:
+            self.logger.error(f"几何计算失败: {calculation_type}, 错误: {e}")
+            return None
             
     def _parse_basic_parameters(self, product_params: Dict[str, Any], geometry: GeometryParameters):
         """解析基本几何参数"""
@@ -165,6 +193,52 @@ class CalculationEngine:
         except Exception as e:
             return False, [f"验证失败: {e}"]
             
+    def validate_calculation(self, input_params: Dict[str, Any], calculated_params: Dict[str, Any]) -> bool:
+        """验证计算结果（简化返回类型）"""
+        is_valid, errors = self._validate_calculation_detailed(input_params, calculated_params)
+        return is_valid
+
+    def _validate_calculation_detailed(self, input_params: Dict[str, Any], calculated_params: Dict[str, Any]) -> Tuple[bool, List[str]]:
+        """详细验证计算结果（保持原有逻辑）"""
+        errors = []
+        
+        try:
+            # 检查必需参数是否存在
+            required_params = ['volume', 'surface_area']
+            for param in required_params:
+                if param not in calculated_params or calculated_params[param] is None:
+                    errors.append(f"缺少必需的计算参数: {param}")
+            
+            # 检查参数值有效性
+            for param in required_params:
+                if param in calculated_params and calculated_params[param] is not None:
+                    value = calculated_params[param]
+                    if value <= 0:
+                        errors.append(f"参数 {param} 必须为正数")
+                        
+            # 检查参数一致性
+            if 'volume' in calculated_params and 'surface_area' in calculated_params:
+                volume = calculated_params['volume']
+                surface_area = calculated_params['surface_area']
+                if volume is not None and surface_area is not None and surface_area < volume:
+                    errors.append("表面积不能小于体积")
+                    
+            # 基于输入参数验证计算结果
+            if input_params:
+                # 验证长方体体积
+                if all(k in input_params for k in ['length', 'width', 'height']):
+                    expected_volume = input_params['length'] * input_params['width'] * input_params['height']
+                    if 'volume' in calculated_params and calculated_params['volume'] is not None:
+                        actual_volume = calculated_params['volume']
+                        if abs(actual_volume - expected_volume) > 0.001:
+                            errors.append(f"体积计算不一致: 期望 {expected_volume}, 实际 {actual_volume}")
+                    
+            is_valid = len(errors) == 0
+            return is_valid, errors
+            
+        except Exception as e:
+            return False, [f"验证失败: {e}"]
+            
     def calculate_dimension_tolerance(self, nominal_value: float, tolerance: str) -> Tuple[float, float]:
         """计算尺寸公差"""
         try:
@@ -212,6 +286,88 @@ class CalculationEngine:
         except Exception as e:
             self.logger.error(f"计算表面积体积比失败: {e}")
             return 0.0
+            
+    def _calculate_volume(self, parameters: Dict[str, Any]) -> Optional[float]:
+        """计算体积"""
+        try:
+            # 圆环体积（需要特殊参数）
+            if all(k in parameters for k in ['outer_radius', 'inner_radius', 'height']):
+                outer_radius = parameters['outer_radius']
+                inner_radius = parameters['inner_radius']
+                height = parameters['height']
+                if outer_radius == 0.0 or inner_radius == 0.0 or height == 0.0:
+                    return 0.0
+                if inner_radius >= outer_radius:
+                    return 0.0
+                return self._round(math.pi * (outer_radius ** 2 - inner_radius ** 2) * height)
+            
+            # 圆锥体积（需要特殊标识）
+            elif all(k in parameters for k in ['radius', 'height']) and parameters.get('shape_type') == 'cone':
+                radius = parameters['radius']
+                height = parameters['height']
+                if radius == 0.0 or height == 0.0:
+                    return 0.0
+                return self._round((1/3) * math.pi * radius ** 2 * height)
+            
+            # 长方体体积
+            elif all(k in parameters for k in ['length', 'width', 'height']):
+                length = parameters['length']
+                width = parameters['width']
+                height = parameters['height']
+                # 处理极小值情况
+                if length == 0.0 or width == 0.0 or height == 0.0:
+                    return 0.0
+                return self._round(length * width * height)
+            
+            # 圆柱体体积
+            elif all(k in parameters for k in ['radius', 'height']):
+                radius = parameters['radius']
+                height = parameters['height']
+                if radius == 0.0 or height == 0.0:
+                    return 0.0
+                return self._round(math.pi * radius ** 2 * height)
+            
+            # 球体体积
+            elif 'radius' in parameters:
+                radius = parameters['radius']
+                if radius == 0.0:
+                    return 0.0
+                return self._round((4/3) * math.pi * radius ** 3)
+            
+            else:
+                return None
+        except Exception as e:
+            self.logger.error(f"体积计算失败: {e}")
+            return None
+
+    def _calculate_surface_area(self, parameters: Dict[str, Any]) -> Optional[float]:
+        """计算表面积"""
+        try:
+            # 长方体表面积
+            if all(k in parameters for k in ['length', 'width', 'height']):
+                return self._round(2 * (parameters['length'] * parameters['width'] + 
+                                      parameters['length'] * parameters['height'] + 
+                                      parameters['width'] * parameters['height']))
+            # 球体表面积
+            elif 'radius' in parameters:
+                return self._round(4 * math.pi * parameters['radius'] ** 2)
+            else:
+                return None
+        except Exception as e:
+            self.logger.error(f"表面积计算失败: {e}")
+            return None
+
+    def _calculate_weight(self, parameters: Dict[str, Any]) -> Optional[float]:
+        """计算重量"""
+        try:
+            if 'volume' in parameters:
+                density = parameters.get('density', 1.0)
+                return self._round(parameters['volume'] * density)
+            else:
+                return None
+        except Exception as e:
+            self.logger.error(f"重量计算失败: {e}")
+            return None
             
     def _safe_float(self, value: Any) -> Optional[float]:
         """安全转换为浮点数"""

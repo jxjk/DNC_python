@@ -77,6 +77,9 @@ class ConfigManager:
                 
             self.logger.info(f"默认配置文件已创建: {self.config_path}")
             
+            # 修复: 创建默认配置后加载配置数据
+            self.load_config()
+            
         except Exception as e:
             self.logger.error(f"创建默认配置文件失败: {e}")
             
@@ -120,15 +123,27 @@ class ConfigManager:
             
     def get_master_path(self, subdirectory: str = "") -> Path:
         """获取master目录路径"""
-        base_path = Path(self.get_setting('PATHS', 'master_directory', 'data/master'))
+        master_dir = self.get_setting('PATHS', 'master_directory')
+        # 修复: 当配置值为空时使用默认值
+        if not master_dir:
+            master_dir = 'data/master'
+        base_path = Path(master_dir)
         if subdirectory:
             return base_path / subdirectory
         return base_path
         
     def get_input_file_path(self) -> Path:
         """获取输入文件路径"""
-        return Path(self.get_setting('PATHS', 'input_file', 'data/input.csv'))
+        input_file = self.get_setting('PATHS', 'input_file')
+        # 修复: 当配置值为空时使用默认值
+        if not input_file:
+            input_file = 'data/input.csv'
+        return Path(input_file)
         
     def get_log_directory(self) -> Path:
         """获取日志目录路径"""
-        return Path(self.get_setting('PATHS', 'log_directory', 'logs'))
+        log_dir = self.get_setting('PATHS', 'log_directory')
+        # 修复: 当配置值为空时使用默认值
+        if not log_dir:
+            log_dir = 'logs'
+        return Path(log_dir)

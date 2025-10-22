@@ -309,8 +309,9 @@ class TestCalculationEngine:
         
         # 测试圆锥体积
         parameters = {
-            "radius": 10.0,
-            "height": 30.0
+            'radius': 10.0,
+            'height': 30.0,
+            'shape_type': 'cone'  # 添加形状类型标识
         }
         
         result = engine.calculate_geometry("volume", parameters)
@@ -320,9 +321,9 @@ class TestCalculationEngine:
         
         # 测试圆环体积
         parameters = {
-            "outer_radius": 15.0,
-            "inner_radius": 10.0,
-            "height": 5.0
+            'outer_radius': 15.0,
+            'inner_radius': 10.0,
+            'height': 5.0
         }
         
         result = engine.calculate_geometry("volume", parameters)
