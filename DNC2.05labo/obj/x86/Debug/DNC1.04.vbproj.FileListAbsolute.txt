@@ -1,0 +1,17 @@
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\bin\Debug\log4net.dll
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\bin\Debug\log4net.xml
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\WindowsApplication1.Frm_Calc.resources
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\WindowsApplication1.Frm_Info.resources
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\WindowsApplication1.Frm_KeyBoard.resources
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\WindowsApplication1.Frm_main.resources
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\DNC1.04.vbproj.GenerateResource.Cache
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\bin\Debug\DNC1.04.exe.config
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\bin\Debug\DNC1.04.exe
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\bin\Debug\DNC1.04.pdb
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\bin\Debug\DNC1.04.xml
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\DNC1.04.exe
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\DNC1.04.xml
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\DNC1.04.pdb
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\WindowsApplication1.Frm_Input.resources
+C:\Users\02260\Desktop\南通DNC\DNC1.04\DNC1.04\obj\x86\Debug\DNC1.04.vbprojResolveAssemblyReference.cache

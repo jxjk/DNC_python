@@ -1,0 +1,13 @@
+DEFINE,DISPVALUE,SENDVALUE,comment
+select1,BW,1,
+select1,CW,2,
+select1,内径退刀加工,3,
+select1,沟槽加工,4,
+select1,外径R角加工,5,
+select1,切削外径,6,
+select1,附属品表面加工,7,
+select1,附属品反面加工,8,
+selectAROE,-,0,
+selectAROE,AROE-1,1,
+selectAROE,AROE-2,2,
+selectAROE,AROE-3,3,

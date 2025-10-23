@@ -551,6 +551,504 @@ async def main():
     return results
 ```
 
+## 基于VB.NET功能的API扩展
+
+### 控件系统API
+
+#### ControlManager 控件管理器
+
+```python
+class ControlManager:
+    """控件管理器，基于VB.NET Frm_main.vb的控件管理逻辑"""
+    
+    def __init__(self):
+        self.controls = {}
+        self.control_groups = {}
+    
+    def create_control(self, control_type: str, control_id: str, 
+                      properties: Dict) -> QWidget:
+        """
+        动态创建控件 - 基于makeTextBox, makeLabel等VB.NET方法
+        
+        Args:
+            control_type: 控件类型 (TextBox, Label, Button等)
+            control_id: 控件ID
+            properties: 控件属性字典
+            
+        Returns:
+            QWidget: 创建的控件实例
+        """
+    
+    def add_control(self, control_id: str, control: QWidget):
+        """添加控件到管理器"""
+    
+    def remove_control(self, control_id: str):
+        """移除控件"""
+    
+    def enable_controls(self, control_ids: List[str], enabled: bool):
+        """批量启用/禁用控件"""
+    
+    def manage_control_group(self, group_name: str, control_ids: List[str]):
+        """管理控件组"""
+```
+
+#### 8种核心控件类型API
+
+**LoadControl API**
+```python
+class LoadControl:
+    """Load控件 - 基于makeCntrlLoad"""
+    
+    def __init__(self, data_source: str, field_mapping: Dict):
+        self.data_source = data_source
+        self.field_mapping = field_mapping
+    
+    def load_data(self) -> pd.DataFrame:
+        """从CSV文件加载数据"""
+    
+    def validate_data(self) -> bool:
+        """验证数据完整性"""
+    
+    def get_field_value(self, field_name: str) -> Any:
+        """获取字段值"""
+```
+
+**InputControl API**
+```python
+class InputControl:
+    """Input控件 - 基于makeCntrlInput"""
+    
+    def __init__(self, control_id: str, data_type: str, validation_rules: Dict):
+        self.control_id = control_id
+        self.data_type = data_type
+        self.validation_rules = validation_rules
+    
+    def handle_text_change(self, new_value: str):
+        """处理文本变更事件"""
+    
+    def validate_input(self, value: str) -> bool:
+        """验证输入值"""
+    
+    def get_value(self) -> Any:
+        """获取控件值"""
+```
+
+### 计算引擎API扩展
+
+#### ExpressionCalculator 表达式计算器
+
+```python
+class ExpressionCalculator:
+    """表达式计算器 - 基于getCalcResult"""
+    
+    def __init__(self):
+        self.variables = {}
+        self.functions = {
+            'MAX': max, 'MIN': min, 'ROUND': round, 'ABS': abs
+        }
+    
+    def calculate(self, expression: str, variables: Dict) -> float:
+        """
+        计算表达式值
+        
+        Args:
+            expression: 计算表达式
+            variables: 变量字典
+            
+        Returns:
+            float: 计算结果
+        """
+    
+    def _replace_variables(self, expression: str, variables: Dict) -> str:
+        """替换表达式中的变量"""
+```
+
+#### RelationJudge 关系判断器
+
+```python
+class RelationJudge:
+    """关系判断器 - 基于judgeRelation"""
+    
+    def judge(self, condition: str, left_value: Any, right_value: Any) -> bool:
+        """
+        判断关系条件
+        
+        Args:
+            condition: 条件运算符 (=, <>, >, <, >=, <=)
+            left_value: 左值
+            right_value: 右值
+            
+        Returns:
+            bool: 判断结果
+        """
+```
+
+#### PrecisionController 精度控制器
+
+```python
+class PrecisionController:
+    """精度控制器 - 基于四舍五入处理"""
+    
+    def __init__(self, decimal_places: int = 4):
+        self.decimal_places = decimal_places
+    
+    def round_value(self, value: float) -> float:
+        """四舍五入处理"""
+    
+    def format_display(self, value: float) -> str:
+        """格式化显示值"""
+```
+
+### 通信模块API
+
+#### NCProtocolHandler NC协议处理器
+
+```python
+class NCProtocolHandler:
+    """NC协议处理器 - 基于makeSendTxt"""
+    
+    def __init__(self, protocol_type: str):
+        self.protocol_type = protocol_type
+        self.message_formatters = {
+            'rexroth': self._format_rexroth_message,
+            'brother': self._format_brother_message
+        }
+    
+    def format_message(self, command: str, parameters: Dict) -> str:
+        """格式化NC命令消息"""
+    
+    def _format_rexroth_message(self, command: str, parameters: Dict) -> str:
+        """格式化Rexroth协议消息"""
+    
+    def _format_brother_message(self, command: str, parameters: Dict) -> str:
+        """格式化Brother协议消息"""
+```
+
+#### NamedPipeClient 命名管道客户端
+
+```python
+class NamedPipeClient:
+    """命名管道客户端 - 基于NamedPipeAsyncClient"""
+    
+    def __init__(self, pipe_name: str):
+        self.pipe_name = pipe_name
+        self.connected = False
+    
+    async def connect(self):
+        """异步连接命名管道"""
+    
+    async def send_data(self, data: str):
+        """异步发送数据"""
+    
+    def add_data_received_callback(self, callback: Callable):
+        """添加数据接收回调"""
+```
+
+#### ConnectionManager 连接管理器
+
+```python
+class ConnectionManager:
+    """连接管理器 - 基于ConnectionChange"""
+    
+    def __init__(self):
+        self.connections = {}
+        self.connection_callbacks = []
+    
+    def add_connection(self, connection_id: str, connection: object):
+        """添加连接"""
+    
+    def remove_connection(self, connection_id: str):
+        """移除连接"""
+    
+    def _notify_connection_change(self, connection_id: str, status: str):
+        """通知连接状态变更"""
+```
+
+### 数据处理API扩展
+
+#### CSVLoader CSV文件加载器
+
+```python
+class CSVLoader:
+    """CSV文件加载器 - 基于LoadFileToTBL"""
+    
+    def __init__(self, encoding_detector: EncodingDetector):
+        self.encoding_detector = encoding_detector
+    
+    def load_file(self, file_path: str) -> pd.DataFrame:
+        """加载CSV文件"""
+    
+    def _clean_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """数据清理"""
+```
+
+#### TableSearcher 表搜索引擎
+
+```python
+class TableSearcher:
+    """表搜索引擎 - 基于searchT_relation"""
+    
+    def __init__(self, data_tables: Dict[str, pd.DataFrame]):
+        self.data_tables = data_tables
+        self.search_cache = {}
+    
+    def search_table(self, table_name: str, search_criteria: Dict) -> pd.DataFrame:
+        """搜索数据表"""
+```
+
+#### DataConverter 数据转换器
+
+```python
+class DataConverter:
+    """数据转换器 - 基于searchT_ChngValue"""
+    
+    def __init__(self, conversion_rules: Dict):
+        self.conversion_rules = conversion_rules
+    
+    def convert_value(self, value: Any, conversion_type: str) -> Any:
+        """转换数据值"""
+    
+    def add_conversion_rule(self, conversion_type: str, rule: Callable):
+        """添加转换规则"""
+```
+
+### 系统管理API
+
+#### SystemInitializer 系统初始化器
+
+```python
+class SystemInitializer:
+    """系统初始化器 - 基于Frm_main_Load"""
+    
+    def __init__(self, config_manager: ConfigManager, data_manager: DataManager):
+        self.config_manager = config_manager
+        self.data_manager = data_manager
+    
+    async def initialize_system(self):
+        """异步初始化系统"""
+    
+    async def _load_configuration(self):
+        """加载系统配置"""
+    
+    async def _load_master_data(self):
+        """加载Master数据"""
+    
+    async def _initialize_ui(self):
+        """初始化用户界面"""
+    
+    async def _setup_communication(self):
+        """设置通信连接"""
+```
+
+#### ControlStateManager 控件状态管理器
+
+```python
+class ControlStateManager:
+    """控件状态管理器"""
+    
+    def __init__(self):
+        self.control_states = {}
+        self.control_groups = {}
+    
+    def set_controls_enabled(self, control_ids: List[str], enabled: bool):
+        """设置控件启用状态"""
+    
+    def set_controls_visible(self, control_ids: List[str], visible: bool):
+        """设置控件可见性"""
+    
+    def add_control_group(self, group_name: str, control_ids: List[str]):
+        """添加控件组"""
+    
+    def set_group_enabled(self, group_name: str, enabled: bool):
+        """设置控件组启用状态"""
+```
+
+#### IniConfigManager INI配置管理器
+
+```python
+class IniConfigManager:
+    """INI配置管理器"""
+    
+    def __init__(self, ini_file_path: str):
+        self.ini_file_path = ini_file_path
+        self.config = {}
+    
+    def load_config(self) -> Dict:
+        """加载INI配置文件"""
+    
+    def save_config(self, config: Dict):
+        """保存INI配置文件"""
+    
+    def get_value(self, section: str, key: str, default=None):
+        """获取配置值"""
+```
+
+### 工具方法API
+
+#### StringUtils 字符串工具类
+
+```python
+class StringUtils:
+    """字符串工具类 - 基于VB.NET字符串处理函数"""
+    
+    @staticmethod
+    def len_b(text: str) -> int:
+        """计算字符串字节长度（兼容VB.NET的LenB函数）"""
+    
+    @staticmethod
+    def make_format_str(format_pattern: str, *args) -> str:
+        """创建格式化字符串"""
+    
+    @staticmethod
+    def to_half_adjust(value: float, decimal_places: int = 0) -> float:
+        """四舍五入处理（兼容VB.NET的ToHalfAdjust）"""
+    
+    @staticmethod
+    def get_operator_name(operator_id: str) -> str:
+        """获取操作员名称"""
+```
+
+#### SystemUtils 系统工具类
+
+```python
+class SystemUtils:
+    """系统工具类"""
+    
+    @staticmethod
+    def get_all_controls(parent_widget: QWidget) -> List[QWidget]:
+        """获取所有子控件"""
+    
+    @staticmethod
+    def change_form_size(form: QWidget, width: int, height: int):
+        """改变窗体大小"""
+    
+    @staticmethod
+    def show_info_form(title: str, message: str):
+        """显示信息窗体"""
+```
+
+#### ToleranceCalculator 公差计算器
+
+```python
+class ToleranceCalculator:
+    """公差计算器"""
+    
+    @staticmethod
+    def get_shafts_tolerance(diameter: float, tolerance_class: str) -> Tuple[float, float]:
+        """获取轴公差"""
+    
+    @staticmethod
+    def get_length_tolerance(length: float, tolerance_class: str) -> Tuple[float, float]:
+        """获取长度公差"""
+```
+
+### 事件处理API
+
+#### EventDispatcher 事件分发器
+
+```python
+class EventDispatcher:
+    """事件分发器"""
+    
+    def __init__(self):
+        self.event_handlers = {}
+        self.text_change_handlers = {}
+    
+    def register_handler(self, event_type: str, handler: Callable):
+        """注册事件处理器"""
+    
+    def register_text_change_handler(self, control_id: str, handler: Callable):
+        """注册文本变更处理器 - 基于txt_change"""
+    
+    def dispatch_event(self, event_type: str, event_data: Dict):
+        """分发事件"""
+```
+
+#### TextChangeHandler 文本变更处理器
+
+```python
+class TextChangeHandler:
+    """文本变更处理器 - 基于txt_change"""
+    
+    def __init__(self, validation_rules: Dict, calculation_trigger: Callable):
+        self.validation_rules = validation_rules
+        self.calculation_trigger = calculation_trigger
+        self.change_event_flag = False
+    
+    def handle_text_change(self, control_id: str, new_text: str):
+        """处理文本变更"""
+    
+    def _validate_text(self, control_id: str, text: str) -> bool:
+        """验证文本内容"""
+```
+
+### 验证模块API
+
+#### NumericValidator 数值验证器
+
+```python
+class NumericValidator:
+    """数值验证器 - 基于chkTxtIsNumeric"""
+    
+    def validate(self, text: str, min_value: float = None, 
+                max_value: float = None, decimal_places: int = None) -> bool:
+        """验证数值文本"""
+```
+
+#### BusinessRuleValidator 业务规则验证器
+
+```python
+class BusinessRuleValidator:
+    """业务规则验证器 - 基于chkAddControls"""
+    
+    def __init__(self, validation_rules: Dict):
+        self.validation_rules = validation_rules
+    
+    def validate_controls(self, control_values: Dict) -> Dict[str, str]:
+        """验证控件组业务规则"""
+    
+    def add_validation_rule(self, rule_name: str, rule: Callable):
+        """添加验证规则"""
+```
+
+#### ValidationErrorHandler 验证错误处理器
+
+```python
+class ValidationErrorHandler:
+    """验证错误处理器"""
+    
+    def __init__(self):
+        self.error_messages = {}
+    
+    def add_error(self, control_id: str, message: str):
+        """添加错误信息"""
+    
+    def clear_errors(self, control_id: str = None):
+        """清除错误信息"""
+    
+    def has_errors(self) -> bool:
+        """检查是否有错误"""
+```
+
+### 操作员管理API
+
+#### OperatorManager 操作员管理器
+
+```python
+class OperatorManager:
+    """操作员管理器 - 基于TB_OpeID_TextChanged"""
+    
+    def __init__(self):
+        self.current_operator = None
+        self.operator_database = {}
+    
+    def set_operator(self, operator_id: str):
+        """设置当前操作员"""
+    
+    def get_operator_name(self, operator_id: str) -> str:
+        """获取操作员名称"""
+```
+
 ## 扩展开发
 
 ### 添加新的计算模块
@@ -601,6 +1099,7 @@ class ExternalSystemIntegration:
 
 ---
 
-**API版本**: 1.0  
+**API版本**: 2.0  
 **最后更新**: 2025/10/23  
-**维护者**: DNC开发团队
+**维护者**: DNC开发团队  
+**基于VB.NET源码**: DNC2.05labo/Frm_main.vb

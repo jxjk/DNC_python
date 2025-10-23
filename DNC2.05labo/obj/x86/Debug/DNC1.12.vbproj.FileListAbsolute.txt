@@ -1,0 +1,17 @@
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\bin\Debug\DNC1.12.exe.config
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\bin\Debug\DNC1.12.exe
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\bin\Debug\DNC1.12.pdb
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\bin\Debug\DNC1.12.xml
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\bin\Debug\log4net.dll
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\bin\Debug\log4net.xml
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\WindowsApplication1.Frm_Calc.resources
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\WindowsApplication1.Frm_Info.resources
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\WindowsApplication1.Frm_Input.resources
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\WindowsApplication1.Frm_KeyBoard.resources
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\WindowsApplication1.Frm_main.resources
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\WindowsApplication1.SplashScreen1.resources
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\DNC1.12.vbproj.GenerateResource.Cache
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\DNC1.12.exe
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\DNC1.12.xml
+C:\Users\02260\Desktop\files\南通DNC\DNC1.12\DNC1.12\obj\x86\Debug\DNC1.12.pdb

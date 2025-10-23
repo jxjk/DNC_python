@@ -1,0 +1,57 @@
+2020-01-30 09:27:31,086 [1] WARN  WindowsApplication1.Frm_main setIni 1893 - err3
+2020-01-30 09:27:31,188 [1] WARN  WindowsApplication1.Frm_main setIni 1894 - type=
+2020-01-30 09:27:31,188 [1] WARN  WindowsApplication1.Frm_main setIni 1894 - System.NullReferenceException: オブジェクト参照がオブジェクト インスタンスに設定されていません。
+   場所 WindowsApplication1.Frm_main.setIni() 場所 C:\Users\02465\ドキュメント (業務用)\南通\DNCソースファイル\DNC2.05ラボ用_小田改\DNC2.05labo\Frm_main.vb:行 1535
+2020-01-30 09:27:31,189 [1] WARN  WindowsApplication1.Frm_main setPRG 1922 - err4
+2020-01-30 09:27:31,190 [1] WARN  WindowsApplication1.Frm_main setPRG 1923 - type=
+2020-01-30 09:27:31,190 [1] WARN  WindowsApplication1.Frm_main setPRG 1923 - System.NullReferenceException: オブジェクト参照がオブジェクト インスタンスに設定されていません。
+   場所 WindowsApplication1.Frm_main.setPRG() 場所 C:\Users\02465\ドキュメント (業務用)\南通\DNCソースファイル\DNC2.05ラボ用_小田改\DNC2.05labo\Frm_main.vb:行 1904
+2020-01-30 09:27:31,190 [1] WARN  WindowsApplication1.Frm_main Frm_main_Load 378 - err1
+2020-01-30 09:27:31,191 [1] WARN  WindowsApplication1.Frm_main Frm_main_Load 379 - type=
+2020-01-30 09:27:31,191 [1] WARN  WindowsApplication1.Frm_main Frm_main_Load 382 - System.NullReferenceException: オブジェクト参照がオブジェクト インスタンスに設定されていません。
+   場所 WindowsApplication1.Frm_main.Frm_main_Load(Object sender, EventArgs e) 場所 C:\Users\02465\ドキュメント (業務用)\南通\DNCソースファイル\DNC2.05ラボ用_小田改\DNC2.05labo\Frm_main.vb:行 272
+2020-04-02 17:16:52,438 [1] WARN  WindowsApplication1.Frm_main Btn_send_Click 6757 - System.IO.IOException: ネットワーク パスが見つかりません。
+
+   場所 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   場所 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   場所 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   場所 System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   場所 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   場所 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding)
+   場所 WindowsApplication1.Frm_main.makeSendTxt() 場所 C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\Frm_main.vb:行 6661
+   場所 WindowsApplication1.Frm_main.Btn_send_Click(Object sender, EventArgs e) 場所 C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\Frm_main.vb:行 6711
+2020-04-02 17:16:52,515 [1] INFO  WindowsApplication1.Frm_main SearchTB_Model 3544 - InputData:0000000000@BFPDPC12-P18-L15-B10@5
+2020-04-10 13:16:51,596 [1] WARN  WindowsApplication1.Frm_main Btn_send_Click 6812 - System.IO.IOException: ネットワーク パスが見つかりません。
+
+   場所 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   場所 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   場所 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   場所 System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   場所 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   場所 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding)
+   場所 WindowsApplication1.Frm_main.makeSendTxt() 場所 C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\Frm_main.vb:行 6716
+   場所 WindowsApplication1.Frm_main.Btn_send_Click(Object sender, EventArgs e) 場所 C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\Frm_main.vb:行 6766
+2020-04-10 13:16:51,728 [1] INFO  WindowsApplication1.Frm_main SearchTB_Model 3599 - InputData:
+2020-04-23 12:32:15,492 [1] WARN  WindowsApplication1.Frm_main LoadDbToTBL 513 - err24
+2020-04-23 12:32:15,685 [1] WARN  WindowsApplication1.Frm_main LoadDbToTBL 514 - type=
+2020-04-23 12:32:15,686 [1] WARN  WindowsApplication1.Frm_main LoadDbToTBL 517 - System.IO.FileNotFoundException: ファイル 'C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\bin\Release\master\TOLERANCE_GENERAL_LENGTH.csv' が見つかりませんでした。
+   場所 Microsoft.VisualBasic.FileIO.TextFieldParser.ValidatePath(String path)
+   場所 Microsoft.VisualBasic.FileIO.TextFieldParser.InitializeFromPath(String path, Encoding defaultEncoding, Boolean detectEncoding)
+   場所 Microsoft.VisualBasic.FileIO.TextFieldParser..ctor(String path, Encoding defaultEncoding)
+   場所 WindowsApplication1.Frm_main.LoadDbToTBL(String tableName, DataTable& dt) 場所 C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\Frm_main.vb:行 466
+2020-04-23 12:34:58,942 [1] WARN  WindowsApplication1.Frm_main LoadDbToTBL 513 - err24
+2020-04-23 12:34:59,013 [1] WARN  WindowsApplication1.Frm_main LoadDbToTBL 514 - type=
+2020-04-23 12:34:59,013 [1] WARN  WindowsApplication1.Frm_main LoadDbToTBL 517 - System.IO.FileNotFoundException: ファイル 'C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\bin\Release\master\TOLERANCE_GENERAL_LENGTH.csv' が見つかりませんでした。
+   場所 Microsoft.VisualBasic.FileIO.TextFieldParser.ValidatePath(String path)
+   場所 Microsoft.VisualBasic.FileIO.TextFieldParser.InitializeFromPath(String path, Encoding defaultEncoding, Boolean detectEncoding)
+   場所 Microsoft.VisualBasic.FileIO.TextFieldParser..ctor(String path, Encoding defaultEncoding)
+   場所 WindowsApplication1.Frm_main.LoadDbToTBL(String tableName, DataTable& dt) 場所 C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\Frm_main.vb:行 466
+2020-04-23 12:40:15,891 [1] WARN  WindowsApplication1.Frm_main LoadDbToTBL 513 - err24
+2020-04-23 12:40:16,138 [1] WARN  WindowsApplication1.Frm_main LoadDbToTBL 514 - type=
+2020-04-23 12:40:16,138 [1] WARN  WindowsApplication1.Frm_main LoadDbToTBL 517 - System.IO.FileNotFoundException: ファイル 'C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\bin\Release\master\TOLERANCE_GENERAL_LENGTH.csv' が見つかりませんでした。
+   場所 Microsoft.VisualBasic.FileIO.TextFieldParser.ValidatePath(String path)
+   場所 Microsoft.VisualBasic.FileIO.TextFieldParser.InitializeFromPath(String path, Encoding defaultEncoding, Boolean detectEncoding)
+   場所 Microsoft.VisualBasic.FileIO.TextFieldParser..ctor(String path, Encoding defaultEncoding)
+   場所 WindowsApplication1.Frm_main.LoadDbToTBL(String tableName, DataTable& dt) 場所 C:\Users\02465\ドキュメント (業務用)\次世代MTOモデル開発\★DNC\プログラム改修\DNC2.05ラボ用_自動検証、描画更新停止、型式出力機能修正、ロボ用出力、検査用出力\DNC2.05labo\Frm_main.vb:行 466
+2020-04-23 12:47:45,970 [1] INFO  WindowsApplication1.Frm_main SearchTB_Model 3649 - InputData:0000000000@JPBB4-6@3
+2020-04-23 12:52:01,638 [1] INFO  WindowsApplication1.Frm_main SearchTB_Model 3649 - InputData:0000000000@JPBB4-6@3
