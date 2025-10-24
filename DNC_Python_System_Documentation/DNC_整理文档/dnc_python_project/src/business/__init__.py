@@ -7,6 +7,7 @@ from .model_recognizer import ModelRecognizer, PatternBasedRecognizer
 from .program_matcher import ProgramMatcher, AdvancedProgramMatcher, MatchResult
 from .calculation_engine import CalculationEngine, AdvancedCalculationEngine, CalculationResult
 from .nc_communicator import NCCommunicator, AdvancedNCCommunicator, NCCommand, NCResponse
+from .relation_validator import RelationValidator, ValidationResult
 
 __all__ = [
     # 型号识别器
@@ -27,5 +28,9 @@ __all__ = [
     "NCCommunicator",
     "AdvancedNCCommunicator",
     "NCCommand", 
-    "NCResponse"
+    "NCResponse",
+    
+    # 关系验证器
+    "RelationValidator",
+    "ValidationResult"
 ]
