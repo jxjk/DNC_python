@@ -9,9 +9,9 @@ from PyQt5.QtCore import Qt
 # 添加src目录到路径
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from ui.parameter_input import ParameterInputDialog
-from ui.program_display import ProgramDisplayWidget
-from ui.status_monitor import StatusMonitorWidget
+from src.ui.parameter_input import ParameterInputDialog
+from src.ui.program_display import ProgramDisplayWidget
+from src.ui.status_monitor import StatusMonitorWidget
 
 
 class TestParameterInputDialog(unittest.TestCase):

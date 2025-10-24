@@ -9,14 +9,14 @@ from typing import Dict, Any, Optional
 from PyQt5.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, 
                            QTabWidget, QStatusBar, QMessageBox, QAction, 
                            QMenu, QToolBar, QSplitter, QLabel)
-from PyQt5.QtCore import Qt, pyqtSignal, QTimer
+from PyQt5.QtCore import Qt, pyqtSignal, QTimer,QSize
 from PyQt5.QtGui import QIcon, QFont
 
-from ..core.application import DNCApplication
-from ..core.config import ConfigManager
-from .parameter_input import ParameterInputDialog
-from .program_display import ProgramDisplayWidget
-from .status_monitor import StatusMonitorWidget
+from src.core.application import DNCApplication
+from src.core.config import ConfigManager
+from src.ui.parameter_input import ParameterInputDialog
+from src.ui.program_display import ProgramDisplayWidget
+from src.ui.status_monitor import StatusMonitorWidget
 
 
 class MainWindow(QMainWindow):

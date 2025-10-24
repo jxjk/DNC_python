@@ -6,10 +6,10 @@ from unittest.mock import Mock, patch
 # 添加src目录到路径
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from business.model_recognizer import ModelRecognizer
-from business.program_matcher import ProgramMatcher
-from business.calculation_engine import CalculationEngine
-from business.nc_communicator import NCCommunicator
+from src.business.model_recognizer import ModelRecognizer
+from src.business.program_matcher import ProgramMatcher
+from src.business.calculation_engine import CalculationEngine
+from src.business.nc_communicator import NCCommunicator
 
 
 class TestModelRecognizer(unittest.TestCase):

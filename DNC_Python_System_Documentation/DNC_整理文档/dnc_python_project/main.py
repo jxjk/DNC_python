@@ -13,7 +13,7 @@ from pathlib import Path
 # 添加src目录到路径
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
-from core.application import DNCApplication
+from src.core.application import DNCApplication
 
 
 def setup_logging():

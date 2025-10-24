@@ -6,9 +6,9 @@ from unittest.mock import Mock, patch
 # 添加src目录到路径
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from core.application import DNCApplication
-from core.config import ConfigManager
-from core.event_dispatcher import EventDispatcher
+from src.core.application import DNCApplication
+from src.core.config import ConfigManager
+from src.core.event_dispatcher import EventDispatcher
 
 
 class TestConfigManager(unittest.TestCase):
