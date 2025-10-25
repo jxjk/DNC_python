@@ -313,6 +313,21 @@ class EventDispatcher(QObject):
         """错误事件处理槽"""
         self._call_handlers('error_occurred', event)
     
+    def dispatch(self, event_type: str, data: Any) -> None:
+        """
+        分发事件
+        
+        Args:
+            event_type: 事件类型
+            data: 事件数据
+        """
+        if event_type in self._event_handlers:
+            for handler in self._event_handlers[event_type]:
+                try:
+                    handler(data)
+                except Exception as e:
+                    self.logger.error(f"事件处理函数执行失败: {event_type}, 错误: {e}")
+
     def _call_handlers(self, event_type: str, event: Any) -> None:
         """
         调用事件处理函数

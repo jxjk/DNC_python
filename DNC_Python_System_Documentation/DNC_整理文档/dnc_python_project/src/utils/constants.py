@@ -288,6 +288,33 @@ SYSTEM_PATHS = {
     "programs": "programs/"
 }
 
+# 默认配置路径
+DEFAULT_CONFIG_PATH = "config/"
+
+# 事件类型常量
+EVENT_TYPES = {
+    "MODEL_RECOGNIZED": "model_recognized",
+    "PROGRAM_MATCHED": "program_matched",
+    "PARAMETERS_CALCULATED": "parameters_calculated",
+    "DATA_SENT": "data_sent",
+    "COMMUNICATION_STARTED": "communication_started",
+    "COMMUNICATION_COMPLETED": "communication_completed",
+    "COMMUNICATION_FAILED": "communication_failed",
+    "UI_UPDATE": "ui_update",
+    "ERROR_OCCURRED": "error_occurred",
+    "STATUS_CHANGED": "status_changed"
+}
+
+# 支持的通信协议
+SUPPORTED_PROTOCOLS = [
+    "rexroth",
+    "fanuc", 
+    "siemens",
+    "mitsubishi",
+    "heidenhain",
+    "custom"
+]
+
 # 版本信息
 VERSION_INFO = {
     "major": 1,

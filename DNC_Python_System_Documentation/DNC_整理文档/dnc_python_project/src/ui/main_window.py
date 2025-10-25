@@ -14,7 +14,7 @@ from PyQt5.QtGui import QIcon, QFont
 
 from src.core.application import DNCApplication
 from src.core.config import ConfigManager
-from src.ui.parameter_input import ParameterInputDialog
+from src.ui.parameter_input import ParameterInputWidget
 from src.ui.program_display import ProgramDisplayWidget
 from src.ui.status_monitor import StatusMonitorWidget
 
@@ -70,7 +70,7 @@ class MainWindow(QMainWindow):
         splitter = QSplitter(Qt.Horizontal)
         
         # 左侧：参数输入
-        self.parameter_input = ParameterInputDialog(self.app)
+        self.parameter_input = ParameterInputWidget()
         splitter.addWidget(self.parameter_input)
         
         # 右侧：标签页
@@ -81,11 +81,11 @@ class MainWindow(QMainWindow):
         self.tab_widget = QTabWidget()
         
         # 程序显示标签页
-        self.program_display = ProgramDisplayWidget(self.app)
+        self.program_display = ProgramDisplayWidget()
         self.tab_widget.addTab(self.program_display, "程序显示")
         
         # 状态监控标签页
-        self.status_monitor = StatusMonitorWidget(self.app)
+        self.status_monitor = StatusMonitorWidget()
         self.tab_widget.addTab(self.status_monitor, "状态监控")
         
         right_layout.addWidget(self.tab_widget)

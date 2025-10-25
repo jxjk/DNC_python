@@ -1,8 +1,10 @@
-import sys
+import sys,os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QGroupBox,
                             QLabel, QTextEdit, QPushButton, QScrollArea,
                             QSplitter, QFrame, QProgressBar)
-from PyQt5.QtCore import pyqtSignal, Qt
+from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5.QtGui import QFont, QSyntaxHighlighter, QTextCharFormat, QColor
 from typing import Dict, Any, List
 
@@ -79,6 +81,8 @@ class ProgramDisplayWidget(QWidget):
     # 信号定义
     program_saved = pyqtSignal(str)
     program_loaded = pyqtSignal(str)
+    program_selected = pyqtSignal(dict)
+    program_executed = pyqtSignal(dict)
     current_line_changed = pyqtSignal(int)
     
     def __init__(self, parent=None):

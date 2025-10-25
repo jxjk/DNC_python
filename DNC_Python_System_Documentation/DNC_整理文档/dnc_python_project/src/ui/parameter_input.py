@@ -1,29 +1,25 @@
 import sys
-from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGroupBox, 
+from PyQt5.QtWidgets import (QWidget, QDialog, QVBoxLayout, QHBoxLayout, QGroupBox, 
                             QLabel, QLineEdit, QComboBox, QDoubleSpinBox,
                             QPushButton, QFormLayout, QTextEdit)
 from PyQt5.QtCore import pyqtSignal, Qt
 from typing import Dict, Any, Optional
-
-
-class ParameterInputDialog(QDialog):
-    """参数输入对话框"""
+class ParameterInputWidget(QWidget):
+    """参数输入部件 - 用于主窗口布局"""
     
     # 信号定义
     parameters_changed = pyqtSignal(dict)
     model_changed = pyqtSignal(str)
     
-    def __init__(self, parent=None):
+    def __init__(self, app=None, parent=None):
         super().__init__(parent)
+        self.app = app
         self.current_model = None
         self._init_ui()
         self._connect_signals()
     
     def _init_ui(self) -> None:
         """初始化用户界面"""
-        self.setWindowTitle("加工参数输入")
-        self.setMinimumSize(600, 700)
-        
         # 主布局
         main_layout = QVBoxLayout(self)
         
@@ -193,7 +189,7 @@ class ParameterInputDialog(QDialog):
     def _connect_signals(self) -> None:
         """连接信号和槽"""
         self.ok_button.clicked.connect(self._on_ok_clicked)
-        self.cancel_button.clicked.connect(self.reject)
+        self.cancel_button.clicked.connect(self.clear)
         self.clear_button.clicked.connect(self.clear)
         
         # 连接参数变化信号
@@ -203,7 +199,6 @@ class ParameterInputDialog(QDialog):
         """确定按钮点击处理"""
         parameters = self.get_parameters()
         self.parameters_changed.emit(parameters)
-        self.accept()
     
     def _on_model_changed(self, model: str) -> None:
         """型号变化处理"""
@@ -341,12 +336,24 @@ class ParameterInputDialog(QDialog):
             
         finally:
             self.blockSignals(False)
+    
+    def update_model_info(self, model_info: Dict[str, Any]) -> None:
+        """更新型号信息"""
+        model_name = model_info.get('model_name', '')
+        if model_name:
+            self.model_description.setPlainText(f"识别型号: {model_name}")
+    
+    def update_calculated_parameters(self, calc_result: Dict[str, Any]) -> None:
+        """更新计算后的参数"""
+        calculated_params = calc_result.get('calculated_parameters', {})
+        if calculated_params:
+            self.set_parameters(calculated_params)
 
 
 if __name__ == "__main__":
     from PyQt5.QtWidgets import QApplication
     
     app = QApplication(sys.argv)
-    dialog = ParameterInputDialog()
+    dialog = ParameterInputWidget()
     dialog.show()
     sys.exit(app.exec_())

@@ -405,3 +405,72 @@ class NamedPipeServer:
         except Exception as e:
             self.logger.error(f"广播消息异常: {e}")
             return False
+
+
+class NamedPipe:
+    """命名管道主类（兼容性包装器）"""
+    
+    def __init__(self, pipe_name: str = "dnc_pipe", mode: str = "client"):
+        """
+        初始化命名管道
+        
+        Args:
+            pipe_name: 管道名称
+            mode: 模式，'client' 或 'server'
+        """
+        self.pipe_name = pipe_name
+        self.mode = mode
+        
+        if mode == "client":
+            self._client = NamedPipeClient(pipe_name)
+        elif mode == "server":
+            self._server = NamedPipeServer(pipe_name)
+        else:
+            raise ValueError(f"不支持的管道模式: {mode}")
+    
+    def connect(self, timeout: float = 10.0) -> bool:
+        """连接到命名管道（客户端模式）"""
+        if self.mode != "client":
+            raise RuntimeError("只能在客户端模式下调用connect方法")
+        return self._client.connect(timeout)
+    
+    def disconnect(self) -> bool:
+        """断开命名管道连接（客户端模式）"""
+        if self.mode != "client":
+            raise RuntimeError("只能在客户端模式下调用disconnect方法")
+        return self._client.disconnect()
+    
+    def send_message(self, message: str, timeout: float = 5.0) -> bool:
+        """发送消息到命名管道（客户端模式）"""
+        if self.mode != "client":
+            raise RuntimeError("只能在客户端模式下调用send_message方法")
+        return self._client.send_message(message, timeout)
+    
+    def receive_message(self, timeout: float = 5.0) -> Optional[str]:
+        """从命名管道接收消息（客户端模式）"""
+        if self.mode != "client":
+            raise RuntimeError("只能在客户端模式下调用receive_message方法")
+        return self._client.receive_message(timeout)
+    
+    def start(self, message_handler: Callable[[str], str] = None) -> bool:
+        """启动命名管道服务器（服务器模式）"""
+        if self.mode != "server":
+            raise RuntimeError("只能在服务器模式下调用start方法")
+        return self._server.start(message_handler)
+    
+    def stop(self) -> bool:
+        """停止命名管道服务器（服务器模式）"""
+        if self.mode != "server":
+            raise RuntimeError("只能在服务器模式下调用stop方法")
+        return self._server.stop()
+    
+    def get_status(self) -> Dict[str, Any]:
+        """获取管道状态"""
+        if self.mode == "client":
+            return {
+                "mode": "client",
+                "pipe_name": self.pipe_name,
+                "is_connected": self._client.is_connected
+            }
+        else:
+            return self._server.get_server_status()

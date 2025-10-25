@@ -72,27 +72,24 @@ def main():
     
     # 设置日志
     logger = setup_logging()
-    
     try:
         # 创建应用程序
         app = DNCApplication()
         
-        # 启动应用程序
-        app.start()
-        
-        # 显示主窗口
-        app.show_main_window()
-        
-        logger.info("DNC Python 系统启动成功")
-        
-        # 运行应用程序
-        return app.run()
+        # 初始化应用程序
+        if app.initialize():
+            logger.info("DNC Python 系统初始化成功")
+            
+            # 运行应用程序
+            return app.run()
+        else:
+            logger.error("DNC Python 系统初始化失败")
+            print("DNC Python 系统初始化失败")
+            return 1
         
     except Exception as e:
         logger.error(f"系统启动失败: {e}")
         print(f"系统启动失败: {e}")
         return 1
-
-
 if __name__ == "__main__":
     sys.exit(main())

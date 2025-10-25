@@ -274,7 +274,7 @@ class TestDNCApplication(unittest.TestCase):
         self.app._cleanup()
         
         # 验证清理操作
-        self.app.named_pipe_manager.stop_server.assert_called_once()
+        self.app.named_pipe_manager.stop.assert_called_once()
         self.app.file_manager.close_all_files.assert_called_once()
         self.app.logger.info.assert_called_with("系统资源清理完成")
 

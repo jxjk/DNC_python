@@ -320,3 +320,19 @@ class FileManager:
         except Exception as e:
             self.logger.error(f"清理备份文件失败: {directory}, 错误: {e}")
             return False
+    
+    def close_all_files(self) -> bool:
+        """
+        关闭所有打开的文件
+        
+        Returns:
+            bool: 操作是否成功
+        """
+        try:
+            # 对于FileManager类，实际上没有需要关闭的文件句柄
+            # 因为所有文件操作都是使用with语句，会自动关闭
+            self.logger.info("所有文件已关闭")
+            return True
+        except Exception as e:
+            self.logger.error(f"关闭文件失败: {e}")
+            return False

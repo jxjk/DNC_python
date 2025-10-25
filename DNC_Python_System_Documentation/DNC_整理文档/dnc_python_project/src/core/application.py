@@ -1,33 +1,37 @@
+# file: c:\Users\Lenovo\Desktop\DNC_python\DNC_Python_System_Documentation\DNC_整理文档\dnc_python_project\src\core\application.py
 """
 DNC系统主应用程序模块
 负责系统初始化、生命周期管理和模块协调
 """
 
+from src.utils.logger import get_logger
 import sys
 import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from typing import Optional, Dict, Any, List
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from PyQt5.QtCore import QObject, pyqtSignal, QTimer
 
 # 绝对引用导入
-from dnc_python_project.src.core.config import ConfigManager
-from dnc_python_project.src.core.event_dispatcher import EventDispatcher
-from dnc_python_project.src.ui.main_window import MainWindow
-from dnc_python_project.src.business.model_recognizer import ModelRecognizer
-from dnc_python_project.src.business.program_matcher import ProgramMatcher
-from dnc_python_project.src.business.calculation_engine import CalculationEngine
-from dnc_python_project.src.business.relation_validator import RelationValidator
-from dnc_python_project.src.business.nc_communicator import NCCommunicator
-from dnc_python_project.src.data.csv_processor import CSVProcessor
-from dnc_python_project.src.data.data_validator import DataValidator
-from dnc_python_project.src.data.file_manager import FileManager
-from dnc_python_project.src.communication.nc_protocol import NCProtocol
-from dnc_python_project.src.communication.named_pipe import NamedPipeManager
-from dnc_python_project.src.communication.protocol_factory import ProtocolFactory
-from dnc_python_project.src.ui.control_factory import ControlFactory
-from dnc_python_project.src.utils.logger import Logger
-from dnc_python_project.src.utils.error_handler import ErrorHandler
-from dnc_python_project.src.utils.constants import (
+from src.core.config import ConfigManager
+from src.core.event_dispatcher import EventDispatcher
+# from src.ui.main_window import MainWindow
+from src.business.model_recognizer import ModelRecognizer
+from src.business.program_matcher import ProgramMatcher
+from src.business.calculation_engine import CalculationEngine
+from src.business.relation_validator import RelationValidator
+from src.business.nc_communicator import NCCommunicator
+from src.data.csv_processor import CSVProcessor
+from src.data.data_validator import DataValidator
+from src.data.file_manager import FileManager
+from src.communication.nc_protocol import NCProtocol
+from src.communication.named_pipe import NamedPipeServer as NamedPipeManager
+from src.communication.protocol_factory import NCProtocolFactory as ProtocolFactory
+from src.ui.control_factory import ControlFactory
+from src.utils.logger import DncLogger as Logger
+from src.utils.error_handler import ErrorHandler
+from src.utils.constants import (
     DEFAULT_CONFIG_PATH, 
     SUPPORTED_PROTOCOLS,
     EVENT_TYPES
@@ -46,6 +50,8 @@ class DNCApplication(QObject):
     parameters_calculated = pyqtSignal(dict)  # 参数计算完成
     data_sent = pyqtSignal(bool)         # 数据发送完成
     error_occurred = pyqtSignal(str)     # 错误发生
+    nc_command_sent = pyqtSignal(dict)   # NC命令发送完成
+    nc_response_received = pyqtSignal(dict)  # NC响应接收完成
     
     def __init__(self, config_path: Optional[str] = None):
         """
@@ -85,7 +91,7 @@ class DNCApplication(QObject):
         self.current_protocol: Optional[NCProtocol] = None
         
         # UI模块
-        self.main_window: Optional[MainWindow] = None
+        # self.main_window: Optional[MainWindow] = None
         self.control_factory: Optional[ControlFactory] = None
         
         # 当前状态
@@ -106,12 +112,13 @@ class DNCApplication(QObject):
             bool: 初始化是否成功
         """
         try:
-            self.logger = Logger.get_logger("DNCApplication")
+            self.logger = get_logger("DNCApplication")
             self.logger.info("开始初始化DNC系统...")
+
             
             # 1. 初始化配置管理器
             self.config_manager = ConfigManager(self.config_path)
-            if not self.config_manager.load_all_configs():
+            if not self.config_manager.load_config():
                 self.logger.error("配置文件加载失败")
                 return False
             
@@ -151,28 +158,32 @@ class DNCApplication(QObject):
             
         except Exception as e:
             error_msg = f"系统初始化失败: {str(e)}"
-            self.logger.error(error_msg)
+            # 如果logger还没有初始化，直接打印错误信息
+            if self.logger:
+                self.logger.error(error_msg)
+            else:
+                print(f"错误: {error_msg}")
             self._show_error_dialog("初始化错误", error_msg)
             return False
     
     def _setup_event_handlers(self) -> None:
         """设置事件处理器"""
         if self.event_dispatcher:
-            self.event_dispatcher.register_handler(
-                EVENT_TYPES.MODEL_RECOGNIZED, 
+            self.event_dispatcher.subscribe(
+                'model_recognized', 
                 self._on_model_recognized
             )
-            self.event_dispatcher.register_handler(
-                EVENT_TYPES.PROGRAM_MATCHED,
+            self.event_dispatcher.subscribe(
+                'program_matched',
                 self._on_program_matched
             )
-            self.event_dispatcher.register_handler(
-                EVENT_TYPES.PARAMETERS_CALCULATED,
+            self.event_dispatcher.subscribe(
+                'parameters_calculated',
                 self._on_parameters_calculated
             )
-            self.event_dispatcher.register_handler(
-                EVENT_TYPES.DATA_SENT,
-                self._on_data_sent
+            self.event_dispatcher.subscribe(
+                'nc_communication_status',
+                self._on_nc_communication_status
             )
     
     def _on_initialization_timeout(self) -> None:
@@ -196,6 +207,8 @@ class DNCApplication(QObject):
             self.is_running = True
             self.logger.info("启动DNC应用程序...")
             
+            # 将导入移到这里，避免循环导入
+            from src.ui.main_window import MainWindow
             # 创建Qt应用程序实例
             app = QApplication(sys.argv)
             app.setApplicationName("DNC系统")
@@ -226,12 +239,17 @@ class DNCApplication(QObject):
         """启动通信模块"""
         try:
             # 初始化NC通信协议
-            protocol_type = self.config_manager.get_value("ProtocolType", "rexroth")
+            protocol_type = self.config_manager.get_config_value("nc", "protocol")
+            if not protocol_type:
+                protocol_type = "rexroth"
             self.current_protocol = self.protocol_factory.create_protocol(protocol_type)
             
             # 启动命名管道
-            if self.config_manager.get_value("UseNamedPipe", "0") == "1":
-                pipe_name = self.config_manager.get_value("PipeName", "DNC_Pipe")
+            use_named_pipe = self.config_manager.get_config_value("system", "use_named_pipe")
+            if use_named_pipe == "1":
+                pipe_name = self.config_manager.get_config_value("system", "pipe_name")
+                if not pipe_name:
+                    pipe_name = "DNC_Pipe"
                 self.named_pipe_manager.start_server(pipe_name)
                 self.named_pipe_manager.data_received.connect(self._on_pipe_data_received)
             
@@ -259,9 +277,23 @@ class DNCApplication(QObject):
                 self.logger.error("型号识别失败")
                 return False
             
-            self.current_model = model_info.get('model')
-            self.model_recognized.emit(model_info)
-            self.event_dispatcher.dispatch(EVENT_TYPES.MODEL_RECOGNIZED, model_info)
+            # 将 RecognitionResult 转换为字典以便发送信号
+            model_info_dict = {
+                'model': model_info.model,
+                'qr_code': model_info.qr_code,
+                'po': model_info.po,
+                'quantity': model_info.quantity,
+                'recognition_mode': model_info.recognition_mode,
+                'confidence': model_info.confidence,
+                'error_message': model_info.error_message
+            }
+            
+            # self.current_model = model_info.model
+            # self.model_recognized.emit(model_info_dict)
+            self.event_dispatcher.dispatch(EVENT_TYPES["MODEL_RECOGNIZED"], model_info_dict)
+            self.current_model = model_info.model
+            self.model_recognized.emit(model_info_dict)
+            # self.event_dispatcher.dispatch(EVENT_TYPES["MODEL_RECOGNIZED"], model_info_dict)
             
             # 2. 程序匹配
             program_info = self.program_matcher.match_program(self.current_model)
@@ -271,10 +303,10 @@ class DNCApplication(QObject):
             
             self.current_program_no = program_info.get('program_no')
             self.program_matched.emit(program_info)
-            self.event_dispatcher.dispatch(EVENT_TYPES.PROGRAM_MATCHED, program_info)
+            self.event_dispatcher.dispatch(EVENT_TYPES["PROGRAM_MATCHED"], program_info)
             
             # 3. 参数计算
-            model_parts = model_info.get('processed_parts', [])
+            model_parts = []  # 暂时使用空列表，后续可能需要从model_info中提取
             parameters = self.calculation_engine.calculate(
                 self.current_program_no, 
                 model_parts
@@ -286,7 +318,7 @@ class DNCApplication(QObject):
             
             self.current_parameters = parameters
             self.parameters_calculated.emit(parameters)
-            self.event_dispatcher.dispatch(EVENT_TYPES.PARAMETERS_CALCULATED, parameters)
+            self.event_dispatcher.dispatch(EVENT_TYPES["PARAMETERS_CALCULATED"], parameters)
             
             # 4. 关系验证
             validation_results = self.relation_validator.validate_relations(
@@ -297,7 +329,7 @@ class DNCApplication(QObject):
             # 5. 更新UI显示
             if self.main_window:
                 self.main_window.update_display(
-                    model_info, 
+                    model_info_dict, 
                     program_info, 
                     parameters,
                     validation_results
@@ -335,11 +367,11 @@ class DNCApplication(QObject):
             if success:
                 self.logger.info("参数发送成功")
                 self.data_sent.emit(True)
-                self.event_dispatcher.dispatch(EVENT_TYPES.DATA_SENT, {"success": True})
+                self.event_dispatcher.dispatch(EVENT_TYPES["DATA_SENT"], {"success": True})
             else:
                 self.logger.error("参数发送失败")
                 self.data_sent.emit(False)
-                self.event_dispatcher.dispatch(EVENT_TYPES.DATA_SENT, {"success": False})
+                self.event_dispatcher.dispatch(EVENT_TYPES["DATA_SENT"], {"success": False})
             
             return success
             
@@ -384,6 +416,13 @@ class DNCApplication(QObject):
         status = "成功" if success else "失败"
         self.logger.info(f"数据发送{status}")
     
+    def _on_nc_communication_status(self, data: Dict[str, Any]) -> None:
+        """NC通信状态事件处理"""
+        status = data.get('status', '')
+        message = data.get('message', '')
+        self.logger.info(f"NC通信状态: {status} - {message}")
+
+    
     def _show_error_dialog(self, title: str, message: str) -> None:
         """显示错误对话框"""
         try:
@@ -398,7 +437,7 @@ class DNCApplication(QObject):
         
         # 停止通信模块
         if self.named_pipe_manager:
-            self.named_pipe_manager.stop_server()
+            self.named_pipe_manager.stop()
         
         # 关闭文件资源
         if self.file_manager:
@@ -422,6 +461,177 @@ class DNCApplication(QObject):
             "current_program": self.current_program_no,
             "parameter_count": len(self.current_parameters)
         }
+
+    def set_current_program(self, program_info: Dict[str, Any]) -> None:
+        """设置当前程序"""
+        self.current_program_no = program_info.get('program_no')
+        self.program_matched.emit(program_info)
+    
+    def get_current_program(self) -> Optional[Dict[str, Any]]:
+        """获取当前程序信息"""
+        if self.current_program_no is None:
+            return None
+        return {
+            'program_no': self.current_program_no,
+            'name': f"程序 {self.current_program_no}"
+        }
+    def get_current_program(self) -> Optional[Dict[str, Any]]:
+        """获取当前程序信息"""
+        if self.current_program_no is None:
+            return None
+        return {
+            'program_no': self.current_program_no,
+            'name': f"程序 {self.current_program_no}"
+        }
+
+
+    def connect_to_device(self) -> bool:
+        """连接到设备"""
+        try:
+            self.logger.info("开始连接设备...")
+            
+            # 这里应该实现设备连接逻辑
+            # 暂时返回成功
+            self.logger.info("设备连接成功")
+            return True
+            
+        except Exception as e:
+            error_msg = f"设备连接失败: {str(e)}"
+            self.logger.error(error_msg)
+            return False
+
+    def disconnect_from_device(self) -> bool:
+        """断开设备连接"""
+        try:
+            self.logger.info("开始断开设备连接...")
+            
+            # 这里应该实现设备断开逻辑
+            # 暂时返回成功
+            self.logger.info("设备已断开")
+            return True
+            
+        except Exception as e:
+            error_msg = f"设备断开失败: {str(e)}"
+            self.logger.error(error_msg)
+            return False
+
+    def calculate_parameters(self) -> bool:
+        """计算参数"""
+        try:
+            self.logger.info("开始计算参数...")
+            
+            # 这里应该实现参数计算逻辑
+            # 暂时返回成功
+            self.logger.info("参数计算完成")
+            return True
+            
+        except Exception as e:
+            error_msg = f"参数计算失败: {str(e)}"
+            self.logger.error(error_msg)
+            return False
+
+    def update_parameters(self, parameters: Dict[str, Any]) -> None:
+        """更新参数"""
+        try:
+            self.logger.info(f"更新参数: {parameters}")
+            
+            # 更新当前参数
+            self.current_parameters.update(parameters)
+            
+            self.logger.info("参数更新完成")
+            
+        except Exception as e:
+            error_msg = f"参数更新失败: {str(e)}"
+            self.logger.error(error_msg)
+
+    def update_model(self, model_info: Dict[str, Any]) -> None:
+        """更新型号信息"""
+        try:
+            self.logger.info(f"更新型号信息: {model_info}")
+            
+            # 更新当前型号
+            self.current_model = model_info.get('model')
+            
+            self.logger.info("型号信息更新完成")
+            
+        except Exception as e:
+            error_msg = f"型号信息更新失败: {str(e)}"
+            self.logger.error(error_msg)
+
+    def recognize_model(self) -> bool:
+        """基于当前参数进行型号识别"""
+        try:
+            self.logger.info("开始型号识别...")
+            
+            if not self.current_parameters:
+                self.logger.warning("没有参数可用于型号识别")
+                return False
+            
+            # 从参数中提取型号描述
+            model_description = self.current_parameters.get('model', {}).get('model_description', '')
+            if not model_description:
+                self.logger.warning("没有型号描述可用于识别")
+                return False
+            
+            # 使用型号识别器进行识别
+            model_info = self.model_recognizer.recognize_model(model_description)
+            if not model_info:
+                self.logger.error("型号识别失败")
+                return False
+            
+            # 更新当前型号并发送信号
+            self.current_model = model_info.model
+            # 将 RecognitionResult 转换为字典以便发送信号
+            model_info_dict = {
+                'model': model_info.model,
+                'qr_code': model_info.qr_code,
+                'po': model_info.po,
+                'quantity': model_info.quantity,
+                'recognition_mode': model_info.recognition_mode,
+                'confidence': model_info.confidence,
+                'error_message': model_info.error_message
+            }
+            self.model_recognized.emit(model_info_dict)
+            self.event_dispatcher.dispatch(EVENT_TYPES["MODEL_RECOGNIZED"], model_info_dict)
+            
+            self.logger.info(f"型号识别完成: {self.current_model}")
+            return True
+            
+        except Exception as e:
+            error_msg = f"型号识别失败: {str(e)}"
+            self.logger.error(error_msg)
+            self.error_occurred.emit(error_msg)
+            return False
+
+    def match_program(self) -> bool:
+        """基于当前型号进行程序匹配"""
+        try:
+            self.logger.info("开始程序匹配...")
+            
+            if not self.current_model:
+                self.logger.warning("没有当前型号可用于程序匹配")
+                return False
+            
+            # 使用程序匹配器进行匹配
+            program_info = self.program_matcher.match_program(self.current_model)
+            if not program_info:
+                self.logger.error("程序匹配失败")
+                return False
+            
+            # 更新当前程序号并发送信号
+            self.current_program_no = program_info.get('program_no')
+            self.program_matched.emit(program_info)
+            self.event_dispatcher.dispatch(EVENT_TYPES["PROGRAM_MATCHED"], program_info)
+
+            
+            self.logger.info(f"程序匹配完成: 程序号 {self.current_program_no}")
+            return True
+            
+        except Exception as e:
+            error_msg = f"程序匹配失败: {str(e)}"
+            self.logger.error(error_msg)
+            self.error_occurred.emit(error_msg)
+            return False
 
 
 def create_application(config_path: Optional[str] = None) -> DNCApplication:

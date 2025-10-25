@@ -1,0 +1,290 @@
+2025-10-25 23:15:53,764 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-25 23:15:53,777 - DNCSystem - ERROR - 系统启动失败: 'DNCApplication' object has no attribute 'start'
+2025-10-25 23:19:01,456 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-25 23:19:01,456 - DNCSystem - ERROR - 系统启动失败: 'NoneType' object has no attribute 'error'
+2025-10-25 23:21:03,973 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-25 23:24:41,324 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-25 23:26:13,423 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-25 23:26:13,423 - src.core.config - INFO - 配置加载成功
+2025-10-25 23:28:13,898 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-25 23:28:13,898 - src.core.config - INFO - 配置加载成功
+2025-10-25 23:31:35,412 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-25 23:31:35,426 - src.core.config - INFO - 配置加载成功
+2025-10-25 23:31:35,452 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-25 23:31:35,470 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-25 23:31:35,470 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-25 23:31:35,486 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-25 23:31:35,497 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-25 23:31:35,505 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-25 23:31:35,517 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-25 23:31:35,518 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-25 23:31:35,528 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-25 23:31:35,530 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-25 23:46:30,951 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-25 23:46:30,965 - src.core.config - INFO - 配置加载成功
+2025-10-25 23:46:30,966 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-25 23:46:30,966 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-25 23:46:30,967 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-25 23:46:30,968 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-25 23:46:30,968 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-25 23:46:30,969 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-25 23:46:30,970 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-25 23:46:30,970 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-25 23:46:30,970 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-25 23:46:30,972 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-25 23:58:15,218 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-25 23:58:15,224 - src.core.config - INFO - 配置加载成功
+2025-10-25 23:58:15,226 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-25 23:58:15,226 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-25 23:58:15,226 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-25 23:58:15,226 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-25 23:58:15,228 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-25 23:58:15,229 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-25 23:58:15,230 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-25 23:58:15,231 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-25 23:58:15,232 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-25 23:58:15,233 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-25 23:58:15,251 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-25 23:58:25,829 - DNCSystem - ERROR - 系统启动失败: 'NamedPipeServer' object has no attribute 'stop_server'
+2025-10-26 00:03:49,554 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 00:03:49,563 - src.core.config - INFO - 配置加载成功
+2025-10-26 00:03:49,565 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 00:03:49,567 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 00:03:49,568 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 00:03:49,568 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 00:03:49,570 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 00:03:49,570 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 00:03:49,577 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 00:03:49,580 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 00:03:49,581 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 00:03:49,581 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 00:03:49,589 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 00:14:56,543 - src.communication.named_pipe - WARNING - 命名管道服务器未在运行
+2025-10-26 00:14:56,543 - DNCSystem - ERROR - 系统启动失败: 'FileManager' object has no attribute 'close_all_files'
+2025-10-26 00:15:13,324 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 00:15:13,324 - src.core.config - INFO - 配置加载成功
+2025-10-26 00:15:13,324 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 00:15:13,324 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 00:15:13,324 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 00:15:13,324 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 00:15:13,324 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 00:15:13,332 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 00:15:13,333 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 00:15:13,333 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 00:15:13,333 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 00:15:13,333 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 00:15:13,340 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 00:15:16,876 - src.communication.named_pipe - WARNING - 命名管道服务器未在运行
+2025-10-26 00:15:16,877 - DNCSystem - ERROR - 系统启动失败: 'FileManager' object has no attribute 'close_all_files'
+2025-10-26 00:19:38,867 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 00:19:38,874 - src.core.config - INFO - 配置加载成功
+2025-10-26 00:19:38,874 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 00:19:38,874 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 00:19:38,874 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 00:19:38,874 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 00:19:38,874 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 00:19:38,876 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 00:19:38,876 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 00:19:38,877 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 00:19:38,877 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 00:19:38,877 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 00:19:38,883 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 00:22:20,553 - src.communication.named_pipe - WARNING - 命名管道服务器未在运行
+2025-10-26 00:22:20,554 - src.data.file_manager - INFO - 所有文件已关闭
+2025-10-26 00:22:27,180 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 00:22:27,180 - src.core.config - INFO - 配置加载成功
+2025-10-26 00:22:27,180 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 00:22:27,180 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 00:22:27,180 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 00:22:27,180 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 00:22:27,180 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 00:22:27,180 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 00:22:27,180 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 00:22:27,180 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 00:22:27,185 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 00:22:27,185 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 00:22:27,190 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 00:28:52,489 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 00:28:52,489 - src.core.config - INFO - 配置加载成功
+2025-10-26 00:28:52,489 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 00:28:52,489 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 00:28:52,489 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 00:28:52,489 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 00:28:52,497 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 00:28:52,497 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 00:28:52,497 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 00:28:52,497 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 00:28:52,498 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 00:28:52,498 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 00:28:52,503 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 00:28:57,215 - src.communication.named_pipe - WARNING - 命名管道服务器未在运行
+2025-10-26 00:28:57,215 - src.data.file_manager - INFO - 所有文件已关闭
+2025-10-26 00:31:06,923 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 00:31:06,923 - src.core.config - INFO - 配置加载成功
+2025-10-26 00:31:06,923 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 00:31:06,923 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 00:31:06,923 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 00:31:06,928 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 00:31:06,928 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 00:31:06,929 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 00:31:06,929 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 00:31:06,929 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 00:31:06,930 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 00:31:06,930 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 00:31:06,934 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 00:31:24,551 - src.ui.main_window - ERROR - 连接设备失败: 'DNCApplication' object has no attribute 'connect_to_device'
+2025-10-26 00:31:28,049 - src.ui.main_window - ERROR - 断开设备失败: 'DNCApplication' object has no attribute 'disconnect_from_device'
+2025-10-26 00:31:38,308 - src.ui.main_window - ERROR - 计算参数失败: 'DNCApplication' object has no attribute 'calculate_parameters'
+2025-10-26 00:32:35,296 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '请选择或输入型号', 'current_model': None}}
+2025-10-26 00:35:49,580 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 00:35:49,580 - src.core.config - INFO - 配置加载成功
+2025-10-26 00:35:49,590 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 00:35:49,590 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 00:35:49,590 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 00:35:49,590 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 00:35:49,590 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 00:35:49,592 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 00:35:49,593 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 00:35:49,593 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 00:35:49,593 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 00:35:49,594 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 00:35:49,599 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 00:36:49,554 - src.ui.main_window - INFO - 型号已更新: 手动选择
+2025-10-26 00:40:16,543 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 00:40:16,559 - src.core.config - INFO - 配置加载成功
+2025-10-26 00:40:16,559 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 00:40:16,559 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 00:40:16,559 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 00:40:16,559 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 00:40:16,559 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 00:40:16,563 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 00:40:16,563 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 00:40:16,564 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 00:40:16,564 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 00:40:16,564 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 00:40:16,570 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 00:41:28,589 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@rtert@3\n', 'current_model': None}}
+2025-10-26 00:46:40,286 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 00:46:40,288 - src.core.config - INFO - 配置加载成功
+2025-10-26 00:46:40,288 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 00:46:40,288 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 00:46:40,288 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 00:46:40,288 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 00:46:40,288 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 00:46:40,288 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 00:46:40,292 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 00:46:40,292 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 00:46:40,293 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 00:46:40,293 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 00:46:40,297 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 00:46:43,974 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '', 'current_model': None}}
+2025-10-26 00:46:57,896 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@asdf@#', 'current_model': None}}
+2025-10-26 00:46:57,896 - src.business.model_recognizer - INFO - 开始识别QR码: 123@asdf@#
+2025-10-26 00:46:57,896 - src.business.model_recognizer - INFO - 型号识别完成: asdf, 置信度: 0.0
+2025-10-26 00:47:29,031 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '234@qerq@#', 'current_model': None}}
+2025-10-26 00:47:29,034 - src.business.model_recognizer - INFO - 开始识别QR码: 234@qerq@#
+2025-10-26 00:47:29,034 - src.business.model_recognizer - INFO - 型号识别完成: qerq, 置信度: 0.0
+2025-10-26 00:50:36,897 - src.communication.named_pipe - WARNING - 命名管道服务器未在运行
+2025-10-26 00:50:36,897 - src.data.file_manager - INFO - 所有文件已关闭
+2025-10-26 07:04:33,647 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 07:04:33,647 - src.core.config - INFO - 配置加载成功
+2025-10-26 07:04:33,647 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 07:04:33,647 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 07:04:33,647 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 07:04:33,647 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 07:04:33,647 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 07:04:33,654 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 07:04:33,654 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 07:04:33,654 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 07:04:33,655 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 07:04:33,655 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 07:04:33,662 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 07:05:29,860 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '1234@AAA-c@3', 'current_model': None}}
+2025-10-26 07:05:29,875 - src.business.model_recognizer - INFO - 开始识别QR码: 1234@AAA-c@3
+2025-10-26 07:05:29,875 - src.business.model_recognizer - INFO - 型号识别完成: AAA-c, 置信度: 0.7
+2025-10-26 07:05:29,875 - src.ui.main_window - INFO - 型号识别完成: {'model': 'AAA-c', 'qr_code': '1234@AAA-c@3', 'po': '1234', 'quantity': '3', 'recognition_mode': 'mode_1', 'confidence': 0.7, 'error_message': None}
+2025-10-26 07:08:24,989 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@C-CCC10-5', 'current_model': None}}
+2025-10-26 07:08:24,989 - src.business.model_recognizer - INFO - 开始识别QR码: 123@C-CCC10-5
+2025-10-26 07:08:24,989 - src.business.model_recognizer - INFO - 型号识别完成: C-CCC10-5, 置信度: 0.0
+2025-10-26 07:08:24,989 - src.ui.main_window - INFO - 型号识别完成: {'model': 'C-CCC10-5', 'qr_code': '123@C-CCC10-5', 'po': '123', 'quantity': '', 'recognition_mode': 'mode_1', 'confidence': 0.0, 'error_message': '数量不能为空'}
+2025-10-26 07:09:11,149 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@C-CCC10-5', 'current_model': None}}
+2025-10-26 07:09:11,149 - src.business.model_recognizer - INFO - 开始识别QR码: 123@C-CCC10-5
+2025-10-26 07:09:11,149 - src.business.model_recognizer - INFO - 型号识别完成: C-CCC10-5, 置信度: 0.0
+2025-10-26 07:09:11,149 - src.ui.main_window - INFO - 型号识别完成: {'model': 'C-CCC10-5', 'qr_code': '123@C-CCC10-5', 'po': '123', 'quantity': '', 'recognition_mode': 'mode_1', 'confidence': 0.0, 'error_message': '数量不能为空'}
+2025-10-26 07:09:18,621 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@C-CCC10-5', 'current_model': None}}
+2025-10-26 07:09:18,623 - src.business.model_recognizer - INFO - 开始识别QR码: 123@C-CCC10-5
+2025-10-26 07:09:18,623 - src.business.model_recognizer - INFO - 型号识别完成: C-CCC10-5, 置信度: 0.0
+2025-10-26 07:09:18,623 - src.ui.main_window - INFO - 型号识别完成: {'model': 'C-CCC10-5', 'qr_code': '123@C-CCC10-5', 'po': '123', 'quantity': '', 'recognition_mode': 'mode_1', 'confidence': 0.0, 'error_message': '数量不能为空'}
+2025-10-26 07:09:41,100 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@C-CCC10@5', 'current_model': None}}
+2025-10-26 07:09:41,100 - src.business.model_recognizer - INFO - 开始识别QR码: 123@C-CCC10@5
+2025-10-26 07:09:41,100 - src.business.model_recognizer - INFO - 型号识别完成: C-CCC10, 置信度: 0.7
+2025-10-26 07:09:41,100 - src.ui.main_window - INFO - 型号识别完成: {'model': 'C-CCC10', 'qr_code': '123@C-CCC10@5', 'po': '123', 'quantity': '5', 'recognition_mode': 'mode_1', 'confidence': 0.7, 'error_message': None}
+2025-10-26 07:09:45,082 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@C-CCC10@5', 'current_model': None}}
+2025-10-26 07:09:45,082 - src.business.model_recognizer - INFO - 开始识别QR码: 123@C-CCC10@5
+2025-10-26 07:09:45,082 - src.business.model_recognizer - INFO - 型号识别完成: C-CCC10, 置信度: 0.7
+2025-10-26 07:09:45,082 - src.ui.main_window - INFO - 型号识别完成: {'model': 'C-CCC10', 'qr_code': '123@C-CCC10@5', 'po': '123', 'quantity': '5', 'recognition_mode': 'mode_1', 'confidence': 0.7, 'error_message': None}
+2025-10-26 07:09:47,549 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@C-CCC10@5', 'current_model': None}}
+2025-10-26 07:09:47,549 - src.business.model_recognizer - INFO - 开始识别QR码: 123@C-CCC10@5
+2025-10-26 07:09:47,549 - src.business.model_recognizer - INFO - 型号识别完成: C-CCC10, 置信度: 0.7
+2025-10-26 07:09:47,549 - src.ui.main_window - INFO - 型号识别完成: {'model': 'C-CCC10', 'qr_code': '123@C-CCC10@5', 'po': '123', 'quantity': '5', 'recognition_mode': 'mode_1', 'confidence': 0.7, 'error_message': None}
+2025-10-26 07:13:24,797 - src.communication.named_pipe - WARNING - 命名管道服务器未在运行
+2025-10-26 07:13:24,797 - src.data.file_manager - INFO - 所有文件已关闭
+2025-10-26 07:13:39,517 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 07:13:39,517 - src.core.config - INFO - 配置加载成功
+2025-10-26 07:13:39,517 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 07:13:39,536 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 07:13:39,536 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 07:13:39,547 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 07:13:39,556 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 07:13:39,556 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 07:13:39,577 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 07:13:39,577 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 07:13:39,590 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 07:13:39,591 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 07:13:39,594 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 07:14:51,077 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '1234@C-CCC10@10', 'current_model': None}}
+2025-10-26 07:14:51,077 - src.business.model_recognizer - INFO - 开始识别QR码: 1234@C-CCC10@10
+2025-10-26 07:14:51,077 - src.business.model_recognizer - INFO - 型号识别完成: C-CCC10, 置信度: 0.7
+2025-10-26 07:14:51,077 - src.ui.main_window - INFO - 型号识别完成: {'model': 'C-CCC10', 'qr_code': '1234@C-CCC10@10', 'po': '1234', 'quantity': '10', 'recognition_mode': 'mode_1', 'confidence': 0.7, 'error_message': None}
+2025-10-26 07:42:57,154 - src.communication.named_pipe - WARNING - 命名管道服务器未在运行
+2025-10-26 07:42:57,155 - src.data.file_manager - INFO - 所有文件已关闭
+2025-10-26 07:43:01,314 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 07:43:01,314 - src.core.config - INFO - 配置加载成功
+2025-10-26 07:43:01,314 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 07:43:01,314 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 07:43:01,314 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 07:43:01,314 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 07:43:01,314 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 07:43:01,323 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 07:43:01,324 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 07:43:01,324 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 07:43:01,325 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 07:43:01,325 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 07:43:01,327 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 07:43:22,058 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@CCC-10@5', 'current_model': None}}
+2025-10-26 07:43:22,058 - src.business.model_recognizer - INFO - 开始识别QR码: 123@CCC-10@5
+2025-10-26 07:43:22,058 - src.business.model_recognizer - INFO - 型号识别完成: CCC-10, 置信度: 0.7
+2025-10-26 07:43:22,058 - src.ui.main_window - INFO - 型号识别完成: {'model': 'CCC-10', 'qr_code': '123@CCC-10@5', 'po': '123', 'quantity': '5', 'recognition_mode': 'mode_1', 'confidence': 0.7, 'error_message': None}
+2025-10-26 07:52:54,009 - src.communication.named_pipe - WARNING - 命名管道服务器未在运行
+2025-10-26 07:52:54,009 - src.data.file_manager - INFO - 所有文件已关闭
+2025-10-26 07:52:59,893 - DNCSystem - INFO - DNC Python 系统启动
+2025-10-26 07:52:59,893 - src.core.config - INFO - 配置加载成功
+2025-10-26 07:52:59,907 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_define.csv, 共4行
+2025-10-26 07:52:59,907 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\type_prg.csv, 共4行
+2025-10-26 07:52:59,907 - src.business.program_matcher - INFO - 程序匹配数据加载成功
+2025-10-26 07:52:59,907 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\load.csv, 共5行
+2025-10-26 07:52:59,907 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\define.csv, 共3行
+2025-10-26 07:52:59,907 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\chngValue.csv, 共37行
+2025-10-26 07:52:59,907 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\calc.csv, 共22行
+2025-10-26 07:52:59,907 - src.business.calculation_engine - INFO - 计算数据加载成功
+2025-10-26 07:52:59,907 - src.data.csv_processor - INFO - CSV文件读取成功: config\csv\relation.csv, 共21行
+2025-10-26 07:52:59,910 - src.business.relation_validator - INFO - 关系数据加载成功
+2025-10-26 07:52:59,915 - DNCSystem - INFO - DNC Python 系统初始化成功
+2025-10-26 07:53:20,715 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@CCC-10@3', 'current_model': None}}
+2025-10-26 07:53:20,718 - src.business.model_recognizer - INFO - 开始识别QR码: 123@CCC-10@3
+2025-10-26 07:53:20,719 - src.business.model_recognizer - INFO - 型号识别完成: CCC-10, 置信度: 0.7
+2025-10-26 07:53:20,719 - src.ui.main_window - INFO - 型号识别完成: {'model': 'CCC-10', 'qr_code': '123@CCC-10@3', 'po': '123', 'quantity': '3', 'recognition_mode': 'mode_1', 'confidence': 0.7, 'error_message': None}
+2025-10-26 07:56:05,368 - src.ui.main_window - INFO - 参数已更新: {'basic': {'workpiece_name': '', 'workpiece_id': '', 'process_type': '铣削', 'precision': '普通'}, 'geometry': {'length': 0.0, 'width': 0.0, 'height': 0.0, 'diameter': 0.0, 'angle': 0.0}, 'process': {'spindle_speed': 0.0, 'feed_rate': 0.0, 'cut_depth': 0.0, 'cut_width': 0.0}, 'material': {'material_type': '碳钢', 'material_hardness': '软', 'material_strength': 0.0}, 'model': {'model_type': '自动识别', 'model_description': '123@CCC-10@3', 'current_model': None}}
+2025-10-26 07:56:05,374 - src.business.model_recognizer - INFO - 开始识别QR码: 123@CCC-10@3
+2025-10-26 07:56:05,374 - src.business.model_recognizer - INFO - 型号识别完成: CCC-10, 置信度: 0.7
+2025-10-26 07:56:05,374 - src.ui.main_window - INFO - 型号识别完成: {'model': 'CCC-10', 'qr_code': '123@CCC-10@3', 'po': '123', 'quantity': '3', 'recognition_mode': 'mode_1', 'confidence': 0.7, 'error_message': None}

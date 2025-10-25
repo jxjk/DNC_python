@@ -9,7 +9,14 @@ import logging
 from typing import Dict, Any, Optional, List
 from pathlib import Path
 from dataclasses import dataclass, asdict
-
+@dataclass
+class DeviceConfig:
+    """设备配置"""
+    device_name: str = "DefaultDevice"
+    device_model: str = "DefaultModel"
+    manufacturer: str = "DefaultManufacturer"
+    firmware_version: str = "1.0.0"
+    serial_number: str = "00000000"
 
 @dataclass
 class QRCodeConfig:
@@ -21,7 +28,6 @@ class QRCodeConfig:
     qty_place: int = 3
     barcode_header_str_num: int = 11
 
-
 @dataclass
 class NCCommunicationConfig:
     """NC通信配置"""
@@ -31,6 +37,17 @@ class NCCommunicationConfig:
     timeout: int = 30
     retry_count: int = 3
 
+@dataclass
+class CommunicationConfig:
+    """通信配置"""
+    com_type: int = 0  # 0: 串口, 1: 网络
+    com_port: str = "COM1"
+    baud_rate: int = 9600
+    data_bits: int = 8
+    parity: str = 'N'
+    stop_bits: int = 1
+    ip_address: str = "192.168.1.100"
+    port: int = 8080
 
 @dataclass
 class UIConfig:
@@ -69,6 +86,8 @@ class ConfigManager:
         # 配置对象
         self.qr_config = QRCodeConfig()
         self.nc_config = NCCommunicationConfig()
+        self.com_config = CommunicationConfig()
+        self.device_config = DeviceConfig()
         self.ui_config = UIConfig()
         self.system_config = SystemConfig()
         
@@ -127,7 +146,6 @@ class ConfigManager:
         except Exception as e:
             self.logger.error(f"配置保存失败: {e}")
             return False
-    
     def get_config_value(self, section: str, key: str) -> Any:
         """
         获取配置值
@@ -142,6 +160,8 @@ class ConfigManager:
         config_objects = {
             'qr': self.qr_config,
             'nc': self.nc_config,
+            'com': self.com_config,
+            'device': self.device_config,
             'ui': self.ui_config,
             'system': self.system_config
         }
@@ -165,6 +185,8 @@ class ConfigManager:
         config_objects = {
             'qr': self.qr_config,
             'nc': self.nc_config,
+            'com': self.com_config,
+            'device': self.device_config,
             'ui': self.ui_config,
             'system': self.system_config
         }
@@ -174,7 +196,6 @@ class ConfigManager:
                 setattr(config_objects[section], key, value)
                 return True
         return False
-    
     def get_csv_config_path(self, filename: str) -> Path:
         """
         获取CSV配置文件路径
@@ -224,6 +245,8 @@ class ConfigManager:
         """重置为默认配置"""
         self.qr_config = QRCodeConfig()
         self.nc_config = NCCommunicationConfig()
+        self.com_config = CommunicationConfig()
+        self.device_config = DeviceConfig()
         self.ui_config = UIConfig()
         self.system_config = SystemConfig()
         self.logger.info("配置已重置为默认值")
@@ -234,6 +257,10 @@ class ConfigManager:
             self.qr_config = QRCodeConfig(**config_data['qr_config'])
         if 'nc_config' in config_data:
             self.nc_config = NCCommunicationConfig(**config_data['nc_config'])
+        if 'com_config' in config_data:
+            self.com_config = CommunicationConfig(**config_data['com_config'])
+        if 'device_config' in config_data:
+            self.device_config = DeviceConfig(**config_data['device_config'])
         if 'ui_config' in config_data:
             self.ui_config = UIConfig(**config_data['ui_config'])
         if 'system_config' in config_data:
@@ -244,6 +271,8 @@ class ConfigManager:
         return {
             'qr_config': asdict(self.qr_config),
             'nc_config': asdict(self.nc_config),
+            'com_config': asdict(self.com_config),
+            'device_config': asdict(self.device_config),
             'ui_config': asdict(self.ui_config),
             'system_config': asdict(self.system_config)
         }
