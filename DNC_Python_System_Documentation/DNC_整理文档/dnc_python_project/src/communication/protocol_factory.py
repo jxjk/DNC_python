@@ -31,6 +31,14 @@ class NCProtocolFactory:
         try:
             connection_params = connection_params or {}
             
+            # 处理字符串类型的协议类型
+            if isinstance(protocol_type, str):
+                try:
+                    protocol_type = NCProtocolType(protocol_type.lower())
+                except ValueError:
+                    self.logger.error(f"不支持的协议类型字符串: {protocol_type}")
+                    return None
+            
             # 检查缓存中是否已有实例
             cache_key = self._get_cache_key(protocol_type, connection_params)
             if cache_key in self._protocol_cache:
@@ -50,7 +58,7 @@ class NCProtocolFactory:
             return protocol
             
         except Exception as e:
-            self.logger.error(f"创建协议实例失败: {protocol_type.value}, 错误: {e}")
+            self.logger.error(f"创建协议实例失败: {protocol_type}, 错误: {e}")
             return None
     
     def _create_protocol_instance(self, protocol_type: NCProtocolType) -> Optional[NCProtocol]:

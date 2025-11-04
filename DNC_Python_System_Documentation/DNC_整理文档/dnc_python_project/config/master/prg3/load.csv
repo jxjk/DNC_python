@@ -1,0 +1,11 @@
+NO,TYPE,DRAWING,DISPFLG,#3,#4,#5,#6,#7,#500,#501,#502,#503,#504,#505,#516,#506,#534,#535,#536,#537,#543,#545,#561
+5000,PE_ROLJ_43_15,,1,0,0,0,0,25,select1,2,1158,150,15,43,,relationEF,0,0,0,0,0,0,correct2
+5001,PE_ROLJ_43_20,,1,0,0,0,0,25,select1,2,1159,150,20,43,,relationEF,0,0,0,0,0,0,correct2
+5002,PE_ROLJ_43_25,,1,0,0,0,0,25,select1,2,1160,150,25,43,,relationEF,0,0,0,0,0,0,correct2
+5003,PE_ROLJ_53_20,,1,0,0,0,0,30,select1,2,1161,150,20,53,,relationEF,0,0,0,0,0,0,correct2
+5004,PE_ROLJ_53_25,,1,0,0,0,0,30,select1,2,1162,150,25,53,,relationEF,0,0,0,0,0,0,correct2
+5005,PE_ROLJ_53_30,,1,0,0,0,0,30,select1,2,1163,150,30,53,,relationEF,0,0,0,0,0,0,correct2
+5006,PE_ROLJ_72_25,,1,0,0,0,0,40,select1,2,1164,relation16,25,72,switchD70,relationEF,0,0,0,0,0,0,correct2
+5007,PE_ROLJ_72_30,,1,0,0,0,0,40,select1,2,1165,relation16,30,72,switchD70,relationEF,0,0,0,0,0,0,correct2
+5008,PE_ROLJ_72_35,,1,0,0,0,0,40,select1,2,1166,relation16,35,72,switchD70,relationEF,0,0,0,0,0,0,correct2
+5009,PE_ROLJM_43_15,,1,0,0,defineM,defineN,25,select1,2,1177,relation17.5,15,43,,relationEF,0,0,0,0,switchMN,,correct2

@@ -1,0 +1,5 @@
+DEFINE,DISPVALUE,SENDVALUE
+switchJD,镗刀,0
+switchJD,铰刀,1
+switchSBC,无识别槽,0
+switchSBC,有识别槽,1

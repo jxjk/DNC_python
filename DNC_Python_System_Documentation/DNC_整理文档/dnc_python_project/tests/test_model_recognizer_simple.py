@@ -11,14 +11,11 @@ import os
 # 添加项目根目录到Python路径
 project_root = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, project_root)
-
 from src.business.model_recognizer import (
     ModelRecognizer, 
-    PatternBasedRecognizer,
     RecognitionResult
 )
-
-
+from src.business.pattern_recognizer import PatternBasedRecognizer
 class TestModelRecognizerSimple:
     """型号识别器简化测试类"""
     

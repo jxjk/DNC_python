@@ -1,0 +1,6 @@
+2025-11-04 20:02:27 - CacheManager - INFO - 初始化缓存管理器，最大大小: 1000, 策略: lru
+2025-11-04 20:02:27 - CacheManager - INFO - 缓存清理线程已启动
+2025-11-04 20:08:45 - CacheManager - INFO - 初始化缓存管理器，最大大小: 1000, 策略: lru
+2025-11-04 20:08:45 - CacheManager - INFO - 缓存清理线程已启动
+2025-11-04 20:51:59 - CacheManager - INFO - 初始化缓存管理器，最大大小: 1000, 策略: lru
+2025-11-04 20:51:59 - CacheManager - INFO - 缓存清理线程已启动

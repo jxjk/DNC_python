@@ -1,0 +1,302 @@
+2025-10-29 21:54:27 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-29 21:54:27 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'ConfigManager' object has no attribute 'get_config'
+2025-10-29 22:05:26 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@4
+2025-10-29 22:05:26 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'ConfigManager' object has no attribute 'get_config'
+2025-10-29 22:30:20 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-29 22:30:20 - QRProcessingFlow - INFO - 二维码处理完成: 123@GPA20GT15040_A-H8@3
+2025-10-30 18:03:20 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 18:03:20 - QRProcessingFlow - INFO - 二维码处理完成: 123@GPA20GT15040_A-H8@3
+2025-10-30 18:17:10 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 18:17:10 - QRProcessingFlow - INFO - 二维码处理完成: 123@GPA20GT15040_A-H8@3
+2025-10-30 18:34:41 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 18:34:41 - QRProcessingFlow - INFO - 二维码处理完成: 123@GPA20GT15040_A-H8@3
+2025-10-30 18:45:31 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 18:45:31 - QRProcessingFlow - INFO - 二维码处理完成: 123@GPA20GT15040_A-H8@3
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10@OTHER_DATA
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO123MODEL456QTY10
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO001@MODEL001@QTY100
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO002@MODEL002@QTY200@EXTRA
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO003@MODEL003
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO001@MODEL001@QTY100
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO002@MODEL002@QTY200
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO003@MODEL003@QTY300
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: TEST
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO123#MODEL456#QTY10
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:35:47 - QRProcessingFlow - INFO - 开始处理二维码: PO123MODEL456QTY10
+2025-10-30 19:35:47 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10@OTHER_DATA
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO123MODEL456QTY10
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO001@MODEL001@QTY100
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO002@MODEL002@QTY200@EXTRA
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO003@MODEL003
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO001@MODEL001@QTY100
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO002@MODEL002@QTY200
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO003@MODEL003@QTY300
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: TEST
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO123#MODEL456#QTY10
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:38:10 - QRProcessingFlow - INFO - 开始处理二维码: PO123MODEL456QTY10
+2025-10-30 19:38:10 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-10-30 19:39:18 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 19:39:18 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 无法获取ini.csv配置
+2025-10-30 19:39:18 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 19:39:18 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 无法获取ini.csv配置
+2025-10-30 19:43:17 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 19:43:17 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 无法获取ini.csv配置
+2025-10-30 19:43:17 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 19:43:17 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 无法获取ini.csv配置
+2025-10-30 19:46:32 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 19:46:32 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 无法获取ini.csv配置
+2025-10-30 19:46:32 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 19:46:32 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 无法获取ini.csv配置
+2025-10-30 19:50:23 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@5
+2025-10-30 19:50:23 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-10-30 20:17:46 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 20:17:46 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-10-30 20:52:15 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-10-30 20:52:15 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-10-30 21:16:24 - QRProcessingFlow - INFO - 开始处理二维码: 12343@GPA20GT15040_A-H8@3
+2025-10-30 21:16:24 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-10-30 21:51:18 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@5
+2025-10-30 21:51:18 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-11-01 05:21:35 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-01 05:21:35 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO124@MODEL457@QTY20
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO125@MODEL458@QTY30
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO124@MODEL457
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO125@MODEL458@QTY30
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: 
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: None
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10@OTHER_DATA
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: MODEL456@PO123@QTY10@OTHER_DATA
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO123#MODEL456#QTY10#OTHER_DATA
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10@EXTRA1@EXTRA2@EXTRA3
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO 123@MODEL 456@QTY 10@WITH SPACES
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:35:24 - QRProcessingFlow - INFO - 开始处理二维码: PO-123@MODEL-456@QTY-10@SPECIAL_CHAR
+2025-11-01 05:35:24 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:42:52 - QRProcessingFlow - INFO - 开始处理二维码: test1
+2025-11-01 05:42:52 - QRProcessingFlow - ERROR - 二维码处理失败: QR字符串分割后找不到型号位置: test1
+2025-11-01 05:42:52 - QRProcessingFlow - INFO - 开始处理二维码: test2
+2025-11-01 05:42:52 - QRProcessingFlow - ERROR - 二维码处理失败: QR字符串分割后找不到型号位置: test2
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10@OTHER_DATA
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO123MODEL456QTY10
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO001@MODEL001@QTY100
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO002@MODEL002@QTY200@EXTRA
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO003@MODEL003
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO001@MODEL001@QTY100
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO002@MODEL002@QTY200
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO003@MODEL003@QTY300
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: TEST
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO123@MODEL456@QTY10
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO123#MODEL456#QTY10
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:44:30 - QRProcessingFlow - INFO - 开始处理二维码: PO123MODEL456QTY10
+2025-11-01 05:44:30 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'Mock' object is not iterable
+2025-11-01 05:47:55 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-01 05:47:55 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-11-01 06:17:41 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-01 06:17:41 - QRProcessingFlow - INFO - 二维码处理完成: 123
+2025-11-01 06:19:51 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@4
+2025-11-01 06:19:51 - QRProcessingFlow - INFO - 二维码处理完成: 123
+2025-11-01 06:21:23 - QRProcessingFlow - INFO - 开始处理二维码: test1
+2025-11-01 06:21:23 - QRProcessingFlow - ERROR - 二维码处理失败: QR字符串分割后找不到型号位置: test1
+2025-11-01 06:21:23 - QRProcessingFlow - INFO - 开始处理二维码: test2
+2025-11-01 06:21:23 - QRProcessingFlow - ERROR - 二维码处理失败: QR字符串分割后找不到型号位置: test2
+2025-11-01 06:43:28 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-01 06:43:28 - QRProcessingFlow - ERROR - 二维码处理失败: QR配置加载失败: 'QRCodeConfig' object has no attribute 'decimal_place'
+2025-11-01 06:49:20 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-01 06:49:20 - QRProcessingFlow - INFO - 二维码处理完成: 123
+2025-11-01 06:50:42 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@4
+2025-11-01 06:50:42 - QRProcessingFlow - INFO - 二维码处理完成: 123
+2025-11-01 06:58:35 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-01 06:58:35 - QRProcessingFlow - INFO - 二维码处理完成: 123
+2025-11-01 07:08:04 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-01 07:08:04 - QRProcessingFlow - INFO - 二维码处理完成: 123
+2025-11-01 07:30:10 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-01 07:30:10 - QRProcessingFlow - INFO - 二维码处理完成: 123
+2025-11-01 07:30:24 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-01 07:30:24 - QRProcessingFlow - INFO - 二维码处理完成: 123
+2025-11-01 07:47:11 - QRProcessingFlow - INFO - 开始处理二维码: 1234@GPA20GT15040_A-H8@1
+2025-11-01 07:47:11 - QRProcessingFlow - INFO - 二维码处理完成: 1234
+2025-11-01 07:54:44 - QRProcessingFlow - INFO - 开始处理二维码: C@AAA@12345
+2025-11-01 07:54:44 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=1, split_str='@'
+2025-11-01 07:54:44 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=1
+2025-11-01 07:54:44 - QRProcessingFlow - INFO - 使用模式1解析: C@AAA@12345
+2025-11-01 07:54:44 - QRProcessingFlow - INFO - 分割结果: ['C', 'AAA', '12345']
+2025-11-01 07:54:44 - QRProcessingFlow - INFO - 配置: model_place=1, 计算索引=0
+2025-11-01 07:54:44 - QRProcessingFlow - INFO - 分割后数组长度: 3
+2025-11-01 07:54:44 - QRProcessingFlow - INFO - 模式1解析结果: C
+2025-11-01 07:54:44 - QRProcessingFlow - INFO - 二维码处理完成: C
+2025-11-01 08:06:42 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@6
+2025-11-01 08:06:42 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 08:06:42 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 08:06:42 - QRProcessingFlow - INFO - 使用模式1解析: 123@GPA20GT15040_A-H8@6
+2025-11-01 08:06:42 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '6']
+2025-11-01 08:06:42 - QRProcessingFlow - INFO - 配置: model_place=2, 计算索引=1
+2025-11-01 08:06:42 - QRProcessingFlow - INFO - 分割后数组长度: 3
+2025-11-01 08:06:42 - QRProcessingFlow - INFO - 模式1解析结果: GPA20GT15040_A-H8
+2025-11-01 08:06:42 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-11-01 19:41:54 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+123@GPA20GT15040_A-H8@3
+2025-11-01 19:41:54 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 19:41:54 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 19:41:54 - QRProcessingFlow - INFO - 使用模式1解析: 123@GPA20GT15040_A-H8@3
+123@GPA20GT15040_A-H8@3
+2025-11-01 19:41:54 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '3\n123', 'GPA20GT15040_A-H8', '3']
+2025-11-01 19:41:54 - QRProcessingFlow - INFO - 配置: model_place=2, 计算索引=1
+2025-11-01 19:41:54 - QRProcessingFlow - INFO - 分割后数组长度: 5
+2025-11-01 19:41:54 - QRProcessingFlow - INFO - 模式1解析结果: GPA20GT15040_A-H8
+2025-11-01 19:41:54 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-11-01 20:17:56 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@4
+2025-11-01 20:17:56 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 20:17:56 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 20:17:56 - QRProcessingFlow - INFO - 使用模式1解析: 123@GPA20GT15040_A-H8@4
+2025-11-01 20:17:56 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '4']
+2025-11-01 20:17:56 - QRProcessingFlow - INFO - 配置: model_place=2, 计算索引=1
+2025-11-01 20:17:56 - QRProcessingFlow - INFO - 分割后数组长度: 3
+2025-11-01 20:17:56 - QRProcessingFlow - INFO - 模式1解析结果: GPA20GT15040_A-H8
+2025-11-01 20:17:56 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8
+2025-11-01 20:40:24 - QRProcessingFlow - INFO - 开始处理二维码: 1234@GPA20GT15040_A-H8@4
+2025-11-01 20:40:24 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 20:40:24 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 20:40:24 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 1234@GPA20GT15040_A-H8@4
+2025-11-01 20:40:24 - QRProcessingFlow - INFO - 分割结果: ['1234', 'GPA20GT15040_A-H8', '4']
+2025-11-01 20:40:24 - QRProcessingFlow - INFO - 提取结果 - PO: 1234, 型号: GPA20GT15040_A-H8, QUANTITY: 4
+2025-11-01 20:40:24 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 1234, QUANTITY: 4
+2025-11-01 20:43:55 - QRProcessingFlow - INFO - 开始处理二维码: 1234@GPA20GT15040_A-H8@3
+2025-11-01 20:43:55 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 20:43:55 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 20:43:55 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 1234@GPA20GT15040_A-H8@3
+2025-11-01 20:43:55 - QRProcessingFlow - INFO - 分割结果: ['1234', 'GPA20GT15040_A-H8', '3']
+2025-11-01 20:43:55 - QRProcessingFlow - INFO - 提取结果 - PO: 1234, 型号: GPA20GT15040_A-H8, QUANTITY: 3
+2025-11-01 20:43:55 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 1234, QUANTITY: 3
+2025-11-01 21:09:12 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@2
+2025-11-01 21:09:12 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 21:09:12 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 21:09:12 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 123@GPA20GT15040_A-H8@2
+2025-11-01 21:09:12 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '2']
+2025-11-01 21:09:12 - QRProcessingFlow - INFO - 提取结果 - PO: 123, 型号: GPA20GT15040_A-H8, QUANTITY: 2
+2025-11-01 21:09:12 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 123, QUANTITY: 2
+2025-11-01 21:12:18 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@2
+2025-11-01 21:12:18 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 21:12:18 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 21:12:18 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 123@GPA20GT15040_A-H8@2
+2025-11-01 21:12:18 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '2']
+2025-11-01 21:12:18 - QRProcessingFlow - INFO - 提取结果 - PO: 123, 型号: GPA20GT15040_A-H8, QUANTITY: 2
+2025-11-01 21:12:18 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 123, QUANTITY: 2
+2025-11-01 21:33:52 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@5
+2025-11-01 21:33:52 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 21:33:52 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 21:33:52 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 123@GPA20GT15040_A-H8@5
+2025-11-01 21:33:52 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '5']
+2025-11-01 21:33:52 - QRProcessingFlow - INFO - 提取结果 - PO: 123, 型号: GPA20GT15040_A-H8, QUANTITY: 5
+2025-11-01 21:33:52 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 123, QUANTITY: 5
+2025-11-01 21:43:15 - QRProcessingFlow - INFO - 开始处理二维码: 12344@GPA20GT15040_A-H8@4
+2025-11-01 21:43:15 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 21:43:15 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 21:43:15 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 12344@GPA20GT15040_A-H8@4
+2025-11-01 21:43:15 - QRProcessingFlow - INFO - 分割结果: ['12344', 'GPA20GT15040_A-H8', '4']
+2025-11-01 21:43:15 - QRProcessingFlow - INFO - 提取结果 - PO: 12344, 型号: GPA20GT15040_A-H8, QUANTITY: 4
+2025-11-01 21:43:15 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 12344, QUANTITY: 4
+2025-11-01 22:25:53 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@5
+2025-11-01 22:25:53 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 22:25:53 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 22:25:53 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 123@GPA20GT15040_A-H8@5
+2025-11-01 22:25:53 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '5']
+2025-11-01 22:25:53 - QRProcessingFlow - INFO - 提取结果 - PO: 123, 型号: GPA20GT15040_A-H8, QUANTITY: 5
+2025-11-01 22:25:53 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 123, QUANTITY: 5
+2025-11-01 22:52:33 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@6
+2025-11-01 22:52:33 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-01 22:52:33 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-01 22:52:33 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 123@GPA20GT15040_A-H8@6
+2025-11-01 22:52:33 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '6']
+2025-11-01 22:52:33 - QRProcessingFlow - INFO - 提取结果 - PO: 123, 型号: GPA20GT15040_A-H8, QUANTITY: 6
+2025-11-01 22:52:33 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 123, QUANTITY: 6
+2025-11-02 19:14:52 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@2
+2025-11-02 19:14:52 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-02 19:14:52 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-02 19:14:52 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 123@GPA20GT15040_A-H8@2
+2025-11-02 19:14:52 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '2']
+2025-11-02 19:14:52 - QRProcessingFlow - INFO - 提取结果 - PO: 123, 型号: GPA20GT15040_A-H8, QUANTITY: 2
+2025-11-02 19:14:52 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 123, QUANTITY: 2
+2025-11-03 20:24:51 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-03 20:24:51 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-03 20:24:51 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-03 20:24:51 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 123@GPA20GT15040_A-H8@3
+2025-11-03 20:24:51 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '3']
+2025-11-03 20:24:51 - QRProcessingFlow - INFO - 提取结果 - PO: 123, 型号: GPA20GT15040_A-H8, QUANTITY: 3
+2025-11-03 20:24:51 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 123, QUANTITY: 3
+2025-11-04 20:09:33 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@5
+2025-11-04 20:09:33 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-04 20:09:33 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-04 20:09:33 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 123@GPA20GT15040_A-H8@5
+2025-11-04 20:09:33 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '5']
+2025-11-04 20:09:33 - QRProcessingFlow - INFO - 提取结果 - PO: 123, 型号: GPA20GT15040_A-H8, QUANTITY: 5
+2025-11-04 20:09:33 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 123, QUANTITY: 5, 耗时: 0.0096秒
+2025-11-04 20:52:38 - QRProcessingFlow - INFO - 开始处理二维码: 123@GPA20GT15040_A-H8@3
+2025-11-04 20:52:38 - QRProcessingFlow - INFO - QR配置详情: qr_mode=1, model_place=2, split_str='@'
+2025-11-04 20:52:38 - QRProcessingFlow - INFO - ConfigManager QR配置: qr_mode=1, model_place=2
+2025-11-04 20:52:38 - QRProcessingFlow - INFO - 使用模式1解析（含PO/QUANTITY）: 123@GPA20GT15040_A-H8@3
+2025-11-04 20:52:38 - QRProcessingFlow - INFO - 分割结果: ['123', 'GPA20GT15040_A-H8', '3']
+2025-11-04 20:52:38 - QRProcessingFlow - INFO - 提取结果 - PO: 123, 型号: GPA20GT15040_A-H8, QUANTITY: 3
+2025-11-04 20:52:38 - QRProcessingFlow - INFO - 二维码处理完成: GPA20GT15040_A-H8, PO: 123, QUANTITY: 3, 耗时: 0.0151秒

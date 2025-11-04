@@ -1,3 +1,4 @@
+# file: c:\Users\Lenovo\Desktop\DNC_python\DNC_Python_System_Documentation\DNC_整理文档\dnc_python_project\src\business\relation_validator.py
 """
 关系验证器
 负责验证参数之间的逻辑关系
@@ -35,21 +36,23 @@ class RelationValidator:
         self.csv_processor = csv_processor
         self.logger = logging.getLogger(__name__)
         
-        # 加载关系数据
+        # 不立即加载数据，改为按需加载
         self.relation_data = None
-        self._load_relation_data()
+        self.current_program_no = None  # 添加当前程序编号
     
-    def _load_relation_data(self) -> None:
-        """加载关系数据"""
+    def _load_program_data(self, program_no: int) -> bool:
+        """按程序编号加载数据"""
         try:
-            # 加载关系数据
-            relation_path = self.config_manager.get_csv_config_path("relation.csv")
-            self.relation_data = self.csv_processor.read_csv(relation_path)
+            # 使用新的动态路径查找方法，传递程序编号
+            self.relation_data = self.csv_processor.read_config_csv("relation.csv", program_no)
             
-            self.logger.info("关系数据加载成功")
+            self.current_program_no = program_no
+            self.logger.info(f"程序 {program_no} 的关系数据加载成功")
+            return True
             
         except Exception as e:
-            self.logger.error(f"关系数据加载失败: {e}")
+            self.logger.error(f"程序 {program_no} 的关系数据加载失败: {e}")
+            return False
     
     def validate_relations(self, program_no: int, parameters: Dict[str, Any]) -> ValidationResult:
         """
@@ -63,7 +66,17 @@ class RelationValidator:
             ValidationResult: 验证结果
         """
         try:
-            self.logger.info(f"开始验证参数关系，程序: {program_no}")
+            self.logger.info(f"开始验证关系，程序: {program_no}")
+            
+            # 如果程序编号改变或数据未加载，重新加载数据
+            if self.current_program_no != program_no or not self.relation_data:
+                if not self._load_program_data(program_no):
+                    return ValidationResult(
+                        program_no=program_no,
+                        valid=False,
+                        errors=[f"程序 {program_no} 的关系数据加载失败"],
+                        warnings=[]
+                    )
             
             if not self.relation_data:
                 return ValidationResult(
@@ -212,10 +225,13 @@ class RelationValidator:
         Returns:
             List[Dict[str, Any]]: 关系规则列表
         """
-        if not self.relation_data:
-            self._load_relation_data()
-            if not self.relation_data:
+        # 如果程序编号改变或数据未加载，重新加载数据
+        if self.current_program_no != program_no or not self.relation_data:
+            if not self._load_program_data(program_no):
                 return []
+        
+        if not self.relation_data:
+            return []
         
         rules = []
         for row in self.relation_data:
@@ -237,6 +253,28 @@ class RelationValidator:
         
         return rules
     
+    def batch_validate(self, program_data: List[Tuple[int, Dict[str, Any]]]) -> List[ValidationResult]:
+        """
+        批量验证
+        
+        Args:
+            program_data: 程序数据列表，每个元素为(程序编号, 参数字典)
+            
+        Returns:
+            List[ValidationResult]: 验证结果列表
+        """
+        results = []
+        for program_no, parameters in program_data:
+            # 确保加载对应程序的数据
+            if self.current_program_no != program_no or not self.relation_data:
+                self._load_program_data(program_no)
+            
+            result = self.validate_relations(program_no, parameters)
+            results.append(result)
+        
+        self.logger.info(f"批量验证完成，共处理{len(program_data)}个程序")
+        return results
+    
     def reload_relation_data(self) -> bool:
         """
         重新加载关系数据
@@ -245,7 +283,8 @@ class RelationValidator:
             bool: 重新加载是否成功
         """
         try:
-            self._load_relation_data()
+            if self.current_program_no is not None:
+                return self._load_program_data(self.current_program_no)
             self.logger.info("关系数据重新加载成功")
             return True
         except Exception as e:
@@ -255,4 +294,5 @@ class RelationValidator:
     def clear_cache(self) -> None:
         """清理缓存数据"""
         self.relation_data = None
+        self.current_program_no = None
         self.logger.info("关系验证器缓存已清理")

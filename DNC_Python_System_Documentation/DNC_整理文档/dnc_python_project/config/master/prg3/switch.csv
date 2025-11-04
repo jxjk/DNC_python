@@ -1,0 +1,17 @@
+DEFINE,DISPVALUE,SENDVALUE
+switch1,无切断,0
+switch1,有切断,1
+switchKI,-,0
+switchKI,KI,1
+switchPS,-,0
+switchPS,P加工,1
+switchPS,S加工,2
+switchMN,-,0
+switchMN,M加工,1
+switchMN,N加工,2
+switchAROE,-,0
+switchAROE,第1个工程,1
+switchAROE,第2个工程,2
+switchAROE,第3个工程,3
+switchD70,大口径表面加工,0
+switchD70,大口径反面加工,1

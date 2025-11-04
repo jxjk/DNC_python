@@ -1,0 +1,9 @@
+2025-11-04 20:50:11 - OnOffManager - WARNING - switch配置为空或加载失败
+2025-11-04 20:50:11 - OnOffManager - INFO - 使用默认状态: 0
+2025-11-04 20:50:11 - OnOffManager - INFO - ON/OFF状态已更新: 0 -> 1
+2025-11-04 20:50:11 - OnOffManager - INFO - ON/OFF状态已更新: 1 -> 0
+2025-11-04 20:50:11 - OnOffManager - WARNING - 未知的switch: switch1
+2025-11-04 20:50:11 - OnOffManager - WARNING - 未知的switch: switch2
+2025-11-04 20:50:11 - OnOffManager - WARNING - switch配置为空或加载失败
+2025-11-04 20:50:11 - OnOffManager - INFO - 成功加载持久化状态: 0
+2025-11-04 20:50:11 - OnOffManager - INFO - ON/OFF状态已更新: 0 -> 1
