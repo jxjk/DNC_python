@@ -14,22 +14,44 @@ class MainWindow:
         self.config_manager = config_manager
         self.data_manager = data_manager
         self.logger = logging.getLogger(__name__)
-        
-        # 创建主窗口
         self.root = tk.Tk()
-        self.root.title("DNC 参数计算系统")
+        self.root.title("DNC参数计算系统")
         self.root.geometry("1200x800")
+
+    def _configure_styles(self):
+        """配置界面样式，使界面更美观易读"""
+        # 获取ttk样式对象
+        style = ttk.Style()
         
-        # 状态变量
-        self.current_data = []
-        self.error_messages = []
+        # 配置主题
+        try:
+            style.theme_use('clam')  # 使用clam主题，更现代
+        except:
+            pass  # 如果主题不可用则使用默认主题
+
+        # 配置标签样式
+        style.configure('Title.TLabelframe', font=('Microsoft YaHei', 12, 'bold'), foreground='darkblue')
+        style.configure('Control.TLabelframe', font=('Microsoft YaHei', 11, 'bold'), foreground='darkgreen')
+        style.configure('Bottom.TLabelframe', font=('Microsoft YaHei', 11, 'bold'), foreground='darkred')
+        style.configure('TLabel', font=('Microsoft YaHei', 10))
+        style.configure('TCheckbutton', font=('Microsoft YaHei', 10))
         
-        # 创建界面
-        self._create_widgets()
-        self._setup_layout()
+        # 配置按钮样式
+        style.configure('Action.TButton', font=('Microsoft YaHei', 10, 'bold'), padding=6)
+        style.configure('Send.TButton', font=('Microsoft YaHei', 10, 'bold'), 
+                       foreground='white', background='darkgreen', padding=6)
+        style.map('Send.TButton', background=[('active', 'green')])
+        
+        # 配置输入框样式
+        style.configure('Model.TEntry', font=('Microsoft YaHei', 12), fieldbackground='#f0f8ff')
+        style.configure('Barcode.TEntry', font=('Consolas', 12), fieldbackground='#fff8dc')
+        style.map('Barcode.TEntry', fieldbackground=[('focus', '#ffffff')])
+        style.configure('Input.TEntry', font=('Consolas', 10), fieldbackground='#e6f3ff')  # input控件样式
+        style.configure('Measure.TEntry', font=('Consolas', 10), fieldbackground='#f0fff0')  # measure控件样式
+        style.configure('Correct.TEntry', font=('Consolas', 10), fieldbackground='#fff0f5')  # correct控件样式
         
     def _create_widgets(self):
-        """创建界面组件"""
+        """创建界面组件，与VB.NET界面功能对应"""
         # 创建菜单栏
         self._create_menu_bar()
         
@@ -37,11 +59,14 @@ class MainWindow:
         self.main_frame = ttk.Frame(self.root, padding="10")
         self.main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
         
-        # 创建顶部控制区域
+        # 创建顶部控制区域(对应VB.NET中的TB_Model, TB_Barcode等)
         self._create_control_area()
         
-        # 创建数据显示区域
+        # 创建中央数据显示区域(对应VB.NET中的Panel1, FlowLayoutPanel1)
         self._create_data_display_area()
+        
+        # 创建底部控制区域(对应VB.NET中的按钮区域)
+        self._create_bottom_control_area()
         
         # 创建状态栏
         self._create_status_bar()
@@ -77,30 +102,55 @@ class MainWindow:
         help_menu.add_command(label="关于", command=self._show_about)
         
     def _create_control_area(self):
-        """创建控制区域"""
-        control_frame = ttk.LabelFrame(self.main_frame, text="控制面板", padding="10")
-        control_frame.grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
+        """创建控制区域，包括型号显示和输入功能"""
+        # 创建型号显示区域 (对应VB.NET的TB_Model)
+        model_frame = ttk.LabelFrame(self.main_frame, text="型号信息", padding="15", style='Title.TLabelframe')
+        model_frame.grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
+        model_frame.configure(relief='groove', borderwidth=2)
+        
+        # 型号显示
+        ttk.Label(model_frame, text="型号:", font=("Microsoft YaHei", 11, "bold")).grid(row=0, column=0, sticky=tk.W, padx=(5, 5))
+        self.TB_Model_var = tk.StringVar()
+        self.TB_Model = ttk.Entry(model_frame, textvariable=self.TB_Model_var, width=50, font=("Microsoft YaHei", 12), 
+                                  style='Model.TEntry')
+        self.TB_Model.grid(row=0, column=1, padx=(5, 15), sticky=(tk.W, tk.E))
+        self.TB_Model.config(state='readonly', foreground='blue', background='#f0f8ff')  # 设为只读，通过条码输入更新
+        
+        # 程序显示 (对应VB.NET的TB_Prg)
+        ttk.Label(model_frame, text="程序:", font=("Microsoft YaHei", 11, "bold")).grid(row=0, column=2, sticky=tk.W, padx=(10, 5))
+        self.TB_Prg_var = tk.StringVar()
+        self.TB_Prg = ttk.Entry(model_frame, textvariable=self.TB_Prg_var, width=15, font=("Microsoft YaHei", 10))
+        self.TB_Prg.grid(row=0, column=3, padx=(5, 5))
+        self.TB_Prg.config(state='readonly', foreground='darkgreen')  # 设为只读
+
+        # 配置列权重
+        model_frame.columnconfigure(1, weight=1)
+
+        # 创建控制面板 (原有的输入文件功能)
+        control_frame = ttk.LabelFrame(self.main_frame, text="控制面板", padding="12", style='Control.TLabelframe')
+        control_frame.grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
+        control_frame.configure(relief='groove', borderwidth=2)
         
         # 输入文件选择
-        ttk.Label(control_frame, text="输入文件:").grid(row=0, column=0, sticky=tk.W)
+        ttk.Label(control_frame, text="输入文件:", font=("Microsoft YaHei", 10)).grid(row=0, column=0, sticky=tk.W, padx=(5, 5))
         self.input_file_var = tk.StringVar()
-        self.input_file_entry = ttk.Entry(control_frame, textvariable=self.input_file_var, width=50)
-        self.input_file_entry.grid(row=0, column=1, padx=(5, 5), sticky=(tk.W, tk.E))
+        self.input_file_entry = ttk.Entry(control_frame, textvariable=self.input_file_var, width=40, font=("Microsoft YaHei", 10))
+        self.input_file_entry.grid(row=0, column=1, padx=(5, 10), sticky=(tk.W, tk.E))
         
-        ttk.Button(control_frame, text="浏览...", command=self._browse_input_file).grid(row=0, column=2, padx=(0, 10))
+        ttk.Button(control_frame, text="浏览...", command=self._browse_input_file, style='Action.TButton').grid(row=0, column=2, padx=(5, 10))
         
         # 处理按钮
-        ttk.Button(control_frame, text="处理输入文件", command=self._process_input_file).grid(row=0, column=3, padx=(0, 10))
-        ttk.Button(control_frame, text="清空结果", command=self._clear_results).grid(row=0, column=4)
+        ttk.Button(control_frame, text="处理输入文件", command=self._process_input_file, style='Action.TButton').grid(row=0, column=3, padx=(5, 10))
+        ttk.Button(control_frame, text="清空结果", command=self._clear_results, style='Action.TButton').grid(row=0, column=4, padx=(5, 10))
         
         # 搜索框
-        ttk.Label(control_frame, text="搜索产品:").grid(row=1, column=0, sticky=tk.W, pady=(10, 0))
+        ttk.Label(control_frame, text="搜索产品:", font=("Microsoft YaHei", 10)).grid(row=1, column=0, sticky=tk.W, pady=(12, 0), padx=(5, 5))
         self.search_var = tk.StringVar()
-        self.search_entry = ttk.Entry(control_frame, textvariable=self.search_var, width=30)
-        self.search_entry.grid(row=1, column=1, padx=(5, 5), pady=(10, 0), sticky=(tk.W, tk.E))
+        self.search_entry = ttk.Entry(control_frame, textvariable=self.search_var, width=25, font=("Microsoft YaHei", 10))
+        self.search_entry.grid(row=1, column=1, padx=(5, 10), pady=(12, 0), sticky=(tk.W, tk.E))
         self.search_entry.bind('<KeyRelease>', self._on_search_changed)
         
-        ttk.Button(control_frame, text="搜索", command=self._search_products).grid(row=1, column=2, pady=(10, 0))
+        ttk.Button(control_frame, text="搜索", command=self._search_products, style='Action.TButton').grid(row=1, column=2, pady=(12, 0), padx=(0, 10))
         
         # 配置列权重
         control_frame.columnconfigure(1, weight=1)
@@ -238,7 +288,45 @@ class MainWindow:
         self.status_var.set("就绪")
         
         status_bar = ttk.Label(self.main_frame, textvariable=self.status_var, relief=tk.SUNKEN, anchor=tk.W)
-        status_bar.grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E))
+        status_bar.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E))
+        
+    def _create_bottom_control_area(self):
+        """创建底部控制区域，对应VB.NET中的按钮区域"""
+        # 创建底部控制面板
+        bottom_frame = ttk.LabelFrame(self.main_frame, text="条码/操作面板", padding="15", style='Bottom.TLabelframe')
+        bottom_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(10, 0))
+        bottom_frame.configure(relief='groove', borderwidth=2)
+        
+        # 对应VB.NET中的TB_Barcode, Btn_Keyboard, Btn_send, Btn_chgOperator
+        # 条码输入框(对应TB_Barcode)
+        ttk.Label(bottom_frame, text="条码/型号输入:", font=("Microsoft YaHei", 11, "bold")).grid(row=0, column=0, sticky=tk.W, padx=(5, 10))
+        self.barcode_var = tk.StringVar()
+        self.barcode_entry = ttk.Entry(bottom_frame, textvariable=self.barcode_var, width=45, font=("Consolas", 12), 
+                                       style='Barcode.TEntry')
+        self.barcode_entry.grid(row=0, column=1, padx=(5, 15), sticky=(tk.W, tk.E))
+        self.barcode_entry.bind('<Return>', self._on_barcode_enter)
+        # 设置焦点到条码输入框，便于扫描枪输入
+        self.barcode_entry.focus()
+        
+        # 第二行按钮
+        ttk.Button(bottom_frame, text="虚拟键盘", command=self._show_keyboard, style='Action.TButton').grid(row=1, column=0, padx=(5, 10), pady=(10, 5))
+        ttk.Button(bottom_frame, text="发送数据", command=self._send_data, style='Send.TButton').grid(row=1, column=1, padx=(5, 10), pady=(10, 5), sticky=(tk.W,))
+        
+        # 第三行按钮
+        ttk.Button(bottom_frame, text="操作员设置", command=self._change_operator, style='Action.TButton').grid(row=2, column=0, padx=(5, 10), pady=(5, 5))
+        ttk.Button(bottom_frame, text="程序切换", command=self._change_program, style='Action.TButton').grid(row=2, column=1, padx=(5, 10), pady=(5, 5), sticky=(tk.W,))
+        # 程序切换按钮默认隐藏，有多个程序时显示
+        self.prg_change_btn = bottom_frame.winfo_children()[-1]  # 获取最后添加的按钮引用
+        self.prg_change_btn.grid_remove()
+        
+        # 连接状态复选框(对应CB_Connection)
+        self.connection_var = tk.BooleanVar()
+        self.connection_check = ttk.Checkbutton(bottom_frame, text="设备连接", variable=self.connection_var, 
+                                                style='Connection.TCheckbutton')
+        self.connection_check.grid(row=1, column=2, rowspan=2, padx=(20, 5), pady=(10, 5), sticky=tk.N)
+        
+        # 配置列权重
+        bottom_frame.columnconfigure(1, weight=1)
         
     def _setup_layout(self):
         """设置布局"""
@@ -246,7 +334,16 @@ class MainWindow:
         self.root.rowconfigure(0, weight=1)
         
         self.main_frame.columnconfigure(0, weight=1)
-        self.main_frame.rowconfigure(1, weight=1)
+        # 设置主框架的行权重，确保各部分比例合适
+        self.main_frame.rowconfigure(0, weight=0)  # 型号信息行
+        self.main_frame.rowconfigure(1, weight=0)  # 控制面板行
+        self.main_frame.rowconfigure(2, weight=1)  # 标签页区域获得最多空间
+        self.main_frame.rowconfigure(3, weight=0)  # 底部控制行
+
+        # 确保标签页也具有合适的布局
+        if hasattr(self, 'notebook'):
+            self.notebook.columnconfigure(0, weight=1)
+            self.notebook.rowconfigure(0, weight=1)
         
     def _open_input_file(self):
         """打开输入文件"""
@@ -515,10 +612,17 @@ DNC 参数计算系统
     def run(self):
         """运行应用程序"""
         try:
+            # 配置界面样式
+            self._configure_styles()
+            
             # 加载配置
             if not self.config_manager.load_config():
                 self.logger.warning("配置文件加载失败，使用默认配置")
-                
+            
+            # 创建界面组件（这会初始化status_var等变量）
+            self._create_widgets()
+            self._setup_layout()
+            
             # 加载数据
             self.status_var.set("正在加载数据...")
             if self.data_manager.load_csv_files():
@@ -534,3 +638,358 @@ DNC 参数计算系统
         except Exception as e:
             self.logger.error(f"应用程序启动失败: {e}")
             messagebox.showerror("错误", f"应用程序启动失败: {e}")
+
+    def _on_barcode_enter(self, event):
+        """条码输入框回车事件处理，支持QR码格式：PO@型式@数量"""
+        barcode_value = self.barcode_var.get().strip()
+        if barcode_value:
+            # 解析QR码，支持格式：PO@型式@数量
+            qr_parts = barcode_value.split('@')
+            if len(qr_parts) == 3:
+                # QR码格式：PO@型式@数量
+                po_number = qr_parts[0]
+                model = qr_parts[1]
+                quantity = qr_parts[2]
+                
+                self.status_var.set(f"PO: {po_number}, 型号: {model}, 数量: {quantity}")
+                self._process_model(model, quantity)
+            elif len(qr_parts) == 1:
+                # 直接输入型号
+                model = barcode_value.strip()
+                self.status_var.set(f"型号: {model}")
+                self._process_model(model)
+            else:
+                self.status_var.set(f"无法解析的条码格式: {barcode_value}")
+                messagebox.showwarning("警告", f"无法解析的条码格式: {barcode_value}")
+
+    def _process_model(self, original_model, quantity=None):
+        """处理型号，通过从后往前逐字符删除进行匹配，生成对应的UI控件"""
+        try:
+            # 实现文档中描述的型号匹配方法：从后往前逐字符删除进行匹配
+            matched_model = self._find_matching_model(original_model)
+            if not matched_model:
+                messagebox.showerror("错误", f"未找到匹配的型号: {original_model}")
+                return
+
+            # 更新型号显示
+            self.TB_Model_var.set(matched_model)
+            
+            # 根据匹配到的产品数据加载相应的程序和UI控件
+            self._load_program_for_model(matched_model)
+            
+            # 如果有数量信息，也进行处理
+            if quantity:
+                # 这里可以添加数量处理逻辑
+                pass
+                
+        except Exception as e:
+            self.logger.error(f"处理型号失败: {e}")
+            messagebox.showerror("错误", f"处理型号失败: {e}")
+
+    def _find_matching_model(self, input_model):
+        """根据文档描述的方法，从后往前逐字符删除进行型号匹配"""
+        try:
+            # 获取type_define.csv中的所有型号
+            type_define_data = self.data_manager.get_table_by_name('type_define.csv')
+            if not type_define_data:
+                return None
+
+            # 从输入型号的末尾开始逐字符删除，查找匹配
+            search_string = input_model
+            while len(search_string) > 0:
+                for row in type_define_data:
+                    type_value = row.get('TYPE', '')
+                    if type_value and search_string == type_value:
+                        self.logger.info(f"找到匹配型号: {type_value} (从输入 {input_model} 匹配)")
+                        return type_value
+
+                # 删除最后一个字符，继续搜索
+                search_string = search_string[:-1]
+
+            # 如果上面的搜索没有找到，尝试其他匹配方法
+            # 检查是否是完全匹配
+            for row in type_define_data:
+                type_value = row.get('TYPE', '')
+                if type_value and input_model == type_value:
+                    self.logger.info(f"找到完全匹配型号: {type_value}")
+                    return type_value
+
+            return None
+
+        except Exception as e:
+            self.logger.error(f"型号匹配失败: {e}")
+            return None
+
+    def _load_program_for_model(self, model):
+        """根据型号加载相应的程序和UI控件"""
+        try:
+            # 获取产品数据
+            product_data = self.data_manager.get_product_data(model)
+            if not product_data:
+                return
+
+            # 检查type_prg.csv来确定程序显示顺序
+            type_prg_data = self.data_manager.get_table_by_name('type_prg.csv')
+            prg_no = None
+            
+            # 在type_define.csv中查找产品对应的NO
+            type_define_data = self.data_manager.get_table_by_name('type_define.csv')
+            for row in type_define_data:
+                if row.get('TYPE') == model:
+                    prg_no = row.get('NO')
+                    break
+
+            if prg_no:
+                # 查找type_prg.csv中对应的程序顺序
+                for prg_row in type_prg_data:
+                    if prg_row.get('NO') == prg_no:
+                        # 根据type_prg.csv中的配置加载程序控件
+                        # 按优先级尝试加载prg1, prg2, prg3等
+                        for i in range(1, 4):  # 尝试prg1到prg3
+                            prg_key = f'prg{i}'
+                            prg_value = prg_row.get(prg_key)
+                            if prg_value:
+                                self._load_program_controls(prg_value, model)
+                                break  # 只加载第一个找到的程序
+                        break
+
+            # 如果没有找到程序配置，尝试直接加载第一个可用程序
+            if not prg_no:
+                self._load_program_controls('1', model)
+
+        except Exception as e:
+            self.logger.error(f"加载程序失败: {e}")
+
+    def _load_program_controls(self, prg_no, model):
+        """加载指定程序的控件"""
+        try:
+            # 获取load.csv数据，这是定义UI控件的主要文件
+            load_data = self.data_manager.get_program_table(prg_no, 'load')
+            if not load_data:
+                # 尝试使用默认文件名
+                load_data = self.data_manager.get_table_by_name(f'prg{prg_no}/load.csv')
+            if not load_data:
+                # 尝试从主目录加载load.csv
+                load_data = self.data_manager.get_table_by_name('load.csv')
+
+            # 清除现有的控件（如果有的话）
+            self._clear_program_controls()
+
+            # 检查是否已存在程序标签页，如果存在则先删除
+            if hasattr(self, 'program_tab') and self.program_tab:
+                self.notebook.forget(self.program_tab)  # 从notebook中移除标签页
+                self.program_tab = None
+
+            # 创建一个新的标签页用于显示程序控件
+            self.program_tab = ttk.Frame(self.notebook, padding="5")  # 减少内边距以获得更多空间
+            self.notebook.add(self.program_tab, text=f"程序 {prg_no} 控件")
+            
+            # 为程序标签页配置布局权重
+            self.program_tab.columnconfigure(0, weight=1)
+            self.program_tab.rowconfigure(0, weight=1)
+
+            # 创建主容器框架
+            main_container = ttk.Frame(self.program_tab)
+            main_container.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), padx=5, pady=5)
+            main_container.columnconfigure(0, weight=1)
+            main_container.rowconfigure(0, weight=1)
+
+            # 创建Canvas和Scrollbar以支持滚动
+            canvas = tk.Canvas(main_container, highlightthickness=0)
+            scrollbar = ttk.Scrollbar(main_container, orient="vertical", command=canvas.yview)
+            scrollable_frame = ttk.Frame(canvas)
+
+            # 将滚动区域绑定到canvas
+            scrollable_frame.bind(
+                "<Configure>",
+                lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+            )
+
+            # 在canvas中创建窗口来包含滚动框架
+            canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+            canvas.configure(yscrollcommand=scrollbar.set)
+
+            # 创建一个框架来放置程序控件
+            self.program_frame = ttk.LabelFrame(scrollable_frame, text=f"型号: {model}", padding="8")
+            self.program_frame.pack(fill=tk.X, expand=True, pady=5, padx=5)
+
+            # 如果有load数据，根据数据创建控件
+            if load_data:
+                for i, load_row in enumerate(load_data):
+                    # 检查是否匹配当前型号
+                    if load_row.get('TYPE') == model or load_row.get('NO') == model:
+                        # 创建控件
+                        self._create_controls_from_load_row(load_row, i)
+                        break
+
+            # 将canvas和滚动条放置到主容器中
+            canvas.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+            scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
+
+            # 更新状态
+            self.status_var.set(f"已加载程序 {prg_no} 的控件，型号: {model}")
+
+            # 选择新的程序标签页
+            self.notebook.select(self.program_tab)
+
+        except Exception as e:
+            self.logger.error(f"加载程序控件失败: {e}")
+
+    def _create_controls_from_load_row(self, load_row, row_index):
+        """根据load.csv行创建控件"""
+        try:
+            # 获取cntrl.csv来确定控件类型
+            # 首先尝试获取当前程序的cntrl.csv数据
+            # 遍历已加载的文件，寻找匹配的程序编号
+            cntrl_data = []
+            
+            # 尝试获取当前程序的cntrl.csv数据
+            for key, data in self.data_manager.loaded_files.items():
+                if key.endswith('cntrl.csv'):  # 找到cntrl.csv文件
+                    cntrl_data = data
+                    break
+            
+            # 如果没找到程序特定的cntrl.csv，尝试主目录的cntrl.csv
+            if not cntrl_data:
+                cntrl_data = self.data_manager.loaded_files.get('cntrl.csv', [])
+            if not cntrl_data:
+                # 如果还是没找到，就从主目录加载
+                cntrl_data = self.data_manager.get_table_by_name('cntrl.csv')
+
+            # 创建控件容器
+            controls_frame = ttk.Frame(self.program_frame)
+            controls_frame.grid(row=row_index, column=0, sticky=(tk.W, tk.E), pady=5)
+
+            # 创建一个主容器，用于显示控件
+            main_container = ttk.Frame(controls_frame)
+            main_container.pack(fill=tk.X, padx=5, pady=5)
+
+            # 遍历load.csv中的列，创建对应的控件
+            valid_controls = []  # 存储有效的控件
+            
+            for key, value in load_row.items():
+                if key not in ['NO', 'TYPE', 'DRAWING', 'DISPFLG'] and key.startswith('#') and value:  # 只处理以#开头的宏变量
+                    # 查找cntrl.csv中对应的控件类型
+                    control_info = None
+                    for cntrl_row in cntrl_data:
+                        if cntrl_row.get('MACRO') == key:
+                            control_info = cntrl_row
+                            break
+
+                    if control_info:
+                        # 创建控件
+                        control_widget = self._create_control(control_info, value, main_container)
+                        if control_widget:
+                            valid_controls.append(control_widget)
+
+            # 将控件按6列布局排列（更宽的布局，显著减少行数）
+            cols = 6  # 设置为6列，大幅减少行数，更好地利用水平空间
+            for idx, control_widget in enumerate(valid_controls):
+                row_num = idx // cols  # 计算当前行号
+                col_num = idx % cols   # 计算当前列号
+                
+                # 将控件添加到网格
+                control_widget.grid(row=row_num, column=col_num, padx=3, pady=2, sticky=(tk.W, tk.E))
+                
+                # 配置列权重，使其均匀分布
+                main_container.columnconfigure(col_num, weight=1)
+
+            # 配置滚动功能，以防控件过多
+            # 为main_container添加滚动支持（如果需要）
+            main_container.update_idletasks()  # 更新布局信息
+
+        except Exception as e:
+            self.logger.error(f"创建控件失败: {e}")
+
+    def _create_control(self, control_info, default_value, parent_frame):
+        """创建单个控件，应用新样式使更美观易读"""
+        try:
+            macro = control_info.get('MACRO', '')
+            kind = control_info.get('KIND', '')
+            dispflg = control_info.get('DISPFLG', '1')
+            labeltxt = control_info.get('LABELTXT', macro) or macro  # 如果LABELTXT为空则使用macro
+            sendflg = control_info.get('SEND', '1')  # 获取发送标志
+
+            # 只显示DISPFLG为1的控件
+            if dispflg != '1':
+                return None
+
+            # 创建控件框架
+            ctrl_frame = ttk.Frame(parent_frame, padding="2")
+            
+            # 创建标签，使用更清晰的字体
+            label = ttk.Label(ctrl_frame, text=labeltxt + ":", font=("Microsoft YaHei", 10, "bold"))
+            label.pack(side=tk.TOP, padx=(0, 2), pady=(0, 2), anchor="w")
+
+            # 根据类型创建不同的控件
+            entry = None
+            if kind in ['load', 'input', 'measure', 'select', 'relation', 'switch', 'correct']:
+                # 创建文本框控件
+                var = tk.StringVar(value=default_value)
+                entry = ttk.Entry(ctrl_frame, textvariable=var, width=15, font=("Consolas", 10))
+                entry.pack(side=tk.TOP, padx=(0, 2), pady=2)
+
+                # 为不同类型的控件应用不同样式
+                if kind == 'input':
+                    entry.configure(style='Input.TEntry')  # 自定义样式
+                elif kind == 'measure':
+                    entry.configure(style='Measure.TEntry')  # 自定义样式
+                elif kind == 'correct':
+                    entry.configure(style='Correct.TEntry')  # 自定义样式
+
+                # 保存控件引用，以便后续使用
+                if not hasattr(self, 'control_vars'):
+                    self.control_vars = {}
+                self.control_vars[macro] = var
+
+                # 如果SENDFLG为1，则标记为可发送
+                if sendflg == '1':
+                    # 添加视觉指示器（例如改变背景色或添加图标）
+                    pass
+
+            elif kind == 'changePRG':
+                # 创建程序切换按钮
+                btn_name = control_info.get('BTNNAME', '切换程序')
+                change_prg = control_info.get('CHANGEPRG', '')
+                entry = ttk.Button(ctrl_frame, text=btn_name, command=lambda p=change_prg: self._change_to_program(p), style='Action.TButton')
+                entry.pack(side=tk.TOP, padx=(0, 2), pady=2)
+
+            # 添加类型指示标签（可选，便于识别控件类型）
+            type_label = ttk.Label(ctrl_frame, text=f"({kind})", font=("Microsoft YaHei", 8), foreground="gray")
+            type_label.pack(side=tk.TOP, anchor="w")
+
+            return ctrl_frame
+
+        except Exception as e:
+            self.logger.error(f"创建控件失败: {e}")
+            return None
+
+    def _clear_program_controls(self):
+        """清除现有的程序控件"""
+        if hasattr(self, 'program_frame') and self.program_frame:
+            self.program_frame.destroy()
+
+    def _change_to_program(self, program_name):
+        """切换到指定程序"""
+        self.status_var.set(f"切换到程序: {program_name}")
+        # 这里可以实现程序切换逻辑
+            
+    def _show_keyboard(self):
+        """显示虚拟键盘"""
+        # TODO: 实现虚拟键盘功能
+        messagebox.showinfo("键盘", "虚拟键盘功能待实现")
+        
+    def _send_data(self):
+        """发送数据"""
+        # TODO: 实现数据发送功能
+        messagebox.showinfo("发送", "数据发送功能待实现")
+        
+    def _change_operator(self):
+        """更改操作员"""
+        # TODO: 实现操作员更改功能
+        messagebox.showinfo("操作员", "操作员更改功能待实现")
+        
+    def _change_program(self):
+        """切换程序"""
+        # TODO: 实现程序切换功能
+        messagebox.showinfo("程序切换", "程序切换功能待实现")
