@@ -20,17 +20,18 @@ class DataManager:
         self.loaded_files = {}
         
     def load_csv_files(self) -> bool:
-        """加载所有CSV文件"""
+        """加载所有CSV文件，与VB.NET的LoadFileToTBL功能对应"""
         try:
             master_path = self.config_manager.get_master_path()
             if not master_path.exists():
                 self.logger.error(f"Master目录不存在: {master_path}")
                 return False
                 
-            # 加载主要CSV文件
+            # 对应VB.NET中的基本表格定义
+            # T_ini, T_prg, T_header, T_math, T_type_define, T_type_relation, T_type_prg, T_type_chngvl
             csv_files = [
-                'header.csv', 'ini.csv', 'math.csv', 'prg.csv',
-                'type_chngvl.csv', 'type_define.csv', 'type_prg.csv', 'type_relation.csv'
+                'ini.csv', 'prg.csv', 'header.csv', 'math.csv', 
+                'type_define.csv', 'type_relation.csv', 'type_prg.csv', 'type_chngvl.csv'
             ]
             
             for csv_file in csv_files:
@@ -42,12 +43,23 @@ class DataManager:
                 else:
                     self.logger.warning(f"CSV文件不存在: {file_path}")
                     
-            # 加载prg子目录
-            prg_dirs = ['prg1', 'prg2', 'prg3']
-            for prg_dir in prg_dirs:
-                prg_path = master_path / prg_dir
-                if prg_path.exists():
-                    self._load_prg_directory(prg_dir, prg_path)
+            # 对应VB.NET中从T_prg表获取程序目录并加载各程序的特定CSV文件
+            prg_csv_data = self.loaded_files.get('prg.csv', [])
+            for prg_row in prg_csv_data:
+                prg_no = prg_row.get('PRGNO', '')
+                prg_name = prg_row.get('PRGNAME', '')
+                if prg_no and prg_name:
+                    prg_path = master_path / prg_name
+                    if prg_path.exists():
+                        self._load_prg_directory(f"prg{prg_no}", prg_path)
+                        
+            # 备用：如果prg.csv不存在或为空，尝试加载默认prg目录
+            if not prg_csv_data:
+                prg_dirs = ['prg1', 'prg2', 'prg3']
+                for prg_dir in prg_dirs:
+                    prg_path = master_path / prg_dir
+                    if prg_path.exists():
+                        self._load_prg_directory(prg_dir, prg_path)
                     
             # 构建产品数据索引
             self._build_product_index()
@@ -60,13 +72,15 @@ class DataManager:
             return False
             
     def _load_prg_directory(self, prg_name: str, prg_path: Path):
-        """加载prg子目录中的CSV文件"""
+        """加载prg子目录中的CSV文件，与VB.NET版本功能对应"""
         try:
+            # VB.NET中的各种CSV文件类型
             prg_files = [
                 'add.csv', 'calc.csv', 'chngValue.csv', 'cntrl_rex.csv',
-                'cntrl.csv', 'correct.csv', 'define.csv', 'failed_matches.csv',
+                'cntrl.csv', 'correct.csv', 'define.csv',
                 'input.csv', 'load.csv', 'measure.csv', 'preset.csv',
-                'relation.csv', 'select.csv', 'switch.csv', 'type_define.csv', 'type_prg.csv'
+                'relation.csv', 'select.csv', 'switch.csv', 'type_define.csv', 'type_prg.csv',
+                'exception.csv'  # 对应VB.NET中的exception.csv
             ]
             
             for prg_file in prg_files:
@@ -79,6 +93,15 @@ class DataManager:
                     
         except Exception as e:
             self.logger.error(f"加载PRG目录失败 {prg_name}: {e}")
+            
+    def get_table_by_name(self, table_name: str) -> List[Dict[str, Any]]:
+        """根据名称获取表格数据，模拟VB.NET中的DataSet功能"""
+        return self.loaded_files.get(table_name, [])
+        
+    def get_program_table(self, program_no: str, table_name: str) -> List[Dict[str, Any]]:
+        """获取特定程序的表格数据，对应VB.NET中的T_xxxN命名约定"""
+        key = f"prg{program_no}/{table_name}.csv"
+        return self.loaded_files.get(key, [])
             
     def _build_product_index(self):
         """构建产品数据索引"""

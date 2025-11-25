@@ -66,6 +66,28 @@ class CalculationEngine:
             self.logger.error(f"几何计算失败: {calculation_type}, 错误: {e}")
             return None
             
+    def evaluate_expression(self, expression: str, variables: Dict[str, Any]) -> Optional[float]:
+        """评估数学表达式，类似VB.NET中的计算功能"""
+        try:
+            # 创建安全的变量环境
+            safe_vars = {}
+            for k, v in variables.items():
+                if v is not None:
+                    try:
+                        safe_vars[k] = float(v)
+                    except (ValueError, TypeError):
+                        # 如果不能转换为float，则跳过
+                        continue
+            # 添加数学常数
+            safe_vars.update({'pi': math.pi, 'e': math.e, 'math': math})
+            
+            # 使用安全的eval方法
+            result = eval(expression, {"__builtins__": {}}, safe_vars)
+            return self._round(float(result))
+        except Exception as e:
+            self.logger.error(f"表达式计算失败: {expression}, 错误: {e}")
+            return None
+            
     def _parse_basic_parameters(self, product_params: Dict[str, Any], geometry: GeometryParameters):
         """解析基本几何参数"""
         try:

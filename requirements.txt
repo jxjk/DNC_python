@@ -7,8 +7,8 @@ numpy>=1.21.0
 # Excel文件支持
 openpyxl>=3.0.0
 
-# 日志记录
-log4python>=1.0.0
+# 日志记录已内置
+# log4python>=1.0.0  # Python内置logging模块，无需安装
 
 # 配置管理
 configparser>=5.0.0

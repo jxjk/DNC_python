@@ -3,28 +3,72 @@ import pandas as pd
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 import logging
+import os
 
 class CSVProcessor:
-    """CSV文件处理器，负责读取、写入和验证CSV数据"""
+    """CSV文件处理器，负责读取、写入和验证CSV数据，与VB.NET版本功能对应"""
     
     def __init__(self, file_path: str = None):
         self.file_path = Path(file_path) if file_path else None
         self.logger = logging.getLogger(__name__)
         
     def read_csv(self, file_path: str = None, encoding: str = 'utf-8') -> List[Dict[str, Any]]:
-        """读取CSV文件并返回字典列表"""
+        """读取CSV文件并返回字典列表，与VB.NET的LoadFileToTBL功能对应"""
         try:
             path = Path(file_path) if file_path else self.file_path
             if not path or not path.exists():
                 self.logger.warning(f"CSV文件不存在: {path}")
                 return []
                 
+            # 读取CSV文件，实现类似VB.NET的LoadFileToTBL功能
             data = []
-            with open(path, 'r', encoding=encoding, newline='') as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    data.append(dict(row))
+            header_count = 0  # 对应VB.NET的headerStrNum
+            file_error_count = 0  # 对应VB.NET的fileErrCnt
+            
+            # 尝试多种编码格式读取文件
+            encodings = ['utf-8', 'gbk', 'gb2312', 'cp932', 'shift_jis']
+            lines = None
+            
+            for enc in encodings:
+                try:
+                    with open(path, 'r', encoding=enc, newline='') as f:
+                        lines = f.readlines()
+                    self.logger.debug(f"文件 {path} 使用编码 {enc} 成功读取")
+                    break
+                except UnicodeDecodeError:
+                    continue
+            
+            if lines is None:
+                self.logger.error(f"无法使用常见编码读取文件: {path}")
+                return []
+                
+            for i, line in enumerate(lines):
+                line = line.strip()
+                if line:  # 非空行
+                    # 分割CSV行，对应VB.NET的Split(tmpStr, ",")
+                    row_values = [val.strip() for val in line.split(',')]
                     
+                    if i == 0:  # 首行作为标题
+                        header_count = len(row_values)
+                        headers = row_values
+                    else:  # 数据行
+                        row_count = len(row_values)  # 对应VB.NET的tmpStrNum
+                        
+                        # 检查列数是否与标题行一致，对应VB.NET的错误检查逻辑
+                        if row_count != header_count:
+                            self.logger.warning(f"CSV文件错误: {path}, 行 {i+1}: 列数不匹配 ({row_count} vs {header_count})")
+                            file_error_count += 1
+                            # 继续处理，但记录错误
+                            
+                        # 创建行数据，对应VB.NET的rw(k) = tmpArray(k)
+                        row_dict = {}
+                        for j, header in enumerate(headers):
+                            if j < len(row_values):
+                                row_dict[header] = row_values[j]
+                            else:
+                                row_dict[header] = ""  # 缺失值设为空字符串
+                        data.append(row_dict)
+            
             self.logger.info(f"CSV文件读取成功: {path}, 共 {len(data)} 条记录")
             return data
             

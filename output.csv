@@ -1,0 +1,4 @@
+product_id,model,quantity,master_data,calculated_params
+TEST001,GPA18GT15040_A,5,"{'NO': '1', 'TYPE': 'GPA18GT15040_A', 'DEFINE1': '', 'DEFINE2': ''}",
+TEST002,GPA20GT15040_A,10,"{'NO': '2', 'TYPE': 'GPA20GT15040_A', 'DEFINE1': '', 'DEFINE2': ''}",
+TEST003,GPA24GT15040_A,3,"{'NO': '3', 'TYPE': 'GPA24GT15040_A', 'DEFINE1': '', 'DEFINE2': ''}",
