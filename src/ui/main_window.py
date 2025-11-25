@@ -980,9 +980,105 @@ DNC 参数计算系统
         messagebox.showinfo("键盘", "虚拟键盘功能待实现")
         
     def _send_data(self):
-        """发送数据"""
-        # TODO: 实现数据发送功能
-        messagebox.showinfo("发送", "数据发送功能待实现")
+        """发送数据 - 根据cntrl.csv中的SENDFLG标记，将宏变量和值写入macro.txt文件"""
+        try:
+            # 获取当前型号
+            current_model = self.TB_Model_var.get()
+            if not current_model:
+                messagebox.showwarning("警告", "请先选择一个型号")
+                return
+
+            # 获取当前程序号
+            program_no = self.TB_Prg_var.get() or "1"  # 默认使用程序1
+            
+            # 获取load.csv数据 - 查找与当前型号匹配的行
+            load_data = self.data_manager.get_program_table(program_no, 'load')
+            if not load_data:
+                load_data = self.data_manager.get_table_by_name(f'prg{program_no}/load.csv')
+            if not load_data:
+                load_data = self.data_manager.get_table_by_name('load.csv')
+            
+            if not load_data:
+                messagebox.showerror("错误", "未找到load.csv数据")
+                return
+
+            # 查找与当前型号匹配的行
+            load_row = None
+            for row in load_data:
+                if row.get('TYPE') == current_model or row.get('NO') == current_model:
+                    load_row = row
+                    break
+
+            if not load_row:
+                messagebox.showerror("错误", f"未找到型号 {current_model} 的数据")
+                return
+
+            # 获取cntrl.csv数据 - 获取控件定义和SEND标记
+            cntrl_data = self.data_manager.get_program_table(program_no, 'cntrl')
+            if not cntrl_data:
+                cntrl_data = self.data_manager.get_table_by_name(f'prg{program_no}/cntrl.csv')
+            if not cntrl_data:
+                cntrl_data = self.data_manager.get_table_by_name('cntrl.csv')
+
+            if not cntrl_data:
+                messagebox.showerror("错误", "未找到cntrl.csv数据")
+                return
+
+            # 收集需要发送的宏变量
+            send_macros = []
+            non_numeric_macros = []  # 记录非数值的宏变量
+
+            for cntrl_row in cntrl_data:
+                macro = cntrl_row.get('MACRO', '')
+                send_flag = cntrl_row.get('SENDFLG', '0')
+                
+                # 检查是否需要发送（SENDFLG为1）
+                if send_flag == '1' and macro and macro in load_row:
+                    value = load_row[macro]
+                    # 检查值是否为数值（允许整数和浮点数）
+                    if self._is_numeric(value):
+                        send_macros.append((macro, value))
+                    else:
+                        non_numeric_macros.append((macro, value))
+
+            # 如果有非数值的宏变量，标记并终止
+            if non_numeric_macros:
+                error_msg = "以下宏变量的值不是数值，无法发送：\n\n"
+                for macro, value in non_numeric_macros:
+                    error_msg += f"{macro} = {value}\n"
+                error_msg += "\n请修正这些值后再试。"
+                messagebox.showerror("错误", error_msg)
+                return
+
+            # 如果没有任何需要发送的宏变量
+            if not send_macros:
+                messagebox.showinfo("提示", "没有标记为发送的宏变量")
+                return
+
+            # 将宏变量写入macro.txt文件
+            output_dir = Path("output")
+            output_dir.mkdir(exist_ok=True)  # 创建output目录（如果不存在）
+            macro_file_path = output_dir / "macro.txt"
+            
+            with open(macro_file_path, 'w', encoding='utf-8') as f:
+                for macro, value in send_macros:
+                    f.write(f"{macro}={value}\n")
+
+            messagebox.showinfo("成功", f"宏变量已成功写入 {macro_file_path}\n共发送 {len(send_macros)} 个宏变量")
+            
+        except Exception as e:
+            self.logger.error(f"发送数据失败: {e}")
+            messagebox.showerror("错误", f"发送数据失败: {e}")
+
+    def _is_numeric(self, value):
+        """检查值是否为数值（整数或浮点数）"""
+        if value is None:
+            return False
+        try:
+            float(str(value).strip())
+            return True
+        except ValueError:
+            return False
         
     def _change_operator(self):
         """更改操作员"""
