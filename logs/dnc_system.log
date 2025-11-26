@@ -3171,3 +3171,804 @@
 2025-11-26 20:16:07,550 - src.ui.main_window - INFO - 宏变量 #549 的值 '' 不是数值，使用默认值 0
 2025-11-26 20:16:07,550 - src.ui.main_window - INFO - 宏变量 #550 的值 '' 不是数值，使用默认值 0
 2025-11-26 20:18:24,259 - __main__ - INFO - 应用程序正常退出
+2025-11-26 20:26:54,651 - __main__ - INFO - 启动DNC参数计算系统
+2025-11-26 20:26:54,869 - __main__ - WARNING - 未找到原始master数据目录，将使用空目录
+2025-11-26 20:26:54,930 - __main__ - INFO - 启动用户界面
+2025-11-26 20:26:54,931 - src.config.config_manager - INFO - 配置文件加载成功: config\app_config.ini
+2025-11-26 20:26:54,974 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\ini.csv, 共 46 条记录
+2025-11-26 20:26:54,974 - src.data.data_manager - INFO - 加载CSV文件: ini.csv, 46 条记录
+2025-11-26 20:26:54,974 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg.csv, 共 2 条记录
+2025-11-26 20:26:54,974 - src.data.data_manager - INFO - 加载CSV文件: prg.csv, 2 条记录
+2025-11-26 20:26:54,975 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\header.csv, 共 5 条记录
+2025-11-26 20:26:54,975 - src.data.data_manager - INFO - 加载CSV文件: header.csv, 5 条记录
+2025-11-26 20:26:54,975 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\math.csv, 共 19 条记录
+2025-11-26 20:26:54,975 - src.data.data_manager - INFO - 加载CSV文件: math.csv, 19 条记录
+2025-11-26 20:26:55,040 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_define.csv, 共 43440 条记录
+2025-11-26 20:26:55,040 - src.data.data_manager - INFO - 加载CSV文件: type_define.csv, 43440 条记录
+2025-11-26 20:26:55,041 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_relation.csv, 共 0 条记录
+2025-11-26 20:26:55,041 - src.data.data_manager - INFO - 加载CSV文件: type_relation.csv, 0 条记录
+2025-11-26 20:26:55,111 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_prg.csv, 共 50328 条记录
+2025-11-26 20:26:55,111 - src.data.data_manager - INFO - 加载CSV文件: type_prg.csv, 50328 条记录
+2025-11-26 20:26:55,112 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_chngvl.csv, 共 0 条记录
+2025-11-26 20:26:55,112 - src.data.data_manager - INFO - 加载CSV文件: type_chngvl.csv, 0 条记录
+2025-11-26 20:26:55,112 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\add.csv, 共 0 条记录
+2025-11-26 20:26:55,112 - src.data.data_manager - INFO - 加载PRG文件: prg1/add.csv, 0 条记录
+2025-11-26 20:26:55,112 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\calc.csv, 共 7 条记录
+2025-11-26 20:26:55,112 - src.data.data_manager - INFO - 加载PRG文件: prg1/calc.csv, 7 条记录
+2025-11-26 20:26:55,113 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\chngValue.csv, 共 2 条记录
+2025-11-26 20:26:55,113 - src.data.data_manager - INFO - 加载PRG文件: prg1/chngValue.csv, 2 条记录
+2025-11-26 20:26:55,113 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:26:55,113 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl_rex.csv, 51 条记录
+2025-11-26 20:26:55,113 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl.csv, 共 66 条记录
+2025-11-26 20:26:55,114 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl.csv, 66 条记录
+2025-11-26 20:26:55,114 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\correct.csv, 共 0 条记录
+2025-11-26 20:26:55,114 - src.data.data_manager - INFO - 加载PRG文件: prg1/correct.csv, 0 条记录
+2025-11-26 20:26:55,114 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\define.csv, 共 176 条记录
+2025-11-26 20:26:55,114 - src.data.data_manager - INFO - 加载PRG文件: prg1/define.csv, 176 条记录
+2025-11-26 20:26:55,115 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\input.csv, 共 0 条记录
+2025-11-26 20:26:55,115 - src.data.data_manager - INFO - 加载PRG文件: prg1/input.csv, 0 条记录
+2025-11-26 20:26:55,115 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\load.csv, 共 10 条记录
+2025-11-26 20:26:55,115 - src.data.data_manager - INFO - 加载PRG文件: prg1/load.csv, 10 条记录
+2025-11-26 20:26:55,115 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\measure.csv, 共 0 条记录
+2025-11-26 20:26:55,115 - src.data.data_manager - INFO - 加载PRG文件: prg1/measure.csv, 0 条记录
+2025-11-26 20:26:55,116 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\preset.csv, 共 0 条记录
+2025-11-26 20:26:55,116 - src.data.data_manager - INFO - 加载PRG文件: prg1/preset.csv, 0 条记录
+2025-11-26 20:26:55,117 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\relation.csv, 共 110 条记录
+2025-11-26 20:26:55,117 - src.data.data_manager - INFO - 加载PRG文件: prg1/relation.csv, 110 条记录
+2025-11-26 20:26:55,117 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\select.csv, 共 10 条记录
+2025-11-26 20:26:55,117 - src.data.data_manager - INFO - 加载PRG文件: prg1/select.csv, 10 条记录
+2025-11-26 20:26:55,118 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\switch.csv, 共 4 条记录
+2025-11-26 20:26:55,118 - src.data.data_manager - INFO - 加载PRG文件: prg1/switch.csv, 4 条记录
+2025-11-26 20:26:55,130 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_define.csv, 共 8276 条记录
+2025-11-26 20:26:55,130 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_define.csv, 8276 条记录
+2025-11-26 20:26:55,141 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_prg.csv, 共 8284 条记录
+2025-11-26 20:26:55,141 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_prg.csv, 8284 条记录
+2025-11-26 20:26:55,141 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\add.csv, 共 0 条记录
+2025-11-26 20:26:55,141 - src.data.data_manager - INFO - 加载PRG文件: prg2/add.csv, 0 条记录
+2025-11-26 20:26:55,142 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\calc.csv, 共 7 条记录
+2025-11-26 20:26:55,142 - src.data.data_manager - INFO - 加载PRG文件: prg2/calc.csv, 7 条记录
+2025-11-26 20:26:55,142 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\chngValue.csv, 共 2 条记录
+2025-11-26 20:26:55,142 - src.data.data_manager - INFO - 加载PRG文件: prg2/chngValue.csv, 2 条记录
+2025-11-26 20:26:55,142 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:26:55,142 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl_rex.csv, 51 条记录
+2025-11-26 20:26:55,143 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl.csv, 共 42 条记录
+2025-11-26 20:26:55,143 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl.csv, 42 条记录
+2025-11-26 20:26:55,143 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\correct.csv, 共 0 条记录
+2025-11-26 20:26:55,143 - src.data.data_manager - INFO - 加载PRG文件: prg2/correct.csv, 0 条记录
+2025-11-26 20:26:55,144 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\define.csv, 共 161 条记录
+2025-11-26 20:26:55,144 - src.data.data_manager - INFO - 加载PRG文件: prg2/define.csv, 161 条记录
+2025-11-26 20:26:55,144 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\load.csv, 共 11 条记录
+2025-11-26 20:26:55,144 - src.data.data_manager - INFO - 加载PRG文件: prg2/load.csv, 11 条记录
+2025-11-26 20:26:55,144 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\measure.csv, 共 0 条记录
+2025-11-26 20:26:55,144 - src.data.data_manager - INFO - 加载PRG文件: prg2/measure.csv, 0 条记录
+2025-11-26 20:26:55,145 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\preset.csv, 共 0 条记录
+2025-11-26 20:26:55,145 - src.data.data_manager - INFO - 加载PRG文件: prg2/preset.csv, 0 条记录
+2025-11-26 20:26:55,145 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\relation.csv, 共 58 条记录
+2025-11-26 20:26:55,145 - src.data.data_manager - INFO - 加载PRG文件: prg2/relation.csv, 58 条记录
+2025-11-26 20:26:55,146 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\select.csv, 共 0 条记录
+2025-11-26 20:26:55,146 - src.data.data_manager - INFO - 加载PRG文件: prg2/select.csv, 0 条记录
+2025-11-26 20:26:55,146 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\switch.csv, 共 0 条记录
+2025-11-26 20:26:55,146 - src.data.data_manager - INFO - 加载PRG文件: prg2/switch.csv, 0 条记录
+2025-11-26 20:26:55,153 - src.data.data_manager - INFO - 产品数据索引构建完成: 43313 种产品型号
+2025-11-26 20:26:55,153 - src.data.data_manager - INFO - 所有CSV文件加载完成
+2025-11-26 20:28:21,719 - __main__ - INFO - 启动DNC参数计算系统
+2025-11-26 20:28:21,911 - __main__ - WARNING - 未找到原始master数据目录，将使用空目录
+2025-11-26 20:28:21,981 - __main__ - INFO - 启动用户界面
+2025-11-26 20:28:21,983 - src.config.config_manager - INFO - 配置文件加载成功: config\app_config.ini
+2025-11-26 20:28:22,026 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\ini.csv, 共 46 条记录
+2025-11-26 20:28:22,026 - src.data.data_manager - INFO - 加载CSV文件: ini.csv, 46 条记录
+2025-11-26 20:28:22,027 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg.csv, 共 2 条记录
+2025-11-26 20:28:22,027 - src.data.data_manager - INFO - 加载CSV文件: prg.csv, 2 条记录
+2025-11-26 20:28:22,027 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\header.csv, 共 5 条记录
+2025-11-26 20:28:22,028 - src.data.data_manager - INFO - 加载CSV文件: header.csv, 5 条记录
+2025-11-26 20:28:22,028 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\math.csv, 共 19 条记录
+2025-11-26 20:28:22,028 - src.data.data_manager - INFO - 加载CSV文件: math.csv, 19 条记录
+2025-11-26 20:28:22,089 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_define.csv, 共 43440 条记录
+2025-11-26 20:28:22,090 - src.data.data_manager - INFO - 加载CSV文件: type_define.csv, 43440 条记录
+2025-11-26 20:28:22,090 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_relation.csv, 共 0 条记录
+2025-11-26 20:28:22,090 - src.data.data_manager - INFO - 加载CSV文件: type_relation.csv, 0 条记录
+2025-11-26 20:28:22,158 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_prg.csv, 共 50328 条记录
+2025-11-26 20:28:22,160 - src.data.data_manager - INFO - 加载CSV文件: type_prg.csv, 50328 条记录
+2025-11-26 20:28:22,160 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_chngvl.csv, 共 0 条记录
+2025-11-26 20:28:22,160 - src.data.data_manager - INFO - 加载CSV文件: type_chngvl.csv, 0 条记录
+2025-11-26 20:28:22,161 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\add.csv, 共 0 条记录
+2025-11-26 20:28:22,161 - src.data.data_manager - INFO - 加载PRG文件: prg1/add.csv, 0 条记录
+2025-11-26 20:28:22,161 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\calc.csv, 共 7 条记录
+2025-11-26 20:28:22,162 - src.data.data_manager - INFO - 加载PRG文件: prg1/calc.csv, 7 条记录
+2025-11-26 20:28:22,162 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\chngValue.csv, 共 2 条记录
+2025-11-26 20:28:22,162 - src.data.data_manager - INFO - 加载PRG文件: prg1/chngValue.csv, 2 条记录
+2025-11-26 20:28:22,163 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:28:22,163 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl_rex.csv, 51 条记录
+2025-11-26 20:28:22,164 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl.csv, 共 66 条记录
+2025-11-26 20:28:22,164 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl.csv, 66 条记录
+2025-11-26 20:28:22,164 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\correct.csv, 共 0 条记录
+2025-11-26 20:28:22,165 - src.data.data_manager - INFO - 加载PRG文件: prg1/correct.csv, 0 条记录
+2025-11-26 20:28:22,165 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\define.csv, 共 176 条记录
+2025-11-26 20:28:22,165 - src.data.data_manager - INFO - 加载PRG文件: prg1/define.csv, 176 条记录
+2025-11-26 20:28:22,166 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\input.csv, 共 0 条记录
+2025-11-26 20:28:22,166 - src.data.data_manager - INFO - 加载PRG文件: prg1/input.csv, 0 条记录
+2025-11-26 20:28:22,167 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\load.csv, 共 10 条记录
+2025-11-26 20:28:22,168 - src.data.data_manager - INFO - 加载PRG文件: prg1/load.csv, 10 条记录
+2025-11-26 20:28:22,168 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\measure.csv, 共 0 条记录
+2025-11-26 20:28:22,168 - src.data.data_manager - INFO - 加载PRG文件: prg1/measure.csv, 0 条记录
+2025-11-26 20:28:22,169 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\preset.csv, 共 0 条记录
+2025-11-26 20:28:22,169 - src.data.data_manager - INFO - 加载PRG文件: prg1/preset.csv, 0 条记录
+2025-11-26 20:28:22,170 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\relation.csv, 共 110 条记录
+2025-11-26 20:28:22,170 - src.data.data_manager - INFO - 加载PRG文件: prg1/relation.csv, 110 条记录
+2025-11-26 20:28:22,171 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\select.csv, 共 10 条记录
+2025-11-26 20:28:22,171 - src.data.data_manager - INFO - 加载PRG文件: prg1/select.csv, 10 条记录
+2025-11-26 20:28:22,172 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\switch.csv, 共 4 条记录
+2025-11-26 20:28:22,172 - src.data.data_manager - INFO - 加载PRG文件: prg1/switch.csv, 4 条记录
+2025-11-26 20:28:22,180 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_define.csv, 共 8276 条记录
+2025-11-26 20:28:22,180 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_define.csv, 8276 条记录
+2025-11-26 20:28:22,191 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_prg.csv, 共 8284 条记录
+2025-11-26 20:28:22,191 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_prg.csv, 8284 条记录
+2025-11-26 20:28:22,192 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\add.csv, 共 0 条记录
+2025-11-26 20:28:22,192 - src.data.data_manager - INFO - 加载PRG文件: prg2/add.csv, 0 条记录
+2025-11-26 20:28:22,193 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\calc.csv, 共 7 条记录
+2025-11-26 20:28:22,193 - src.data.data_manager - INFO - 加载PRG文件: prg2/calc.csv, 7 条记录
+2025-11-26 20:28:22,193 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\chngValue.csv, 共 2 条记录
+2025-11-26 20:28:22,193 - src.data.data_manager - INFO - 加载PRG文件: prg2/chngValue.csv, 2 条记录
+2025-11-26 20:28:22,194 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:28:22,194 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl_rex.csv, 51 条记录
+2025-11-26 20:28:22,195 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl.csv, 共 42 条记录
+2025-11-26 20:28:22,195 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl.csv, 42 条记录
+2025-11-26 20:28:22,195 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\correct.csv, 共 0 条记录
+2025-11-26 20:28:22,196 - src.data.data_manager - INFO - 加载PRG文件: prg2/correct.csv, 0 条记录
+2025-11-26 20:28:22,196 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\define.csv, 共 161 条记录
+2025-11-26 20:28:22,196 - src.data.data_manager - INFO - 加载PRG文件: prg2/define.csv, 161 条记录
+2025-11-26 20:28:22,197 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\load.csv, 共 11 条记录
+2025-11-26 20:28:22,197 - src.data.data_manager - INFO - 加载PRG文件: prg2/load.csv, 11 条记录
+2025-11-26 20:28:22,198 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\measure.csv, 共 0 条记录
+2025-11-26 20:28:22,198 - src.data.data_manager - INFO - 加载PRG文件: prg2/measure.csv, 0 条记录
+2025-11-26 20:28:22,198 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\preset.csv, 共 0 条记录
+2025-11-26 20:28:22,198 - src.data.data_manager - INFO - 加载PRG文件: prg2/preset.csv, 0 条记录
+2025-11-26 20:28:22,199 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\relation.csv, 共 58 条记录
+2025-11-26 20:28:22,200 - src.data.data_manager - INFO - 加载PRG文件: prg2/relation.csv, 58 条记录
+2025-11-26 20:28:22,200 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\select.csv, 共 0 条记录
+2025-11-26 20:28:22,200 - src.data.data_manager - INFO - 加载PRG文件: prg2/select.csv, 0 条记录
+2025-11-26 20:28:22,201 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\switch.csv, 共 0 条记录
+2025-11-26 20:28:22,201 - src.data.data_manager - INFO - 加载PRG文件: prg2/switch.csv, 0 条记录
+2025-11-26 20:28:22,208 - src.data.data_manager - INFO - 产品数据索引构建完成: 43313 种产品型号
+2025-11-26 20:28:22,209 - src.data.data_manager - INFO - 所有CSV文件加载完成
+2025-11-26 20:28:35,382 - src.ui.main_window - INFO - 找到匹配型号: GPA20GT15040_A (从输入 GPA20GT15040_A-H8 匹配)
+2025-11-26 20:28:39,773 - src.ui.main_window - INFO - 宏变量 #507 的值为空，跳过输出
+2025-11-26 20:28:39,774 - src.ui.main_window - INFO - 宏变量 #508 的值为空，跳过输出
+2025-11-26 20:28:39,774 - src.ui.main_window - INFO - 宏变量 #514 的值为空，跳过输出
+2025-11-26 20:28:39,774 - src.ui.main_window - INFO - 宏变量 #515 的值为空，跳过输出
+2025-11-26 20:28:39,775 - src.ui.main_window - INFO - 宏变量 #516 的值为空，跳过输出
+2025-11-26 20:28:39,775 - src.ui.main_window - INFO - 宏变量 #517 的值为空，跳过输出
+2025-11-26 20:28:39,775 - src.ui.main_window - INFO - 宏变量 #518 的值为空，跳过输出
+2025-11-26 20:28:39,776 - src.ui.main_window - INFO - 宏变量 #520 的值为空，跳过输出
+2025-11-26 20:28:39,776 - src.ui.main_window - INFO - 宏变量 #521 的值为空，跳过输出
+2025-11-26 20:28:39,776 - src.ui.main_window - INFO - 宏变量 #522 的值为空，跳过输出
+2025-11-26 20:28:39,776 - src.ui.main_window - INFO - 宏变量 #523 的值为空，跳过输出
+2025-11-26 20:28:39,777 - src.ui.main_window - INFO - 宏变量 #524 的值为空，跳过输出
+2025-11-26 20:28:39,777 - src.ui.main_window - INFO - 宏变量 #525 的值为空，跳过输出
+2025-11-26 20:28:39,777 - src.ui.main_window - INFO - 宏变量 #526 的值为空，跳过输出
+2025-11-26 20:28:39,778 - src.ui.main_window - INFO - 宏变量 #527 的值为空，跳过输出
+2025-11-26 20:28:39,778 - src.ui.main_window - INFO - 宏变量 #529 的值为空，跳过输出
+2025-11-26 20:28:39,778 - src.ui.main_window - INFO - 宏变量 #530 的值为空，跳过输出
+2025-11-26 20:28:39,779 - src.ui.main_window - INFO - 宏变量 #531 的值为空，跳过输出
+2025-11-26 20:28:39,779 - src.ui.main_window - INFO - 宏变量 #532 的值为空，跳过输出
+2025-11-26 20:28:39,779 - src.ui.main_window - INFO - 宏变量 #533 的值为空，跳过输出
+2025-11-26 20:28:39,779 - src.ui.main_window - INFO - 宏变量 #534 的值为空，跳过输出
+2025-11-26 20:28:39,779 - src.ui.main_window - INFO - 宏变量 #535 的值为空，跳过输出
+2025-11-26 20:28:39,780 - src.ui.main_window - INFO - 宏变量 #536 的值为空，跳过输出
+2025-11-26 20:28:39,780 - src.ui.main_window - INFO - 宏变量 #537 的值为空，跳过输出
+2025-11-26 20:28:39,780 - src.ui.main_window - INFO - 宏变量 #538 的值为空，跳过输出
+2025-11-26 20:28:39,780 - src.ui.main_window - INFO - 宏变量 #539 的值为空，跳过输出
+2025-11-26 20:28:39,780 - src.ui.main_window - INFO - 宏变量 #540 的值为空，跳过输出
+2025-11-26 20:28:39,780 - src.ui.main_window - INFO - 宏变量 #541 的值为空，跳过输出
+2025-11-26 20:28:39,781 - src.ui.main_window - INFO - 宏变量 #542 的值为空，跳过输出
+2025-11-26 20:28:39,781 - src.ui.main_window - INFO - 宏变量 #543 的值为空，跳过输出
+2025-11-26 20:28:39,781 - src.ui.main_window - INFO - 宏变量 #544 的值为空，跳过输出
+2025-11-26 20:28:39,781 - src.ui.main_window - INFO - 宏变量 #548 的值为空，跳过输出
+2025-11-26 20:28:39,781 - src.ui.main_window - INFO - 宏变量 #549 的值为空，跳过输出
+2025-11-26 20:28:39,781 - src.ui.main_window - INFO - 宏变量 #550 的值为空，跳过输出
+2025-11-26 20:29:12,100 - __main__ - INFO - 应用程序正常退出
+2025-11-26 20:40:22,465 - __main__ - INFO - 启动DNC参数计算系统
+2025-11-26 20:40:22,668 - __main__ - WARNING - 未找到原始master数据目录，将使用空目录
+2025-11-26 20:40:22,748 - __main__ - INFO - 启动用户界面
+2025-11-26 20:40:22,750 - src.config.config_manager - INFO - 配置文件加载成功: config\app_config.ini
+2025-11-26 20:40:22,794 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\ini.csv, 共 46 条记录
+2025-11-26 20:40:22,794 - src.data.data_manager - INFO - 加载CSV文件: ini.csv, 46 条记录
+2025-11-26 20:40:22,794 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg.csv, 共 2 条记录
+2025-11-26 20:40:22,794 - src.data.data_manager - INFO - 加载CSV文件: prg.csv, 2 条记录
+2025-11-26 20:40:22,795 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\header.csv, 共 5 条记录
+2025-11-26 20:40:22,795 - src.data.data_manager - INFO - 加载CSV文件: header.csv, 5 条记录
+2025-11-26 20:40:22,795 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\math.csv, 共 19 条记录
+2025-11-26 20:40:22,796 - src.data.data_manager - INFO - 加载CSV文件: math.csv, 19 条记录
+2025-11-26 20:40:22,849 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_define.csv, 共 43440 条记录
+2025-11-26 20:40:22,849 - src.data.data_manager - INFO - 加载CSV文件: type_define.csv, 43440 条记录
+2025-11-26 20:40:22,850 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_relation.csv, 共 0 条记录
+2025-11-26 20:40:22,850 - src.data.data_manager - INFO - 加载CSV文件: type_relation.csv, 0 条记录
+2025-11-26 20:40:22,921 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_prg.csv, 共 50328 条记录
+2025-11-26 20:40:22,922 - src.data.data_manager - INFO - 加载CSV文件: type_prg.csv, 50328 条记录
+2025-11-26 20:40:22,923 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_chngvl.csv, 共 0 条记录
+2025-11-26 20:40:22,923 - src.data.data_manager - INFO - 加载CSV文件: type_chngvl.csv, 0 条记录
+2025-11-26 20:40:22,923 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\add.csv, 共 0 条记录
+2025-11-26 20:40:22,924 - src.data.data_manager - INFO - 加载PRG文件: prg1/add.csv, 0 条记录
+2025-11-26 20:40:22,924 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\calc.csv, 共 7 条记录
+2025-11-26 20:40:22,924 - src.data.data_manager - INFO - 加载PRG文件: prg1/calc.csv, 7 条记录
+2025-11-26 20:40:22,925 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\chngValue.csv, 共 2 条记录
+2025-11-26 20:40:22,925 - src.data.data_manager - INFO - 加载PRG文件: prg1/chngValue.csv, 2 条记录
+2025-11-26 20:40:22,926 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:40:22,926 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl_rex.csv, 51 条记录
+2025-11-26 20:40:22,926 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl.csv, 共 66 条记录
+2025-11-26 20:40:22,927 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl.csv, 66 条记录
+2025-11-26 20:40:22,927 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\correct.csv, 共 0 条记录
+2025-11-26 20:40:22,927 - src.data.data_manager - INFO - 加载PRG文件: prg1/correct.csv, 0 条记录
+2025-11-26 20:40:22,928 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\define.csv, 共 176 条记录
+2025-11-26 20:40:22,928 - src.data.data_manager - INFO - 加载PRG文件: prg1/define.csv, 176 条记录
+2025-11-26 20:40:22,929 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\input.csv, 共 0 条记录
+2025-11-26 20:40:22,929 - src.data.data_manager - INFO - 加载PRG文件: prg1/input.csv, 0 条记录
+2025-11-26 20:40:22,930 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\load.csv, 共 10 条记录
+2025-11-26 20:40:22,930 - src.data.data_manager - INFO - 加载PRG文件: prg1/load.csv, 10 条记录
+2025-11-26 20:40:22,930 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\measure.csv, 共 0 条记录
+2025-11-26 20:40:22,930 - src.data.data_manager - INFO - 加载PRG文件: prg1/measure.csv, 0 条记录
+2025-11-26 20:40:22,931 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\preset.csv, 共 0 条记录
+2025-11-26 20:40:22,931 - src.data.data_manager - INFO - 加载PRG文件: prg1/preset.csv, 0 条记录
+2025-11-26 20:40:22,932 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\relation.csv, 共 110 条记录
+2025-11-26 20:40:22,932 - src.data.data_manager - INFO - 加载PRG文件: prg1/relation.csv, 110 条记录
+2025-11-26 20:40:22,933 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\select.csv, 共 10 条记录
+2025-11-26 20:40:22,933 - src.data.data_manager - INFO - 加载PRG文件: prg1/select.csv, 10 条记录
+2025-11-26 20:40:22,934 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\switch.csv, 共 4 条记录
+2025-11-26 20:40:22,934 - src.data.data_manager - INFO - 加载PRG文件: prg1/switch.csv, 4 条记录
+2025-11-26 20:40:22,946 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_define.csv, 共 8276 条记录
+2025-11-26 20:40:22,947 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_define.csv, 8276 条记录
+2025-11-26 20:40:22,956 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_prg.csv, 共 8284 条记录
+2025-11-26 20:40:22,956 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_prg.csv, 8284 条记录
+2025-11-26 20:40:22,957 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\add.csv, 共 0 条记录
+2025-11-26 20:40:22,957 - src.data.data_manager - INFO - 加载PRG文件: prg2/add.csv, 0 条记录
+2025-11-26 20:40:22,958 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\calc.csv, 共 7 条记录
+2025-11-26 20:40:22,958 - src.data.data_manager - INFO - 加载PRG文件: prg2/calc.csv, 7 条记录
+2025-11-26 20:40:22,959 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\chngValue.csv, 共 2 条记录
+2025-11-26 20:40:22,959 - src.data.data_manager - INFO - 加载PRG文件: prg2/chngValue.csv, 2 条记录
+2025-11-26 20:40:22,959 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:40:22,959 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl_rex.csv, 51 条记录
+2025-11-26 20:40:22,960 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl.csv, 共 42 条记录
+2025-11-26 20:40:22,960 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl.csv, 42 条记录
+2025-11-26 20:40:22,960 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\correct.csv, 共 0 条记录
+2025-11-26 20:40:22,960 - src.data.data_manager - INFO - 加载PRG文件: prg2/correct.csv, 0 条记录
+2025-11-26 20:40:22,961 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\define.csv, 共 161 条记录
+2025-11-26 20:40:22,961 - src.data.data_manager - INFO - 加载PRG文件: prg2/define.csv, 161 条记录
+2025-11-26 20:40:22,961 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\load.csv, 共 11 条记录
+2025-11-26 20:40:22,961 - src.data.data_manager - INFO - 加载PRG文件: prg2/load.csv, 11 条记录
+2025-11-26 20:40:22,962 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\measure.csv, 共 0 条记录
+2025-11-26 20:40:22,962 - src.data.data_manager - INFO - 加载PRG文件: prg2/measure.csv, 0 条记录
+2025-11-26 20:40:22,962 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\preset.csv, 共 0 条记录
+2025-11-26 20:40:22,962 - src.data.data_manager - INFO - 加载PRG文件: prg2/preset.csv, 0 条记录
+2025-11-26 20:40:22,963 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\relation.csv, 共 58 条记录
+2025-11-26 20:40:22,963 - src.data.data_manager - INFO - 加载PRG文件: prg2/relation.csv, 58 条记录
+2025-11-26 20:40:22,963 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\select.csv, 共 0 条记录
+2025-11-26 20:40:22,963 - src.data.data_manager - INFO - 加载PRG文件: prg2/select.csv, 0 条记录
+2025-11-26 20:40:22,964 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\switch.csv, 共 0 条记录
+2025-11-26 20:40:22,964 - src.data.data_manager - INFO - 加载PRG文件: prg2/switch.csv, 0 条记录
+2025-11-26 20:40:22,970 - src.data.data_manager - INFO - 产品数据索引构建完成: 43313 种产品型号
+2025-11-26 20:40:22,970 - src.data.data_manager - INFO - 所有CSV文件加载完成
+2025-11-26 20:49:45,224 - __main__ - INFO - 应用程序正常退出
+2025-11-26 20:49:53,720 - __main__ - INFO - 启动DNC参数计算系统
+2025-11-26 20:49:53,920 - __main__ - WARNING - 未找到原始master数据目录，将使用空目录
+2025-11-26 20:49:53,994 - __main__ - INFO - 启动用户界面
+2025-11-26 20:49:53,996 - src.config.config_manager - INFO - 配置文件加载成功: config\app_config.ini
+2025-11-26 20:49:54,038 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\ini.csv, 共 46 条记录
+2025-11-26 20:49:54,039 - src.data.data_manager - INFO - 加载CSV文件: ini.csv, 46 条记录
+2025-11-26 20:49:54,039 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg.csv, 共 2 条记录
+2025-11-26 20:49:54,039 - src.data.data_manager - INFO - 加载CSV文件: prg.csv, 2 条记录
+2025-11-26 20:49:54,040 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\header.csv, 共 5 条记录
+2025-11-26 20:49:54,040 - src.data.data_manager - INFO - 加载CSV文件: header.csv, 5 条记录
+2025-11-26 20:49:54,040 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\math.csv, 共 19 条记录
+2025-11-26 20:49:54,040 - src.data.data_manager - INFO - 加载CSV文件: math.csv, 19 条记录
+2025-11-26 20:49:54,096 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_define.csv, 共 43440 条记录
+2025-11-26 20:49:54,097 - src.data.data_manager - INFO - 加载CSV文件: type_define.csv, 43440 条记录
+2025-11-26 20:49:54,098 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_relation.csv, 共 0 条记录
+2025-11-26 20:49:54,098 - src.data.data_manager - INFO - 加载CSV文件: type_relation.csv, 0 条记录
+2025-11-26 20:49:54,164 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_prg.csv, 共 50328 条记录
+2025-11-26 20:49:54,165 - src.data.data_manager - INFO - 加载CSV文件: type_prg.csv, 50328 条记录
+2025-11-26 20:49:54,166 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_chngvl.csv, 共 0 条记录
+2025-11-26 20:49:54,166 - src.data.data_manager - INFO - 加载CSV文件: type_chngvl.csv, 0 条记录
+2025-11-26 20:49:54,167 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\add.csv, 共 0 条记录
+2025-11-26 20:49:54,167 - src.data.data_manager - INFO - 加载PRG文件: prg1/add.csv, 0 条记录
+2025-11-26 20:49:54,168 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\calc.csv, 共 7 条记录
+2025-11-26 20:49:54,168 - src.data.data_manager - INFO - 加载PRG文件: prg1/calc.csv, 7 条记录
+2025-11-26 20:49:54,169 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\chngValue.csv, 共 2 条记录
+2025-11-26 20:49:54,169 - src.data.data_manager - INFO - 加载PRG文件: prg1/chngValue.csv, 2 条记录
+2025-11-26 20:49:54,169 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:49:54,170 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl_rex.csv, 51 条记录
+2025-11-26 20:49:54,170 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl.csv, 共 66 条记录
+2025-11-26 20:49:54,170 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl.csv, 66 条记录
+2025-11-26 20:49:54,171 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\correct.csv, 共 0 条记录
+2025-11-26 20:49:54,171 - src.data.data_manager - INFO - 加载PRG文件: prg1/correct.csv, 0 条记录
+2025-11-26 20:49:54,171 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\define.csv, 共 176 条记录
+2025-11-26 20:49:54,172 - src.data.data_manager - INFO - 加载PRG文件: prg1/define.csv, 176 条记录
+2025-11-26 20:49:54,172 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\input.csv, 共 0 条记录
+2025-11-26 20:49:54,172 - src.data.data_manager - INFO - 加载PRG文件: prg1/input.csv, 0 条记录
+2025-11-26 20:49:54,173 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\load.csv, 共 10 条记录
+2025-11-26 20:49:54,173 - src.data.data_manager - INFO - 加载PRG文件: prg1/load.csv, 10 条记录
+2025-11-26 20:49:54,173 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\measure.csv, 共 0 条记录
+2025-11-26 20:49:54,173 - src.data.data_manager - INFO - 加载PRG文件: prg1/measure.csv, 0 条记录
+2025-11-26 20:49:54,174 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\preset.csv, 共 0 条记录
+2025-11-26 20:49:54,174 - src.data.data_manager - INFO - 加载PRG文件: prg1/preset.csv, 0 条记录
+2025-11-26 20:49:54,175 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\relation.csv, 共 110 条记录
+2025-11-26 20:49:54,175 - src.data.data_manager - INFO - 加载PRG文件: prg1/relation.csv, 110 条记录
+2025-11-26 20:49:54,176 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\select.csv, 共 10 条记录
+2025-11-26 20:49:54,176 - src.data.data_manager - INFO - 加载PRG文件: prg1/select.csv, 10 条记录
+2025-11-26 20:49:54,176 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\switch.csv, 共 4 条记录
+2025-11-26 20:49:54,177 - src.data.data_manager - INFO - 加载PRG文件: prg1/switch.csv, 4 条记录
+2025-11-26 20:49:54,189 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_define.csv, 共 8276 条记录
+2025-11-26 20:49:54,190 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_define.csv, 8276 条记录
+2025-11-26 20:49:54,197 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_prg.csv, 共 8284 条记录
+2025-11-26 20:49:54,198 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_prg.csv, 8284 条记录
+2025-11-26 20:49:54,199 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\add.csv, 共 0 条记录
+2025-11-26 20:49:54,200 - src.data.data_manager - INFO - 加载PRG文件: prg2/add.csv, 0 条记录
+2025-11-26 20:49:54,200 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\calc.csv, 共 7 条记录
+2025-11-26 20:49:54,200 - src.data.data_manager - INFO - 加载PRG文件: prg2/calc.csv, 7 条记录
+2025-11-26 20:49:54,201 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\chngValue.csv, 共 2 条记录
+2025-11-26 20:49:54,201 - src.data.data_manager - INFO - 加载PRG文件: prg2/chngValue.csv, 2 条记录
+2025-11-26 20:49:54,202 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:49:54,202 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl_rex.csv, 51 条记录
+2025-11-26 20:49:54,202 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl.csv, 共 42 条记录
+2025-11-26 20:49:54,202 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl.csv, 42 条记录
+2025-11-26 20:49:54,203 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\correct.csv, 共 0 条记录
+2025-11-26 20:49:54,203 - src.data.data_manager - INFO - 加载PRG文件: prg2/correct.csv, 0 条记录
+2025-11-26 20:49:54,204 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\define.csv, 共 161 条记录
+2025-11-26 20:49:54,204 - src.data.data_manager - INFO - 加载PRG文件: prg2/define.csv, 161 条记录
+2025-11-26 20:49:54,204 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\load.csv, 共 11 条记录
+2025-11-26 20:49:54,204 - src.data.data_manager - INFO - 加载PRG文件: prg2/load.csv, 11 条记录
+2025-11-26 20:49:54,204 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\measure.csv, 共 0 条记录
+2025-11-26 20:49:54,205 - src.data.data_manager - INFO - 加载PRG文件: prg2/measure.csv, 0 条记录
+2025-11-26 20:49:54,205 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\preset.csv, 共 0 条记录
+2025-11-26 20:49:54,205 - src.data.data_manager - INFO - 加载PRG文件: prg2/preset.csv, 0 条记录
+2025-11-26 20:49:54,206 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\relation.csv, 共 58 条记录
+2025-11-26 20:49:54,206 - src.data.data_manager - INFO - 加载PRG文件: prg2/relation.csv, 58 条记录
+2025-11-26 20:49:54,206 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\select.csv, 共 0 条记录
+2025-11-26 20:49:54,207 - src.data.data_manager - INFO - 加载PRG文件: prg2/select.csv, 0 条记录
+2025-11-26 20:49:54,207 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\switch.csv, 共 0 条记录
+2025-11-26 20:49:54,207 - src.data.data_manager - INFO - 加载PRG文件: prg2/switch.csv, 0 条记录
+2025-11-26 20:49:54,213 - src.data.data_manager - INFO - 产品数据索引构建完成: 43313 种产品型号
+2025-11-26 20:49:54,213 - src.data.data_manager - INFO - 所有CSV文件加载完成
+2025-11-26 20:50:23,561 - src.ui.main_window - INFO - 找到匹配型号: GPA20GT15040_A (从输入 GPA20GT15040_A-H8 匹配)
+2025-11-26 20:50:28,222 - src.ui.main_window - INFO - 宏变量 #507 的值为空，跳过输出
+2025-11-26 20:50:28,223 - src.ui.main_window - INFO - 宏变量 #508 的值为空，跳过输出
+2025-11-26 20:50:28,223 - src.ui.main_window - INFO - 宏变量 #514 的值为空，跳过输出
+2025-11-26 20:50:28,223 - src.ui.main_window - INFO - 宏变量 #515 的值为空，跳过输出
+2025-11-26 20:50:28,223 - src.ui.main_window - INFO - 宏变量 #516 的值为空，跳过输出
+2025-11-26 20:50:28,224 - src.ui.main_window - INFO - 宏变量 #517 的值为空，跳过输出
+2025-11-26 20:50:28,224 - src.ui.main_window - INFO - 宏变量 #518 的值为空，跳过输出
+2025-11-26 20:50:28,224 - src.ui.main_window - INFO - 宏变量 #520 的值为空，跳过输出
+2025-11-26 20:50:28,225 - src.ui.main_window - INFO - 宏变量 #521 的值为空，跳过输出
+2025-11-26 20:50:28,225 - src.ui.main_window - INFO - 宏变量 #522 的值为空，跳过输出
+2025-11-26 20:50:28,225 - src.ui.main_window - INFO - 宏变量 #523 的值为空，跳过输出
+2025-11-26 20:50:28,225 - src.ui.main_window - INFO - 宏变量 #524 的值为空，跳过输出
+2025-11-26 20:50:28,226 - src.ui.main_window - INFO - 宏变量 #525 的值为空，跳过输出
+2025-11-26 20:50:28,226 - src.ui.main_window - INFO - 宏变量 #526 的值为空，跳过输出
+2025-11-26 20:50:28,226 - src.ui.main_window - INFO - 宏变量 #527 的值为空，跳过输出
+2025-11-26 20:50:28,226 - src.ui.main_window - INFO - 宏变量 #529 的值为空，跳过输出
+2025-11-26 20:50:28,226 - src.ui.main_window - INFO - 宏变量 #530 的值为空，跳过输出
+2025-11-26 20:50:28,227 - src.ui.main_window - INFO - 宏变量 #531 的值为空，跳过输出
+2025-11-26 20:50:28,227 - src.ui.main_window - INFO - 宏变量 #532 的值为空，跳过输出
+2025-11-26 20:50:28,227 - src.ui.main_window - INFO - 宏变量 #533 的值为空，跳过输出
+2025-11-26 20:50:28,227 - src.ui.main_window - INFO - 宏变量 #534 的值为空，跳过输出
+2025-11-26 20:50:28,228 - src.ui.main_window - INFO - 宏变量 #535 的值为空，跳过输出
+2025-11-26 20:50:28,228 - src.ui.main_window - INFO - 宏变量 #536 的值为空，跳过输出
+2025-11-26 20:50:28,228 - src.ui.main_window - INFO - 宏变量 #537 的值为空，跳过输出
+2025-11-26 20:50:28,228 - src.ui.main_window - INFO - 宏变量 #538 的值为空，跳过输出
+2025-11-26 20:50:28,228 - src.ui.main_window - INFO - 宏变量 #539 的值为空，跳过输出
+2025-11-26 20:50:28,228 - src.ui.main_window - INFO - 宏变量 #540 的值为空，跳过输出
+2025-11-26 20:50:28,229 - src.ui.main_window - INFO - 宏变量 #541 的值为空，跳过输出
+2025-11-26 20:50:28,229 - src.ui.main_window - INFO - 宏变量 #542 的值为空，跳过输出
+2025-11-26 20:50:28,229 - src.ui.main_window - INFO - 宏变量 #543 的值为空，跳过输出
+2025-11-26 20:50:28,229 - src.ui.main_window - INFO - 宏变量 #544 的值为空，跳过输出
+2025-11-26 20:50:28,230 - src.ui.main_window - INFO - 宏变量 #548 的值为空，跳过输出
+2025-11-26 20:50:28,230 - src.ui.main_window - INFO - 宏变量 #549 的值为空，跳过输出
+2025-11-26 20:50:28,230 - src.ui.main_window - INFO - 宏变量 #550 的值为空，跳过输出
+2025-11-26 20:50:32,971 - __main__ - INFO - 应用程序正常退出
+2025-11-26 20:58:08,307 - __main__ - INFO - 启动DNC参数计算系统
+2025-11-26 20:58:08,495 - __main__ - WARNING - 未找到原始master数据目录，将使用空目录
+2025-11-26 20:58:08,563 - __main__ - INFO - 启动用户界面
+2025-11-26 20:58:08,565 - src.config.config_manager - INFO - 配置文件加载成功: config\app_config.ini
+2025-11-26 20:58:08,608 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\ini.csv, 共 46 条记录
+2025-11-26 20:58:08,609 - src.data.data_manager - INFO - 加载CSV文件: ini.csv, 46 条记录
+2025-11-26 20:58:08,609 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg.csv, 共 2 条记录
+2025-11-26 20:58:08,609 - src.data.data_manager - INFO - 加载CSV文件: prg.csv, 2 条记录
+2025-11-26 20:58:08,610 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\header.csv, 共 5 条记录
+2025-11-26 20:58:08,610 - src.data.data_manager - INFO - 加载CSV文件: header.csv, 5 条记录
+2025-11-26 20:58:08,610 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\math.csv, 共 19 条记录
+2025-11-26 20:58:08,611 - src.data.data_manager - INFO - 加载CSV文件: math.csv, 19 条记录
+2025-11-26 20:58:08,659 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_define.csv, 共 43440 条记录
+2025-11-26 20:58:08,660 - src.data.data_manager - INFO - 加载CSV文件: type_define.csv, 43440 条记录
+2025-11-26 20:58:08,661 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_relation.csv, 共 0 条记录
+2025-11-26 20:58:08,661 - src.data.data_manager - INFO - 加载CSV文件: type_relation.csv, 0 条记录
+2025-11-26 20:58:08,728 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_prg.csv, 共 50328 条记录
+2025-11-26 20:58:08,729 - src.data.data_manager - INFO - 加载CSV文件: type_prg.csv, 50328 条记录
+2025-11-26 20:58:08,730 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_chngvl.csv, 共 0 条记录
+2025-11-26 20:58:08,730 - src.data.data_manager - INFO - 加载CSV文件: type_chngvl.csv, 0 条记录
+2025-11-26 20:58:08,730 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\add.csv, 共 0 条记录
+2025-11-26 20:58:08,731 - src.data.data_manager - INFO - 加载PRG文件: prg1/add.csv, 0 条记录
+2025-11-26 20:58:08,731 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\calc.csv, 共 7 条记录
+2025-11-26 20:58:08,731 - src.data.data_manager - INFO - 加载PRG文件: prg1/calc.csv, 7 条记录
+2025-11-26 20:58:08,732 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\chngValue.csv, 共 2 条记录
+2025-11-26 20:58:08,732 - src.data.data_manager - INFO - 加载PRG文件: prg1/chngValue.csv, 2 条记录
+2025-11-26 20:58:08,732 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:58:08,733 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl_rex.csv, 51 条记录
+2025-11-26 20:58:08,733 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl.csv, 共 66 条记录
+2025-11-26 20:58:08,733 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl.csv, 66 条记录
+2025-11-26 20:58:08,734 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\correct.csv, 共 0 条记录
+2025-11-26 20:58:08,734 - src.data.data_manager - INFO - 加载PRG文件: prg1/correct.csv, 0 条记录
+2025-11-26 20:58:08,735 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\define.csv, 共 176 条记录
+2025-11-26 20:58:08,735 - src.data.data_manager - INFO - 加载PRG文件: prg1/define.csv, 176 条记录
+2025-11-26 20:58:08,736 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\input.csv, 共 0 条记录
+2025-11-26 20:58:08,736 - src.data.data_manager - INFO - 加载PRG文件: prg1/input.csv, 0 条记录
+2025-11-26 20:58:08,737 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\load.csv, 共 10 条记录
+2025-11-26 20:58:08,737 - src.data.data_manager - INFO - 加载PRG文件: prg1/load.csv, 10 条记录
+2025-11-26 20:58:08,737 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\measure.csv, 共 0 条记录
+2025-11-26 20:58:08,738 - src.data.data_manager - INFO - 加载PRG文件: prg1/measure.csv, 0 条记录
+2025-11-26 20:58:08,738 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\preset.csv, 共 0 条记录
+2025-11-26 20:58:08,738 - src.data.data_manager - INFO - 加载PRG文件: prg1/preset.csv, 0 条记录
+2025-11-26 20:58:08,739 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\relation.csv, 共 110 条记录
+2025-11-26 20:58:08,740 - src.data.data_manager - INFO - 加载PRG文件: prg1/relation.csv, 110 条记录
+2025-11-26 20:58:08,740 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\select.csv, 共 10 条记录
+2025-11-26 20:58:08,740 - src.data.data_manager - INFO - 加载PRG文件: prg1/select.csv, 10 条记录
+2025-11-26 20:58:08,741 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\switch.csv, 共 4 条记录
+2025-11-26 20:58:08,741 - src.data.data_manager - INFO - 加载PRG文件: prg1/switch.csv, 4 条记录
+2025-11-26 20:58:08,749 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_define.csv, 共 8276 条记录
+2025-11-26 20:58:08,750 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_define.csv, 8276 条记录
+2025-11-26 20:58:08,760 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_prg.csv, 共 8284 条记录
+2025-11-26 20:58:08,761 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_prg.csv, 8284 条记录
+2025-11-26 20:58:08,761 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\add.csv, 共 0 条记录
+2025-11-26 20:58:08,762 - src.data.data_manager - INFO - 加载PRG文件: prg2/add.csv, 0 条记录
+2025-11-26 20:58:08,762 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\calc.csv, 共 7 条记录
+2025-11-26 20:58:08,762 - src.data.data_manager - INFO - 加载PRG文件: prg2/calc.csv, 7 条记录
+2025-11-26 20:58:08,763 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\chngValue.csv, 共 2 条记录
+2025-11-26 20:58:08,763 - src.data.data_manager - INFO - 加载PRG文件: prg2/chngValue.csv, 2 条记录
+2025-11-26 20:58:08,763 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl_rex.csv, 共 51 条记录
+2025-11-26 20:58:08,764 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl_rex.csv, 51 条记录
+2025-11-26 20:58:08,764 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl.csv, 共 42 条记录
+2025-11-26 20:58:08,764 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl.csv, 42 条记录
+2025-11-26 20:58:08,765 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\correct.csv, 共 0 条记录
+2025-11-26 20:58:08,765 - src.data.data_manager - INFO - 加载PRG文件: prg2/correct.csv, 0 条记录
+2025-11-26 20:58:08,766 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\define.csv, 共 161 条记录
+2025-11-26 20:58:08,766 - src.data.data_manager - INFO - 加载PRG文件: prg2/define.csv, 161 条记录
+2025-11-26 20:58:08,767 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\load.csv, 共 11 条记录
+2025-11-26 20:58:08,767 - src.data.data_manager - INFO - 加载PRG文件: prg2/load.csv, 11 条记录
+2025-11-26 20:58:08,768 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\measure.csv, 共 0 条记录
+2025-11-26 20:58:08,768 - src.data.data_manager - INFO - 加载PRG文件: prg2/measure.csv, 0 条记录
+2025-11-26 20:58:08,768 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\preset.csv, 共 0 条记录
+2025-11-26 20:58:08,768 - src.data.data_manager - INFO - 加载PRG文件: prg2/preset.csv, 0 条记录
+2025-11-26 20:58:08,769 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\relation.csv, 共 58 条记录
+2025-11-26 20:58:08,769 - src.data.data_manager - INFO - 加载PRG文件: prg2/relation.csv, 58 条记录
+2025-11-26 20:58:08,770 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\select.csv, 共 0 条记录
+2025-11-26 20:58:08,770 - src.data.data_manager - INFO - 加载PRG文件: prg2/select.csv, 0 条记录
+2025-11-26 20:58:08,770 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\switch.csv, 共 0 条记录
+2025-11-26 20:58:08,770 - src.data.data_manager - INFO - 加载PRG文件: prg2/switch.csv, 0 条记录
+2025-11-26 20:58:08,778 - src.data.data_manager - INFO - 产品数据索引构建完成: 43313 种产品型号
+2025-11-26 20:58:08,778 - src.data.data_manager - INFO - 所有CSV文件加载完成
+2025-11-26 21:10:32,643 - __main__ - INFO - 启动DNC参数计算系统
+2025-11-26 21:10:32,861 - __main__ - WARNING - 未找到原始master数据目录，将使用空目录
+2025-11-26 21:10:32,962 - __main__ - INFO - 启动用户界面
+2025-11-26 21:10:32,963 - src.config.config_manager - INFO - 配置文件加载成功: config\app_config.ini
+2025-11-26 21:10:33,176 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\ini.csv, 共 46 条记录
+2025-11-26 21:10:33,176 - src.data.data_manager - INFO - 加载CSV文件: ini.csv, 46 条记录
+2025-11-26 21:10:33,176 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg.csv, 共 2 条记录
+2025-11-26 21:10:33,177 - src.data.data_manager - INFO - 加载CSV文件: prg.csv, 2 条记录
+2025-11-26 21:10:33,177 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\header.csv, 共 5 条记录
+2025-11-26 21:10:33,177 - src.data.data_manager - INFO - 加载CSV文件: header.csv, 5 条记录
+2025-11-26 21:10:33,177 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\math.csv, 共 19 条记录
+2025-11-26 21:10:33,178 - src.data.data_manager - INFO - 加载CSV文件: math.csv, 19 条记录
+2025-11-26 21:10:33,230 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_define.csv, 共 43440 条记录
+2025-11-26 21:10:33,231 - src.data.data_manager - INFO - 加载CSV文件: type_define.csv, 43440 条记录
+2025-11-26 21:10:33,232 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_relation.csv, 共 0 条记录
+2025-11-26 21:10:33,232 - src.data.data_manager - INFO - 加载CSV文件: type_relation.csv, 0 条记录
+2025-11-26 21:10:33,301 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_prg.csv, 共 50328 条记录
+2025-11-26 21:10:33,302 - src.data.data_manager - INFO - 加载CSV文件: type_prg.csv, 50328 条记录
+2025-11-26 21:10:33,302 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_chngvl.csv, 共 0 条记录
+2025-11-26 21:10:33,302 - src.data.data_manager - INFO - 加载CSV文件: type_chngvl.csv, 0 条记录
+2025-11-26 21:10:33,303 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\add.csv, 共 0 条记录
+2025-11-26 21:10:33,303 - src.data.data_manager - INFO - 加载PRG文件: prg1/add.csv, 0 条记录
+2025-11-26 21:10:33,303 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\calc.csv, 共 7 条记录
+2025-11-26 21:10:33,303 - src.data.data_manager - INFO - 加载PRG文件: prg1/calc.csv, 7 条记录
+2025-11-26 21:10:33,303 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\chngValue.csv, 共 2 条记录
+2025-11-26 21:10:33,303 - src.data.data_manager - INFO - 加载PRG文件: prg1/chngValue.csv, 2 条记录
+2025-11-26 21:10:33,304 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl_rex.csv, 共 51 条记录
+2025-11-26 21:10:33,304 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl_rex.csv, 51 条记录
+2025-11-26 21:10:33,305 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl.csv, 共 66 条记录
+2025-11-26 21:10:33,305 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl.csv, 66 条记录
+2025-11-26 21:10:33,305 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\correct.csv, 共 0 条记录
+2025-11-26 21:10:33,305 - src.data.data_manager - INFO - 加载PRG文件: prg1/correct.csv, 0 条记录
+2025-11-26 21:10:33,306 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\define.csv, 共 176 条记录
+2025-11-26 21:10:33,306 - src.data.data_manager - INFO - 加载PRG文件: prg1/define.csv, 176 条记录
+2025-11-26 21:10:33,307 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\input.csv, 共 0 条记录
+2025-11-26 21:10:33,307 - src.data.data_manager - INFO - 加载PRG文件: prg1/input.csv, 0 条记录
+2025-11-26 21:10:33,307 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\load.csv, 共 10 条记录
+2025-11-26 21:10:33,307 - src.data.data_manager - INFO - 加载PRG文件: prg1/load.csv, 10 条记录
+2025-11-26 21:10:33,308 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\measure.csv, 共 0 条记录
+2025-11-26 21:10:33,308 - src.data.data_manager - INFO - 加载PRG文件: prg1/measure.csv, 0 条记录
+2025-11-26 21:10:33,308 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\preset.csv, 共 0 条记录
+2025-11-26 21:10:33,308 - src.data.data_manager - INFO - 加载PRG文件: prg1/preset.csv, 0 条记录
+2025-11-26 21:10:33,309 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\relation.csv, 共 110 条记录
+2025-11-26 21:10:33,310 - src.data.data_manager - INFO - 加载PRG文件: prg1/relation.csv, 110 条记录
+2025-11-26 21:10:33,310 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\select.csv, 共 10 条记录
+2025-11-26 21:10:33,310 - src.data.data_manager - INFO - 加载PRG文件: prg1/select.csv, 10 条记录
+2025-11-26 21:10:33,311 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\switch.csv, 共 4 条记录
+2025-11-26 21:10:33,311 - src.data.data_manager - INFO - 加载PRG文件: prg1/switch.csv, 4 条记录
+2025-11-26 21:10:33,320 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_define.csv, 共 8276 条记录
+2025-11-26 21:10:33,320 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_define.csv, 8276 条记录
+2025-11-26 21:10:33,329 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_prg.csv, 共 8284 条记录
+2025-11-26 21:10:33,330 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_prg.csv, 8284 条记录
+2025-11-26 21:10:33,330 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\add.csv, 共 0 条记录
+2025-11-26 21:10:33,330 - src.data.data_manager - INFO - 加载PRG文件: prg2/add.csv, 0 条记录
+2025-11-26 21:10:33,330 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\calc.csv, 共 7 条记录
+2025-11-26 21:10:33,331 - src.data.data_manager - INFO - 加载PRG文件: prg2/calc.csv, 7 条记录
+2025-11-26 21:10:33,331 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\chngValue.csv, 共 2 条记录
+2025-11-26 21:10:33,331 - src.data.data_manager - INFO - 加载PRG文件: prg2/chngValue.csv, 2 条记录
+2025-11-26 21:10:33,331 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl_rex.csv, 共 51 条记录
+2025-11-26 21:10:33,331 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl_rex.csv, 51 条记录
+2025-11-26 21:10:33,332 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl.csv, 共 42 条记录
+2025-11-26 21:10:33,332 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl.csv, 42 条记录
+2025-11-26 21:10:33,333 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\correct.csv, 共 0 条记录
+2025-11-26 21:10:33,333 - src.data.data_manager - INFO - 加载PRG文件: prg2/correct.csv, 0 条记录
+2025-11-26 21:10:33,333 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\define.csv, 共 161 条记录
+2025-11-26 21:10:33,333 - src.data.data_manager - INFO - 加载PRG文件: prg2/define.csv, 161 条记录
+2025-11-26 21:10:33,334 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\load.csv, 共 11 条记录
+2025-11-26 21:10:33,334 - src.data.data_manager - INFO - 加载PRG文件: prg2/load.csv, 11 条记录
+2025-11-26 21:10:33,334 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\measure.csv, 共 0 条记录
+2025-11-26 21:10:33,334 - src.data.data_manager - INFO - 加载PRG文件: prg2/measure.csv, 0 条记录
+2025-11-26 21:10:33,335 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\preset.csv, 共 0 条记录
+2025-11-26 21:10:33,335 - src.data.data_manager - INFO - 加载PRG文件: prg2/preset.csv, 0 条记录
+2025-11-26 21:10:33,335 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\relation.csv, 共 58 条记录
+2025-11-26 21:10:33,336 - src.data.data_manager - INFO - 加载PRG文件: prg2/relation.csv, 58 条记录
+2025-11-26 21:10:33,336 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\select.csv, 共 0 条记录
+2025-11-26 21:10:33,336 - src.data.data_manager - INFO - 加载PRG文件: prg2/select.csv, 0 条记录
+2025-11-26 21:10:33,336 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\switch.csv, 共 0 条记录
+2025-11-26 21:10:33,336 - src.data.data_manager - INFO - 加载PRG文件: prg2/switch.csv, 0 条记录
+2025-11-26 21:10:33,342 - src.data.data_manager - INFO - 产品数据索引构建完成: 43313 种产品型号
+2025-11-26 21:10:33,342 - src.data.data_manager - INFO - 所有CSV文件加载完成
+2025-11-26 21:10:33,543 - src.ui.main_window - INFO - 接口文件已变更，正在读取: interface\input.txt
+2025-11-26 21:10:33,543 - src.ui.main_window - INFO - 接口文件内容: 123@GPA20GT15040-A-H8@3
+2025-11-26 21:10:33,569 - src.ui.main_window - INFO - 找到匹配型号: GPA20GT15040_A (从输入 GPA20GT15040-A-H8 通过连字符转下划线匹配)
+2025-11-26 21:10:33,771 - src.ui.main_window - INFO - 接口文件监控已启动
+2025-11-26 21:10:34,275 - src.ui.main_window - INFO - 接口文件已变更，正在读取: interface\input.txt
+2025-11-26 21:14:14,647 - __main__ - INFO - 启动DNC参数计算系统
+2025-11-26 21:14:14,843 - __main__ - WARNING - 未找到原始master数据目录，将使用空目录
+2025-11-26 21:14:14,916 - __main__ - INFO - 启动用户界面
+2025-11-26 21:14:14,918 - src.config.config_manager - INFO - 配置文件加载成功: config\app_config.ini
+2025-11-26 21:14:14,962 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\ini.csv, 共 46 条记录
+2025-11-26 21:14:14,963 - src.data.data_manager - INFO - 加载CSV文件: ini.csv, 46 条记录
+2025-11-26 21:14:14,963 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg.csv, 共 2 条记录
+2025-11-26 21:14:14,963 - src.data.data_manager - INFO - 加载CSV文件: prg.csv, 2 条记录
+2025-11-26 21:14:14,964 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\header.csv, 共 5 条记录
+2025-11-26 21:14:14,964 - src.data.data_manager - INFO - 加载CSV文件: header.csv, 5 条记录
+2025-11-26 21:14:14,964 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\math.csv, 共 19 条记录
+2025-11-26 21:14:14,964 - src.data.data_manager - INFO - 加载CSV文件: math.csv, 19 条记录
+2025-11-26 21:14:15,019 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_define.csv, 共 43440 条记录
+2025-11-26 21:14:15,020 - src.data.data_manager - INFO - 加载CSV文件: type_define.csv, 43440 条记录
+2025-11-26 21:14:15,020 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_relation.csv, 共 0 条记录
+2025-11-26 21:14:15,020 - src.data.data_manager - INFO - 加载CSV文件: type_relation.csv, 0 条记录
+2025-11-26 21:14:15,088 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_prg.csv, 共 50328 条记录
+2025-11-26 21:14:15,090 - src.data.data_manager - INFO - 加载CSV文件: type_prg.csv, 50328 条记录
+2025-11-26 21:14:15,090 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_chngvl.csv, 共 0 条记录
+2025-11-26 21:14:15,091 - src.data.data_manager - INFO - 加载CSV文件: type_chngvl.csv, 0 条记录
+2025-11-26 21:14:15,091 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\add.csv, 共 0 条记录
+2025-11-26 21:14:15,091 - src.data.data_manager - INFO - 加载PRG文件: prg1/add.csv, 0 条记录
+2025-11-26 21:14:15,092 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\calc.csv, 共 7 条记录
+2025-11-26 21:14:15,092 - src.data.data_manager - INFO - 加载PRG文件: prg1/calc.csv, 7 条记录
+2025-11-26 21:14:15,093 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\chngValue.csv, 共 2 条记录
+2025-11-26 21:14:15,093 - src.data.data_manager - INFO - 加载PRG文件: prg1/chngValue.csv, 2 条记录
+2025-11-26 21:14:15,094 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl_rex.csv, 共 51 条记录
+2025-11-26 21:14:15,094 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl_rex.csv, 51 条记录
+2025-11-26 21:14:15,095 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl.csv, 共 66 条记录
+2025-11-26 21:14:15,095 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl.csv, 66 条记录
+2025-11-26 21:14:15,095 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\correct.csv, 共 0 条记录
+2025-11-26 21:14:15,096 - src.data.data_manager - INFO - 加载PRG文件: prg1/correct.csv, 0 条记录
+2025-11-26 21:14:15,096 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\define.csv, 共 176 条记录
+2025-11-26 21:14:15,096 - src.data.data_manager - INFO - 加载PRG文件: prg1/define.csv, 176 条记录
+2025-11-26 21:14:15,097 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\input.csv, 共 0 条记录
+2025-11-26 21:14:15,097 - src.data.data_manager - INFO - 加载PRG文件: prg1/input.csv, 0 条记录
+2025-11-26 21:14:15,098 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\load.csv, 共 10 条记录
+2025-11-26 21:14:15,098 - src.data.data_manager - INFO - 加载PRG文件: prg1/load.csv, 10 条记录
+2025-11-26 21:14:15,098 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\measure.csv, 共 0 条记录
+2025-11-26 21:14:15,098 - src.data.data_manager - INFO - 加载PRG文件: prg1/measure.csv, 0 条记录
+2025-11-26 21:14:15,099 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\preset.csv, 共 0 条记录
+2025-11-26 21:14:15,099 - src.data.data_manager - INFO - 加载PRG文件: prg1/preset.csv, 0 条记录
+2025-11-26 21:14:15,100 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\relation.csv, 共 110 条记录
+2025-11-26 21:14:15,100 - src.data.data_manager - INFO - 加载PRG文件: prg1/relation.csv, 110 条记录
+2025-11-26 21:14:15,100 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\select.csv, 共 10 条记录
+2025-11-26 21:14:15,100 - src.data.data_manager - INFO - 加载PRG文件: prg1/select.csv, 10 条记录
+2025-11-26 21:14:15,101 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\switch.csv, 共 4 条记录
+2025-11-26 21:14:15,101 - src.data.data_manager - INFO - 加载PRG文件: prg1/switch.csv, 4 条记录
+2025-11-26 21:14:15,111 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_define.csv, 共 8276 条记录
+2025-11-26 21:14:15,111 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_define.csv, 8276 条记录
+2025-11-26 21:14:15,118 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_prg.csv, 共 8284 条记录
+2025-11-26 21:14:15,119 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_prg.csv, 8284 条记录
+2025-11-26 21:14:15,119 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\add.csv, 共 0 条记录
+2025-11-26 21:14:15,119 - src.data.data_manager - INFO - 加载PRG文件: prg2/add.csv, 0 条记录
+2025-11-26 21:14:15,120 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\calc.csv, 共 7 条记录
+2025-11-26 21:14:15,120 - src.data.data_manager - INFO - 加载PRG文件: prg2/calc.csv, 7 条记录
+2025-11-26 21:14:15,120 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\chngValue.csv, 共 2 条记录
+2025-11-26 21:14:15,121 - src.data.data_manager - INFO - 加载PRG文件: prg2/chngValue.csv, 2 条记录
+2025-11-26 21:14:15,121 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl_rex.csv, 共 51 条记录
+2025-11-26 21:14:15,121 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl_rex.csv, 51 条记录
+2025-11-26 21:14:15,122 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl.csv, 共 42 条记录
+2025-11-26 21:14:15,122 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl.csv, 42 条记录
+2025-11-26 21:14:15,123 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\correct.csv, 共 0 条记录
+2025-11-26 21:14:15,123 - src.data.data_manager - INFO - 加载PRG文件: prg2/correct.csv, 0 条记录
+2025-11-26 21:14:15,124 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\define.csv, 共 161 条记录
+2025-11-26 21:14:15,124 - src.data.data_manager - INFO - 加载PRG文件: prg2/define.csv, 161 条记录
+2025-11-26 21:14:15,125 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\load.csv, 共 11 条记录
+2025-11-26 21:14:15,126 - src.data.data_manager - INFO - 加载PRG文件: prg2/load.csv, 11 条记录
+2025-11-26 21:14:15,126 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\measure.csv, 共 0 条记录
+2025-11-26 21:14:15,126 - src.data.data_manager - INFO - 加载PRG文件: prg2/measure.csv, 0 条记录
+2025-11-26 21:14:15,127 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\preset.csv, 共 0 条记录
+2025-11-26 21:14:15,127 - src.data.data_manager - INFO - 加载PRG文件: prg2/preset.csv, 0 条记录
+2025-11-26 21:14:15,128 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\relation.csv, 共 58 条记录
+2025-11-26 21:14:15,128 - src.data.data_manager - INFO - 加载PRG文件: prg2/relation.csv, 58 条记录
+2025-11-26 21:14:15,128 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\select.csv, 共 0 条记录
+2025-11-26 21:14:15,129 - src.data.data_manager - INFO - 加载PRG文件: prg2/select.csv, 0 条记录
+2025-11-26 21:14:15,129 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\switch.csv, 共 0 条记录
+2025-11-26 21:14:15,129 - src.data.data_manager - INFO - 加载PRG文件: prg2/switch.csv, 0 条记录
+2025-11-26 21:14:15,134 - src.data.data_manager - INFO - 产品数据索引构建完成: 43313 种产品型号
+2025-11-26 21:14:15,135 - src.data.data_manager - INFO - 所有CSV文件加载完成
+2025-11-26 21:14:15,322 - src.ui.main_window - INFO - 接口文件已变更，正在读取: interface\input.txt
+2025-11-26 21:14:15,323 - src.ui.main_window - INFO - 接口文件监控已启动
+2025-11-26 21:15:27,887 - src.ui.main_window - INFO - 接口文件已变更，正在读取: interface\input.txt
+2025-11-26 21:15:27,887 - src.ui.main_window - INFO - 接口文件内容: 123@GPA20GT15040-A-H8@4
+2025-11-26 21:15:27,931 - src.ui.main_window - INFO - 找到匹配型号: GPA20GT15040_A (从输入 GPA20GT15040-A-H8 通过连字符转下划线匹配)
+2025-11-26 21:15:28,544 - src.ui.main_window - INFO - 接口文件已变更，正在读取: interface\input.txt
+2025-11-26 21:15:34,312 - src.ui.main_window - INFO - 宏变量 #507 的值为空，跳过输出
+2025-11-26 21:15:34,312 - src.ui.main_window - INFO - 宏变量 #508 的值为空，跳过输出
+2025-11-26 21:15:34,313 - src.ui.main_window - INFO - 宏变量 #514 的值为空，跳过输出
+2025-11-26 21:15:34,313 - src.ui.main_window - INFO - 宏变量 #515 的值为空，跳过输出
+2025-11-26 21:15:34,313 - src.ui.main_window - INFO - 宏变量 #516 的值为空，跳过输出
+2025-11-26 21:15:34,313 - src.ui.main_window - INFO - 宏变量 #517 的值为空，跳过输出
+2025-11-26 21:15:34,314 - src.ui.main_window - INFO - 宏变量 #518 的值为空，跳过输出
+2025-11-26 21:15:34,314 - src.ui.main_window - INFO - 宏变量 #520 的值为空，跳过输出
+2025-11-26 21:15:34,314 - src.ui.main_window - INFO - 宏变量 #521 的值为空，跳过输出
+2025-11-26 21:15:34,315 - src.ui.main_window - INFO - 宏变量 #522 的值为空，跳过输出
+2025-11-26 21:15:34,315 - src.ui.main_window - INFO - 宏变量 #523 的值为空，跳过输出
+2025-11-26 21:15:34,315 - src.ui.main_window - INFO - 宏变量 #524 的值为空，跳过输出
+2025-11-26 21:15:34,316 - src.ui.main_window - INFO - 宏变量 #525 的值为空，跳过输出
+2025-11-26 21:15:34,316 - src.ui.main_window - INFO - 宏变量 #526 的值为空，跳过输出
+2025-11-26 21:15:34,316 - src.ui.main_window - INFO - 宏变量 #527 的值为空，跳过输出
+2025-11-26 21:15:34,316 - src.ui.main_window - INFO - 宏变量 #529 的值为空，跳过输出
+2025-11-26 21:15:34,317 - src.ui.main_window - INFO - 宏变量 #530 的值为空，跳过输出
+2025-11-26 21:15:34,317 - src.ui.main_window - INFO - 宏变量 #531 的值为空，跳过输出
+2025-11-26 21:15:34,317 - src.ui.main_window - INFO - 宏变量 #532 的值为空，跳过输出
+2025-11-26 21:15:34,318 - src.ui.main_window - INFO - 宏变量 #533 的值为空，跳过输出
+2025-11-26 21:15:34,318 - src.ui.main_window - INFO - 宏变量 #534 的值为空，跳过输出
+2025-11-26 21:15:34,318 - src.ui.main_window - INFO - 宏变量 #535 的值为空，跳过输出
+2025-11-26 21:15:34,318 - src.ui.main_window - INFO - 宏变量 #536 的值为空，跳过输出
+2025-11-26 21:15:34,319 - src.ui.main_window - INFO - 宏变量 #537 的值为空，跳过输出
+2025-11-26 21:15:34,319 - src.ui.main_window - INFO - 宏变量 #538 的值为空，跳过输出
+2025-11-26 21:15:34,319 - src.ui.main_window - INFO - 宏变量 #539 的值为空，跳过输出
+2025-11-26 21:15:34,320 - src.ui.main_window - INFO - 宏变量 #540 的值为空，跳过输出
+2025-11-26 21:15:34,320 - src.ui.main_window - INFO - 宏变量 #541 的值为空，跳过输出
+2025-11-26 21:15:34,320 - src.ui.main_window - INFO - 宏变量 #542 的值为空，跳过输出
+2025-11-26 21:15:34,320 - src.ui.main_window - INFO - 宏变量 #543 的值为空，跳过输出
+2025-11-26 21:15:34,320 - src.ui.main_window - INFO - 宏变量 #544 的值为空，跳过输出
+2025-11-26 21:15:34,321 - src.ui.main_window - INFO - 宏变量 #548 的值为空，跳过输出
+2025-11-26 21:15:34,321 - src.ui.main_window - INFO - 宏变量 #549 的值为空，跳过输出
+2025-11-26 21:15:34,321 - src.ui.main_window - INFO - 宏变量 #550 的值为空，跳过输出
+2025-11-26 21:22:05,877 - __main__ - INFO - 应用程序正常退出
+2025-11-26 21:24:13,622 - __main__ - INFO - 启动DNC参数计算系统
+2025-11-26 21:24:13,823 - __main__ - WARNING - 未找到原始master数据目录，将使用空目录
+2025-11-26 21:24:13,897 - __main__ - INFO - 启动用户界面
+2025-11-26 21:24:13,899 - src.config.config_manager - INFO - 配置文件加载成功: config\app_config.ini
+2025-11-26 21:24:13,941 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\ini.csv, 共 46 条记录
+2025-11-26 21:24:13,941 - src.data.data_manager - INFO - 加载CSV文件: ini.csv, 46 条记录
+2025-11-26 21:24:13,941 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg.csv, 共 2 条记录
+2025-11-26 21:24:13,942 - src.data.data_manager - INFO - 加载CSV文件: prg.csv, 2 条记录
+2025-11-26 21:24:13,942 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\header.csv, 共 5 条记录
+2025-11-26 21:24:13,942 - src.data.data_manager - INFO - 加载CSV文件: header.csv, 5 条记录
+2025-11-26 21:24:13,943 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\math.csv, 共 19 条记录
+2025-11-26 21:24:13,943 - src.data.data_manager - INFO - 加载CSV文件: math.csv, 19 条记录
+2025-11-26 21:24:14,008 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_define.csv, 共 43440 条记录
+2025-11-26 21:24:14,009 - src.data.data_manager - INFO - 加载CSV文件: type_define.csv, 43440 条记录
+2025-11-26 21:24:14,009 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_relation.csv, 共 0 条记录
+2025-11-26 21:24:14,010 - src.data.data_manager - INFO - 加载CSV文件: type_relation.csv, 0 条记录
+2025-11-26 21:24:14,068 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_prg.csv, 共 50328 条记录
+2025-11-26 21:24:14,069 - src.data.data_manager - INFO - 加载CSV文件: type_prg.csv, 50328 条记录
+2025-11-26 21:24:14,069 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\type_chngvl.csv, 共 0 条记录
+2025-11-26 21:24:14,070 - src.data.data_manager - INFO - 加载CSV文件: type_chngvl.csv, 0 条记录
+2025-11-26 21:24:14,070 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\add.csv, 共 0 条记录
+2025-11-26 21:24:14,070 - src.data.data_manager - INFO - 加载PRG文件: prg1/add.csv, 0 条记录
+2025-11-26 21:24:14,071 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\calc.csv, 共 7 条记录
+2025-11-26 21:24:14,071 - src.data.data_manager - INFO - 加载PRG文件: prg1/calc.csv, 7 条记录
+2025-11-26 21:24:14,072 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\chngValue.csv, 共 2 条记录
+2025-11-26 21:24:14,072 - src.data.data_manager - INFO - 加载PRG文件: prg1/chngValue.csv, 2 条记录
+2025-11-26 21:24:14,072 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl_rex.csv, 共 51 条记录
+2025-11-26 21:24:14,073 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl_rex.csv, 51 条记录
+2025-11-26 21:24:14,073 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\cntrl.csv, 共 66 条记录
+2025-11-26 21:24:14,073 - src.data.data_manager - INFO - 加载PRG文件: prg1/cntrl.csv, 66 条记录
+2025-11-26 21:24:14,074 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\correct.csv, 共 0 条记录
+2025-11-26 21:24:14,074 - src.data.data_manager - INFO - 加载PRG文件: prg1/correct.csv, 0 条记录
+2025-11-26 21:24:14,075 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\define.csv, 共 176 条记录
+2025-11-26 21:24:14,075 - src.data.data_manager - INFO - 加载PRG文件: prg1/define.csv, 176 条记录
+2025-11-26 21:24:14,075 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\input.csv, 共 0 条记录
+2025-11-26 21:24:14,076 - src.data.data_manager - INFO - 加载PRG文件: prg1/input.csv, 0 条记录
+2025-11-26 21:24:14,076 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\load.csv, 共 10 条记录
+2025-11-26 21:24:14,076 - src.data.data_manager - INFO - 加载PRG文件: prg1/load.csv, 10 条记录
+2025-11-26 21:24:14,077 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\measure.csv, 共 0 条记录
+2025-11-26 21:24:14,077 - src.data.data_manager - INFO - 加载PRG文件: prg1/measure.csv, 0 条记录
+2025-11-26 21:24:14,077 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\preset.csv, 共 0 条记录
+2025-11-26 21:24:14,077 - src.data.data_manager - INFO - 加载PRG文件: prg1/preset.csv, 0 条记录
+2025-11-26 21:24:14,078 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\relation.csv, 共 110 条记录
+2025-11-26 21:24:14,078 - src.data.data_manager - INFO - 加载PRG文件: prg1/relation.csv, 110 条记录
+2025-11-26 21:24:14,079 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\select.csv, 共 10 条记录
+2025-11-26 21:24:14,079 - src.data.data_manager - INFO - 加载PRG文件: prg1/select.csv, 10 条记录
+2025-11-26 21:24:14,080 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\switch.csv, 共 4 条记录
+2025-11-26 21:24:14,080 - src.data.data_manager - INFO - 加载PRG文件: prg1/switch.csv, 4 条记录
+2025-11-26 21:24:14,093 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_define.csv, 共 8276 条记录
+2025-11-26 21:24:14,093 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_define.csv, 8276 条记录
+2025-11-26 21:24:14,104 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg1\type_prg.csv, 共 8284 条记录
+2025-11-26 21:24:14,105 - src.data.data_manager - INFO - 加载PRG文件: prg1/type_prg.csv, 8284 条记录
+2025-11-26 21:24:14,106 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\add.csv, 共 0 条记录
+2025-11-26 21:24:14,106 - src.data.data_manager - INFO - 加载PRG文件: prg2/add.csv, 0 条记录
+2025-11-26 21:24:14,106 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\calc.csv, 共 7 条记录
+2025-11-26 21:24:14,107 - src.data.data_manager - INFO - 加载PRG文件: prg2/calc.csv, 7 条记录
+2025-11-26 21:24:14,107 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\chngValue.csv, 共 2 条记录
+2025-11-26 21:24:14,107 - src.data.data_manager - INFO - 加载PRG文件: prg2/chngValue.csv, 2 条记录
+2025-11-26 21:24:14,108 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl_rex.csv, 共 51 条记录
+2025-11-26 21:24:14,108 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl_rex.csv, 51 条记录
+2025-11-26 21:24:14,108 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\cntrl.csv, 共 42 条记录
+2025-11-26 21:24:14,108 - src.data.data_manager - INFO - 加载PRG文件: prg2/cntrl.csv, 42 条记录
+2025-11-26 21:24:14,109 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\correct.csv, 共 0 条记录
+2025-11-26 21:24:14,109 - src.data.data_manager - INFO - 加载PRG文件: prg2/correct.csv, 0 条记录
+2025-11-26 21:24:14,110 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\define.csv, 共 161 条记录
+2025-11-26 21:24:14,110 - src.data.data_manager - INFO - 加载PRG文件: prg2/define.csv, 161 条记录
+2025-11-26 21:24:14,110 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\load.csv, 共 11 条记录
+2025-11-26 21:24:14,110 - src.data.data_manager - INFO - 加载PRG文件: prg2/load.csv, 11 条记录
+2025-11-26 21:24:14,111 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\measure.csv, 共 0 条记录
+2025-11-26 21:24:14,111 - src.data.data_manager - INFO - 加载PRG文件: prg2/measure.csv, 0 条记录
+2025-11-26 21:24:14,112 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\preset.csv, 共 0 条记录
+2025-11-26 21:24:14,112 - src.data.data_manager - INFO - 加载PRG文件: prg2/preset.csv, 0 条记录
+2025-11-26 21:24:14,114 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\relation.csv, 共 58 条记录
+2025-11-26 21:24:14,114 - src.data.data_manager - INFO - 加载PRG文件: prg2/relation.csv, 58 条记录
+2025-11-26 21:24:14,115 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\select.csv, 共 0 条记录
+2025-11-26 21:24:14,116 - src.data.data_manager - INFO - 加载PRG文件: prg2/select.csv, 0 条记录
+2025-11-26 21:24:14,116 - src.data.csv_processor - INFO - CSV文件读取成功: data\master\prg2\switch.csv, 共 0 条记录
+2025-11-26 21:24:14,116 - src.data.data_manager - INFO - 加载PRG文件: prg2/switch.csv, 0 条记录
+2025-11-26 21:24:14,127 - src.data.data_manager - INFO - 产品数据索引构建完成: 43313 种产品型号
+2025-11-26 21:24:14,127 - src.data.data_manager - INFO - 所有CSV文件加载完成
+2025-11-26 21:24:14,387 - src.ui.main_window - INFO - 接口文件已变更，正在读取: interface\input.txt
+2025-11-26 21:24:14,387 - src.ui.main_window - INFO - 接口文件监控已启动
+2025-11-26 21:24:36,372 - src.ui.main_window - INFO - 接口文件已变更，正在读取: interface\input.txt
+2025-11-26 21:24:36,372 - src.ui.main_window - INFO - 接口文件内容: 123@GPA20GT15040-A-H8@2
+2025-11-26 21:24:36,398 - src.ui.main_window - INFO - 找到匹配型号: GPA20GT15040_A (从输入 GPA20GT15040-A-H8 通过连字符转下划线匹配)
+2025-11-26 21:24:37,012 - src.ui.main_window - INFO - 接口文件已变更，正在读取: interface\input.txt
+2025-11-26 21:24:38,006 - src.ui.main_window - INFO - 接口文件输入触发自动发送数据
+2025-11-26 21:24:38,006 - src.ui.main_window - INFO - 宏变量 #507 的值为空，跳过输出
+2025-11-26 21:24:38,007 - src.ui.main_window - INFO - 宏变量 #508 的值为空，跳过输出
+2025-11-26 21:24:38,007 - src.ui.main_window - INFO - 宏变量 #514 的值为空，跳过输出
+2025-11-26 21:24:38,007 - src.ui.main_window - INFO - 宏变量 #515 的值为空，跳过输出
+2025-11-26 21:24:38,007 - src.ui.main_window - INFO - 宏变量 #516 的值为空，跳过输出
+2025-11-26 21:24:38,008 - src.ui.main_window - INFO - 宏变量 #517 的值为空，跳过输出
+2025-11-26 21:24:38,008 - src.ui.main_window - INFO - 宏变量 #518 的值为空，跳过输出
+2025-11-26 21:24:38,008 - src.ui.main_window - INFO - 宏变量 #520 的值为空，跳过输出
+2025-11-26 21:24:38,008 - src.ui.main_window - INFO - 宏变量 #521 的值为空，跳过输出
+2025-11-26 21:24:38,008 - src.ui.main_window - INFO - 宏变量 #522 的值为空，跳过输出
+2025-11-26 21:24:38,008 - src.ui.main_window - INFO - 宏变量 #523 的值为空，跳过输出
+2025-11-26 21:24:38,008 - src.ui.main_window - INFO - 宏变量 #524 的值为空，跳过输出
+2025-11-26 21:24:38,008 - src.ui.main_window - INFO - 宏变量 #525 的值为空，跳过输出
+2025-11-26 21:24:38,009 - src.ui.main_window - INFO - 宏变量 #526 的值为空，跳过输出
+2025-11-26 21:24:38,009 - src.ui.main_window - INFO - 宏变量 #527 的值为空，跳过输出
+2025-11-26 21:24:38,009 - src.ui.main_window - INFO - 宏变量 #529 的值为空，跳过输出
+2025-11-26 21:24:38,010 - src.ui.main_window - INFO - 宏变量 #530 的值为空，跳过输出
+2025-11-26 21:24:38,010 - src.ui.main_window - INFO - 宏变量 #531 的值为空，跳过输出
+2025-11-26 21:24:38,010 - src.ui.main_window - INFO - 宏变量 #532 的值为空，跳过输出
+2025-11-26 21:24:38,010 - src.ui.main_window - INFO - 宏变量 #533 的值为空，跳过输出
+2025-11-26 21:24:38,011 - src.ui.main_window - INFO - 宏变量 #534 的值为空，跳过输出
+2025-11-26 21:24:38,011 - src.ui.main_window - INFO - 宏变量 #535 的值为空，跳过输出
+2025-11-26 21:24:38,011 - src.ui.main_window - INFO - 宏变量 #536 的值为空，跳过输出
+2025-11-26 21:24:38,011 - src.ui.main_window - INFO - 宏变量 #537 的值为空，跳过输出
+2025-11-26 21:24:38,012 - src.ui.main_window - INFO - 宏变量 #538 的值为空，跳过输出
+2025-11-26 21:24:38,012 - src.ui.main_window - INFO - 宏变量 #539 的值为空，跳过输出
+2025-11-26 21:24:38,012 - src.ui.main_window - INFO - 宏变量 #540 的值为空，跳过输出
+2025-11-26 21:24:38,012 - src.ui.main_window - INFO - 宏变量 #541 的值为空，跳过输出
+2025-11-26 21:24:38,013 - src.ui.main_window - INFO - 宏变量 #542 的值为空，跳过输出
+2025-11-26 21:24:38,013 - src.ui.main_window - INFO - 宏变量 #543 的值为空，跳过输出
+2025-11-26 21:24:38,013 - src.ui.main_window - INFO - 宏变量 #544 的值为空，跳过输出
+2025-11-26 21:24:38,014 - src.ui.main_window - INFO - 宏变量 #548 的值为空，跳过输出
+2025-11-26 21:24:38,014 - src.ui.main_window - INFO - 宏变量 #549 的值为空，跳过输出
+2025-11-26 21:24:38,014 - src.ui.main_window - INFO - 宏变量 #550 的值为空，跳过输出
+2025-11-26 21:25:10,359 - __main__ - INFO - 应用程序正常退出
