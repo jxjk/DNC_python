@@ -648,7 +648,7 @@ DNC 参数计算系统
             self.logger.error(f"应用程序启动失败: {e}")
             messagebox.showerror("错误", f"应用程序启动失败: {e}")
 
-    def _on_barcode_enter(self, event):
+    def _on_barcode_enter(self, event, is_interface_input=False):
         """条码输入框回车事件处理，支持QR码格式：PO@型式@数量"""
         barcode_value = self.barcode_var.get().strip()
         if barcode_value:
@@ -670,6 +670,20 @@ DNC 参数计算系统
             else:
                 self.status_var.set(f"无法解析的条码格式: {barcode_value}")
                 messagebox.showwarning("警告", f"无法解析的条码格式: {barcode_value}")
+            
+            # 如果是接口文件输入，则在一段时间后自动触发数据发送
+            if is_interface_input:
+                # 延迟1.5秒后自动发送数据，给用户一些时间查看处理结果
+                self.root.after(1500, self._auto_send_data)
+
+    def _auto_send_data(self):
+        """自动发送数据功能，仅在接口文件输入时调用"""
+        try:
+            self.logger.info("接口文件输入触发自动发送数据")
+            # 调用发送数据方法
+            self._send_data()
+        except Exception as e:
+            self.logger.error(f"自动发送数据失败: {e}")
 
     def _process_model(self, original_model, quantity=None):
         """处理型号，通过从后往前逐字符删除进行匹配，生成对应的UI控件"""
@@ -1483,8 +1497,8 @@ DNC 参数计算系统
                     self.logger.info(f"接口文件内容: {content}")
                     # 将内容模拟为输入，更新条码输入框
                     self.barcode_var.set(content)
-                    # 触发条码输入处理
-                    self._on_barcode_enter(None)
+                    # 触发条码输入处理 - 标记为接口文件输入
+                    self._on_barcode_enter(None, is_interface_input=True)
                     # 清空接口文件内容，避免重复处理
                     with open(self.interface_file_path, 'w', encoding='utf-8') as f:
                         f.write("")
