@@ -864,6 +864,26 @@ DNC 参数计算系统
             main_container = ttk.Frame(controls_frame)
             main_container.pack(fill=tk.X, padx=5, pady=5)
 
+            # 获取当前程序号 - 可能需要从当前型号信息获取
+            program_no = "1"  # 默认程序号
+            # 尝试获取当前程序号
+            if hasattr(self, 'TB_Prg_var') and self.TB_Prg_var:
+                try:
+                    program_no = self.TB_Prg_var.get() or "1"
+                except:
+                    program_no = "1"  # 如果无法获取，使用默认值
+            else:
+                # 尝试从load_row的其他数据中推断程序号
+                program_no = "1"  # 使用默认值
+
+            # 获取relation.csv数据用于处理关系表达式
+            relation_data = self.data_manager.get_program_table(program_no, 'relation')
+            if not relation_data:
+                relation_data = self.data_manager.get_table_by_name(f'prg{program_no}/relation.csv')
+            if not relation_data:
+                # 尝试从主目录加载relation.csv
+                relation_data = self.data_manager.get_table_by_name('relation.csv')
+
             # 遍历load.csv中的列，创建对应的控件
             valid_controls = []  # 存储有效的控件
             
@@ -877,8 +897,11 @@ DNC 参数计算系统
                             break
 
                     if control_info:
+                        # 处理关系表达式（如果值以"relation"开头）
+                        processed_value = self._process_relation_value(value, load_row, relation_data)
+                        
                         # 创建控件
-                        control_widget = self._create_control(control_info, value, main_container)
+                        control_widget = self._create_control(control_info, processed_value, main_container)
                         if control_widget:
                             valid_controls.append(control_widget)
 
@@ -1024,6 +1047,13 @@ DNC 参数计算系统
                 messagebox.showerror("错误", "未找到cntrl.csv数据")
                 return
 
+            # 获取relation.csv数据用于处理关系表达式
+            relation_data = self.data_manager.get_program_table(program_no, 'relation')
+            if not relation_data:
+                relation_data = self.data_manager.get_table_by_name(f'prg{program_no}/relation.csv')
+            if not relation_data:
+                relation_data = self.data_manager.get_table_by_name('relation.csv')
+
             # 收集需要发送的宏变量
             send_macros = []
             non_numeric_macros = []  # 记录非数值的宏变量
@@ -1034,12 +1064,16 @@ DNC 参数计算系统
                 
                 # 检查是否需要发送（SENDFLG为1）
                 if send_flag == '1' and macro and macro in load_row:
-                    value = load_row[macro]
-                    # 检查值是否为数值（允许整数和浮点数）
-                    if self._is_numeric(value):
-                        send_macros.append((macro, value))
+                    raw_value = load_row[macro]
+                    
+                    # 处理关系表达式（如果值以"relation"开头）
+                    processed_value = self._process_relation_value(raw_value, load_row, relation_data)
+                    
+                    # 检查处理后的值是否为数值（允许整数和浮点数）
+                    if self._is_numeric(processed_value):
+                        send_macros.append((macro, processed_value))
                     else:
-                        non_numeric_macros.append((macro, value))
+                        non_numeric_macros.append((macro, raw_value))
 
             # 如果有非数值的宏变量，标记并终止
             if non_numeric_macros:
@@ -1069,6 +1103,269 @@ DNC 参数计算系统
         except Exception as e:
             self.logger.error(f"发送数据失败: {e}")
             messagebox.showerror("错误", f"发送数据失败: {e}")
+
+    def _process_relation_value(self, value, load_row, relation_data):
+        """处理关系表达式，返回计算后的数值"""
+        if not value or not value.startswith("relation"):
+            # 检查是否是宏变量（#开头）
+            if value and value.startswith('#'):
+                # 如果是宏变量，获取其值并进行define映射
+                actual_value = load_row.get(value)
+                if actual_value and str(actual_value).startswith('define'):
+                    # 将 "define" 值映射到对应的参数编号
+                    try:
+                        param_num = int(value[1:])  # 去掉 '#' 获取数字部分
+                        return param_num
+                    except ValueError:
+                        return actual_value  # 如果转换失败，返回原值
+                else:
+                    return actual_value
+            # 不是关系表达式，直接返回原值
+            return value
+
+        if not relation_data:
+            # 无法找到relation数据，返回原值
+            return value
+
+        # 查找对应的关系定义
+        for relation_row in relation_data:
+            if relation_row.get('DEFINE', '') == value:  # DEFINE列包含关系名称如relationLWJ
+                # 找到关系定义，需要根据条件计算结果
+                try:
+                    # 简化处理，查找满足条件的结果
+                    result = self._calculate_relation_result(relation_row, load_row)
+                    if result is not None:
+                        # 如果结果是宏变量（#开头），获取其值并进行define映射
+                        if str(result).startswith('#'):
+                            actual_value = load_row.get(result)
+                            if actual_value and str(actual_value).startswith('define'):
+                                # 将 "define" 值映射到对应的参数编号
+                                try:
+                                    param_num = int(result[1:])  # 去掉 '#' 获取数字部分
+                                    result = param_num
+                                except ValueError:
+                                    result = actual_value  # 如果转换失败，使用原值
+                            else:
+                                result = actual_value
+                        # 如果结果本身仍然是relation表达式，递归处理
+                        elif str(result).startswith("relation"):
+                            return self._process_relation_value(result, load_row, relation_data)
+                        return result
+                except Exception as e:
+                    self.logger.warning(f"计算关系表达式 {value} 失败: {e}")
+                    continue
+
+        # 如果没有找到或计算失败，返回原值
+        return value
+
+    def _calculate_relation_result(self, relation_row, load_row):
+        """根据关系定义和当前load数据计算关系表达式的结果"""
+        relation_name = relation_row.get('DEFINE', '')
+        result_value = relation_row.get('VALUE')  # VALUE列包含结果值
+
+        if not relation_name or result_value is None:
+            return result_value
+
+        # 获取参数和条件信息
+        # relation.csv的格式: DEFINE, VALUE, PARAM1, OPERATOR1, VALUE1, LOGIC, PARAM2, OPERATOR2, VALUE2, ...
+        values_list = list(relation_row.values())
+        if len(values_list) < 2:
+            return result_value
+
+        # 从第3个值开始是条件 (索引2及以后)
+        condition_params = values_list[2:] if len(values_list) > 2 else []
+
+        # 评估关系条件并返回计算结果
+        result = self._evaluate_relation_conditions(relation_name, condition_params, load_row, result_value)
+        return result
+
+    def _evaluate_relation_conditions(self, relation_name, condition_params, load_row, default_result_value):
+        """评估关系条件并返回结果值"""
+        # 从relation.csv获取所有相关规则
+        program_no = "1"  # 默认程序号
+        if hasattr(self, 'TB_Prg_var') and self.TB_Prg_var:
+            try:
+                program_no = self.TB_Prg_var.get() or "1"
+            except:
+                program_no = "1"  # 如果无法获取，使用默认值
+        else:
+            program_no = "1"  # 如果属性不存在，使用默认值
+            
+        relation_data = self.data_manager.get_program_table(program_no, 'relation')
+        if not relation_data:
+            relation_data = self.data_manager.get_table_by_name(f'prg{program_no}/relation.csv')
+        if not relation_data:
+            relation_data = self.data_manager.get_table_by_name('relation.csv')
+
+        if not relation_data:
+            return default_result_value
+
+        # 查找所有与当前关系名称匹配的规则
+        matching_rules = []
+        for row in relation_data:
+            if row.get('DEFINE', '') == relation_name:
+                matching_rules.append(row)
+
+        # 特殊处理：对于某些relation类型，使用不同的规则选择逻辑
+        if relation_name.startswith('relationHPN'):
+            # 对于relationHPN，找到满足条件的规则中参数编号最大的那个（只考虑较小的参数编号，如#1-#99）
+            best_result_value = None
+            best_param_number = -1
+            
+            for rule in matching_rules:
+                result_value = rule.get('VALUE')
+                values_list = list(rule.values())
+                if len(values_list) < 3:  # 至少需要DEFINE, VALUE, 和第一个条件参数
+                    if len(values_list) >= 2:  # 如果只有DEFINE和VALUE，直接返回VALUE
+                        return values_list[1]
+                    continue
+
+                # 条件从第3个元素开始 (索引2)
+                condition_params = values_list[2:]
+                
+                try:
+                    # 解析并评估条件
+                    condition_met = self._check_relation_conditions(condition_params, load_row)
+                    if condition_met:
+                        # 检查结果值是否是参数编号（以#开头）
+                        if str(result_value).startswith('#'):
+                            try:
+                                param_num = int(result_value[1:])
+                                # 只考虑较小的参数编号（如#1-#99），避免#550这样的大编号影响结果
+                                if param_num <= 99 and param_num > best_param_number:
+                                    best_param_number = param_num
+                                    best_result_value = result_value
+                            except ValueError:
+                                # 如果无法解析为数字，继续
+                                continue
+                        elif best_result_value is None:
+                            # 如果当前结果不是#开头的参数，但还没有找到参数类型的返回值
+                            best_result_value = result_value
+                except Exception as e:
+                    self.logger.warning(f"评估关系条件时出错: {e}")
+                    continue
+            
+            if best_result_value is not None:
+                return best_result_value
+        else:
+            # 对于其他relation类型，保持原有逻辑（返回第一个满足条件的规则）
+            for rule in matching_rules:
+                result_value = rule.get('VALUE')
+                values_list = list(rule.values())
+                if len(values_list) < 3:  # 至少需要DEFINE, VALUE, 和第一个条件参数
+                    if len(values_list) >= 2:  # 如果只有DEFINE和VALUE，直接返回VALUE
+                        return values_list[1]
+                    continue
+
+                # 条件从第3个元素开始 (索引2)
+                condition_params = values_list[2:]
+                
+                try:
+                    # 解析并评估条件
+                    condition_met = self._check_relation_conditions(condition_params, load_row)
+                    if condition_met:
+                        return result_value  # 返回满足条件的结果值
+                except Exception as e:
+                    self.logger.warning(f"评估关系条件时出错: {e}")
+                    continue
+
+        # 如果没有规则满足，返回原始值或默认值
+        return default_result_value
+
+    def _check_relation_conditions(self, condition_params, load_row):
+        """检查关系条件是否满足，支持 and/or 逻辑"""
+        if not condition_params:
+            return True  # 没有条件则认为满足
+
+        # 解析条件: [param1, operator, value1, logic, param2, operator, value2, ...]
+        # 或者 [logic, param1, operator, value1, logic, param2, operator, value2, ...]
+        # 检查第一个元素是否为逻辑运算符
+        i = 0
+        # 如果第一个元素是逻辑运算符（and/or），则跳过它，从第二个元素开始解析条件
+        if condition_params and condition_params[0] in ['and', 'or']:
+            i = 1
+
+        total_result = True
+        first_condition = True
+
+        while i < len(condition_params):
+            if not condition_params[i]:  # 跳过空值
+                i += 1
+                continue
+
+            # 获取参数、操作符和比较值
+            param_name = condition_params[i]
+            if i + 1 >= len(condition_params):
+                break
+            operation = condition_params[i + 1]
+            if i + 2 >= len(condition_params):
+                break
+            param_value = condition_params[i + 2]
+
+            if param_name and param_name.startswith('#') and param_value:
+                # 从load_row获取实际参数值
+                actual_param_value = load_row.get(param_name)
+                
+                # 处理 "define" 值的映射
+                if actual_param_value and str(actual_param_value).startswith('define'):
+                    # 将 "define" 值映射到对应的参数编号
+                    # 例如: '#1' -> 'defineH' -> 1, '#8' -> 'defineNK' -> 8
+                    try:
+                        param_num = int(param_name[1:])  # 去掉 '#' 获取数字部分
+                        actual = param_num
+                    except ValueError:
+                        actual = 0  # 如果转换失败，使用0
+                elif actual_param_value and self._is_numeric(actual_param_value):
+                    actual = float(actual_param_value)
+                else:
+                    actual = 0  # 非数值默认为0
+
+                if self._is_numeric(param_value):
+                    expected = float(param_value)
+
+                    # 执行比较
+                    condition_result = False
+                    if operation == '<':
+                        condition_result = actual < expected
+                    elif operation == '<=':
+                        condition_result = actual <= expected
+                    elif operation == '>':
+                        condition_result = actual > expected
+                    elif operation == '>=':
+                        condition_result = actual >= expected
+                    elif operation in ['=', '==', '===']:
+                        condition_result = actual == expected
+                    elif operation == '!=':
+                        condition_result = actual != expected
+                    else:
+                        # 未知操作符，条件不满足
+                        condition_result = False
+                else:
+                    condition_result = False
+            else:
+                condition_result = False
+
+            # 如果这是第一个条件，设置总结果，否则根据逻辑运算符合并
+            if first_condition:
+                total_result = condition_result
+                first_condition = False
+            else:
+                # 检查前一个逻辑运算符 (在当前条件之前的元素)
+                logic_op = condition_params[i - 1] if i > 0 else 'and'
+                if logic_op == 'and':
+                    total_result = total_result and condition_result
+                elif logic_op == 'or':
+                    total_result = total_result or condition_result
+
+            # 移动到下一个条件组（通常是3个元素：参数、操作符、值 + 1个可选的逻辑运算符）
+            if i + 3 < len(condition_params) and condition_params[i + 3] in ['and', 'or']:
+                # 有逻辑运算符，跳过4个元素（参数、操作符、值、逻辑运算符）
+                i += 4
+            else:
+                # 没有逻辑运算符，跳过3个元素（参数、操作符、值）
+                i += 3
+
+        return total_result
 
     def _is_numeric(self, value):
         """检查值是否为数值（整数或浮点数）"""
