@@ -20,6 +20,7 @@ class MainWindow:
         # 初始化接口文件监控相关变量
         self.interface_file_path = Path("interface/input.txt")
         self.interface_file_last_modified = 0
+        self.interface_file_content_hash = ""  # 添加内容哈希值用于更精确的变更检测
         self.interface_monitor_running = False
 
     def _configure_styles(self):
@@ -614,33 +615,7 @@ DNC 参数计算系统
             description = product_data.get('DESCRIPTION', '') if product_data else ''
             self.catalog_tree.insert('', tk.END, values=(product_type, description))
             
-    def run(self):
-        """运行应用程序"""
-        try:
-            # 配置界面样式
-            self._configure_styles()
-            
-            # 加载配置
-            if not self.config_manager.load_config():
-                self.logger.warning("配置文件加载失败，使用默认配置")
-            
-            # 创建界面组件（这会初始化status_var等变量）
-            self._create_widgets()
-            self._setup_layout()
-            
-            # 加载数据
-            self.status_var.set("正在加载数据...")
-            if self.data_manager.load_csv_files():
-                self._update_catalog_tab()
-                self.status_var.set("数据加载完成")
-            else:
-                self.status_var.set("数据加载失败")
-                messagebox.showerror("错误", "数据加载失败，请检查master目录")
-                
-            # 启动主循环
-            self.root.mainloop()
-            
-        # 启动接口文件监控
+    # 启动接口文件监控
             self._start_interface_monitor()
             
             # 启动主循环
@@ -1455,20 +1430,31 @@ DNC 参数计算系统
                 # 如果文件不存在且监控正在运行，则创建一个
                 self.interface_file_path.touch()
                 self.interface_file_last_modified = self.interface_file_path.stat().st_mtime
+                # 初始化内容哈希
+                import hashlib
+                self.interface_file_content_hash = hashlib.md5(b"").hexdigest()
                 self.root.after(1000, self._check_interface_file)  # 1秒后再次检查
                 return
             
             # 获取当前文件的修改时间
             current_modified = self.interface_file_path.stat().st_mtime
             
-            # 如果文件被修改了
-            if current_modified != self.interface_file_last_modified:
+            # 读取文件内容以进行哈希比较
+            import hashlib
+            with open(self.interface_file_path, 'r', encoding='utf-8') as f:
+                current_content = f.read()
+            current_content_hash = hashlib.md5(current_content.encode('utf-8')).hexdigest()
+            
+            # 检查是否文件被修改：修改时间变化 或 内容哈希变化
+            file_changed = (current_modified != self.interface_file_last_modified or 
+                           current_content_hash != self.interface_file_content_hash)
+                           
+            if file_changed:
                 self.logger.info(f"接口文件已变更，正在读取: {self.interface_file_path}")
                 self.interface_file_last_modified = current_modified
+                self.interface_file_content_hash = current_content_hash
                 
-                # 读取文件内容
-                with open(self.interface_file_path, 'r', encoding='utf-8') as f:
-                    content = f.read().strip()
+                content = current_content.strip()
                 
                 if content:
                     self.logger.info(f"接口文件内容: {content}")
