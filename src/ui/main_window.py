@@ -32,15 +32,15 @@ class MainWindow:
         # 配置标签样式
         style.configure('Title.TLabelframe', font=('Microsoft YaHei', 12, 'bold'), foreground='darkblue')
         style.configure('Control.TLabelframe', font=('Microsoft YaHei', 11, 'bold'), foreground='darkgreen')
-        style.configure('Bottom.TLabelframe', font=('Microsoft YaHei', 11, 'bold'), foreground='darkred')
+        style.configure('Bottom.TLabelframe', font=('Microsoft YaHei', 12, 'bold'), foreground='darkred')
         style.configure('TLabel', font=('Microsoft YaHei', 10))
         style.configure('TCheckbutton', font=('Microsoft YaHei', 10))
         
         # 配置按钮样式
         style.configure('Action.TButton', font=('Microsoft YaHei', 10, 'bold'), padding=6)
-        style.configure('Send.TButton', font=('Microsoft YaHei', 10, 'bold'), 
-                       foreground='white', background='darkgreen', padding=6)
-        style.map('Send.TButton', background=[('active', 'green')])
+        style.configure('Send.TButton', font=('Microsoft YaHei', 12, 'bold'), 
+                       foreground='white', background='#228B22', padding=8)  # 森林绿，更显眼
+        style.map('Send.TButton', background=[('active', '#006400')], foreground=[('active', 'white')])  # 深绿色激活状态
         
         # 配置输入框样式
         style.configure('Model.TEntry', font=('Microsoft YaHei', 12), fieldbackground='#f0f8ff')
@@ -293,7 +293,7 @@ class MainWindow:
     def _create_bottom_control_area(self):
         """创建底部控制区域，对应VB.NET中的按钮区域"""
         # 创建底部控制面板
-        bottom_frame = ttk.LabelFrame(self.main_frame, text="条码/操作面板", padding="15", style='Bottom.TLabelframe')
+        bottom_frame = ttk.LabelFrame(self.main_frame, text="条码/操作面板", padding="20", style='Bottom.TLabelframe')
         bottom_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(10, 0))
         bottom_frame.configure(relief='groove', borderwidth=2)
         
