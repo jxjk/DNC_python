@@ -17,6 +17,10 @@ class MainWindow:
         self.root = tk.Tk()
         self.root.title("DNC参数计算系统")
         self.root.geometry("1200x800")
+        # 初始化接口文件监控相关变量
+        self.interface_file_path = Path("interface/input.txt")
+        self.interface_file_last_modified = 0
+        self.interface_monitor_running = False
 
     def _configure_styles(self):
         """配置界面样式，使界面更美观易读"""
@@ -633,6 +637,12 @@ DNC 参数计算系统
                 self.status_var.set("数据加载失败")
                 messagebox.showerror("错误", "数据加载失败，请检查master目录")
                 
+            # 启动主循环
+            self.root.mainloop()
+            
+        # 启动接口文件监控
+            self._start_interface_monitor()
+            
             # 启动主循环
             self.root.mainloop()
             
@@ -1411,3 +1421,75 @@ DNC 参数计算系统
         """切换程序"""
         # TODO: 实现程序切换功能
         messagebox.showinfo("程序切换", "程序切换功能待实现")
+        
+    def _start_interface_monitor(self):
+        """启动接口文件监控"""
+        try:
+            # 创建接口目录（如果不存在）
+            self.interface_file_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            # 如果接口文件不存在，创建一个空文件
+            if not self.interface_file_path.exists():
+                self.interface_file_path.touch()
+                self.logger.info(f"创建接口文件: {self.interface_file_path}")
+            
+            # 获取初始修改时间
+            self.interface_file_last_modified = self.interface_file_path.stat().st_mtime
+            
+            # 启动监控
+            self.interface_monitor_running = True
+            self._check_interface_file()
+            self.logger.info("接口文件监控已启动")
+            
+        except Exception as e:
+            self.logger.error(f"启动接口文件监控失败: {e}")
+    
+    def _check_interface_file(self):
+        """检查接口文件是否发生变化"""
+        try:
+            if not self.interface_monitor_running:
+                return
+                
+            # 检查文件是否存在
+            if not self.interface_file_path.exists():
+                # 如果文件不存在且监控正在运行，则创建一个
+                self.interface_file_path.touch()
+                self.interface_file_last_modified = self.interface_file_path.stat().st_mtime
+                self.root.after(1000, self._check_interface_file)  # 1秒后再次检查
+                return
+            
+            # 获取当前文件的修改时间
+            current_modified = self.interface_file_path.stat().st_mtime
+            
+            # 如果文件被修改了
+            if current_modified != self.interface_file_last_modified:
+                self.logger.info(f"接口文件已变更，正在读取: {self.interface_file_path}")
+                self.interface_file_last_modified = current_modified
+                
+                # 读取文件内容
+                with open(self.interface_file_path, 'r', encoding='utf-8') as f:
+                    content = f.read().strip()
+                
+                if content:
+                    self.logger.info(f"接口文件内容: {content}")
+                    # 将内容模拟为输入，更新条码输入框
+                    self.barcode_var.set(content)
+                    # 触发条码输入处理
+                    self._on_barcode_enter(None)
+                    # 清空接口文件内容，避免重复处理
+                    with open(self.interface_file_path, 'w', encoding='utf-8') as f:
+                        f.write("")
+                    
+            # 继续监控，每500毫秒检查一次
+            self.root.after(500, self._check_interface_file)
+            
+        except Exception as e:
+            self.logger.error(f"检查接口文件失败: {e}")
+            # 即使出错也继续监控
+            if self.interface_monitor_running:
+                self.root.after(1000, self._check_interface_file)
+    
+    def _stop_interface_monitor(self):
+        """停止接口文件监控"""
+        self.interface_monitor_running = False
+        self.logger.info("接口文件监控已停止")
