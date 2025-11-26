@@ -1063,30 +1063,36 @@ DNC 参数计算系统
                 send_flag = cntrl_row.get('SENDFLG', '0')
                 
                 # 检查是否需要发送（SENDFLG为1）
-                if send_flag == '1' and macro and macro in load_row:
-                    raw_value = load_row[macro]
-                    
-                    # 处理关系表达式（如果值以"relation"开头）
-                    processed_value = self._process_relation_value(raw_value, load_row, relation_data)
-                    
-                    # 检查处理后的值是否为数值（允许整数和浮点数）
-                    if self._is_numeric(processed_value):
-                        send_macros.append((macro, processed_value))
+                if send_flag == '1' and macro:
+                    if macro in load_row:
+                        raw_value = load_row[macro]
+                        
+                        # 处理关系表达式（如果值以"relation"开头）
+                        processed_value = self._process_relation_value(raw_value, load_row, relation_data)
+                        
+                        # 检查处理后的值是否为数值（允许整数和浮点数）
+                        if self._is_numeric(processed_value):
+                            send_macros.append((macro, processed_value))
+                        else:
+                            # 如果处理后的值不是数值，使用默认值0
+                            # 这样可以确保尽可能多的宏变量被发送
+                            self.logger.info(f"宏变量 {macro} 的值 '{processed_value}' 不是数值，使用默认值 0")
+                            send_macros.append((macro, "0"))
                     else:
-                        non_numeric_macros.append((macro, raw_value))
+                        # 宏变量在load_row中不存在，使用默认值0
+                        # 这样可以确保尽可能多的宏变量被发送
+                        self.logger.info(f"宏变量 {macro} 在load数据中缺失，使用默认值 0")
+                        send_macros.append((macro, "0"))  # 使用默认值0
 
-            # 如果有非数值的宏变量，标记并终止
+            # 如果有非数值的宏变量，可以选择性地处理
             if non_numeric_macros:
-                error_msg = "以下宏变量的值不是数值，无法发送：\n\n"
-                for macro, value in non_numeric_macros:
-                    error_msg += f"{macro} = {value}\n"
-                error_msg += "\n请修正这些值后再试。"
-                messagebox.showerror("错误", error_msg)
-                return
+                # 不再完全终止处理，而是记录问题并继续
+                self.logger.warning(f"以下宏变量的值不是数值，将被跳过: {non_numeric_macros}")
+                # 可以在错误消息中告知用户，但程序继续处理其他宏变量
 
             # 如果没有任何需要发送的宏变量
             if not send_macros:
-                messagebox.showinfo("提示", "没有标记为发送的宏变量")
+                messagebox.showinfo("提示", "没有找到有效的可发送宏变量")
                 return
 
             # 将宏变量写入macro.txt文件
