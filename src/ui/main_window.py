@@ -1068,22 +1068,25 @@ DNC 参数计算系统
                     if macro in load_row:
                         raw_value = load_row[macro]
                         
+                        # 如果原始值是空字符串，跳过这个宏变量
+                        if raw_value == '' or raw_value is None:
+                            self.logger.info(f"宏变量 {macro} 的值为空，跳过输出")
+                            continue
+                        
                         # 处理关系表达式（如果值以"relation"开头）
                         processed_value = self._process_relation_value(raw_value, load_row, relation_data)
                         
                         # 检查处理后的值是否为数值（允许整数和浮点数）
-                        if self._is_numeric(processed_value):
+                        if self._is_numeric(processed_value) and processed_value != '':
                             send_macros.append((macro, processed_value))
                         else:
-                            # 如果处理后的值不是数值，使用默认值0
-                            # 这样可以确保尽可能多的宏变量被发送
-                            self.logger.info(f"宏变量 {macro} 的值 '{processed_value}' 不是数值，使用默认值 0")
-                            send_macros.append((macro, "0"))
+                            # 如果处理后的值不是数值或为空，跳过这个宏变量
+                            self.logger.info(f"宏变量 {macro} 的值 '{processed_value}' 不是数值或为空，跳过输出")
+                            continue
                     else:
-                        # 宏变量在load_row中不存在，使用默认值0
-                        # 这样可以确保尽可能多的宏变量被发送
-                        self.logger.info(f"宏变量 {macro} 在load数据中缺失，使用默认值 0")
-                        send_macros.append((macro, "0"))  # 使用默认值0
+                        # 宏变量在load_row中不存在，跳过这个宏变量
+                        self.logger.info(f"宏变量 {macro} 在load数据中缺失，跳过输出")
+                        continue
 
             # 如果有非数值的宏变量，可以选择性地处理
             if non_numeric_macros:
