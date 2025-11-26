@@ -282,13 +282,12 @@ class MainWindow:
         self.catalog_tab.columnconfigure(0, weight=1)
         self.catalog_tab.rowconfigure(0, weight=1)
         
-    def _create_status_bar(self):
-        """创建状态栏"""
+    """创建状态栏"""
         self.status_var = tk.StringVar()
         self.status_var.set("就绪")
         
         status_bar = ttk.Label(self.main_frame, textvariable=self.status_var, relief=tk.SUNKEN, anchor=tk.W)
-        status_bar.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E))
+        status_bar.grid(row=4, column=0, columnspan=2, sticky=(tk.W, tk.E))  # 改为row=4，避免与bottom_frame(row=3)重叠
         
     def _create_bottom_control_area(self):
         """创建底部控制区域，对应VB.NET中的按钮区域"""
@@ -339,6 +338,7 @@ class MainWindow:
         self.main_frame.rowconfigure(1, weight=0)  # 控制面板行
         self.main_frame.rowconfigure(2, weight=1)  # 标签页区域获得最多空间
         self.main_frame.rowconfigure(3, weight=0)  # 底部控制行
+        self.main_frame.rowconfigure(4, weight=0)  # 状态栏行
 
         # 确保标签页也具有合适的布局
         if hasattr(self, 'notebook'):
