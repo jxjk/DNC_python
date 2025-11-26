@@ -1102,7 +1102,9 @@ DNC 参数计算系统
             
             with open(macro_file_path, 'w', encoding='utf-8') as f:
                 for macro, value in send_macros:
-                    f.write(f"{macro}={value}\n")
+                    # 去除宏变量名开头的"#"字符
+                    clean_macro = macro.lstrip('#')
+                    f.write(f"{clean_macro}={value}\n")
 
             messagebox.showinfo("成功", f"宏变量已成功写入 {macro_file_path}\n共发送 {len(send_macros)} 个宏变量")
             
