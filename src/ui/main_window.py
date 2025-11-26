@@ -615,7 +615,30 @@ DNC 参数计算系统
             description = product_data.get('DESCRIPTION', '') if product_data else ''
             self.catalog_tree.insert('', tk.END, values=(product_type, description))
             
-    # 启动接口文件监控
+    def run(self):
+        """运行应用程序"""
+        try:
+            # 配置界面样式
+            self._configure_styles()
+            
+            # 加载配置
+            if not self.config_manager.load_config():
+                self.logger.warning("配置文件加载失败，使用默认配置")
+            
+            # 创建界面组件（这会初始化status_var等变量）
+            self._create_widgets()
+            self._setup_layout()
+            
+            # 加载数据
+            self.status_var.set("正在加载数据...")
+            if self.data_manager.load_csv_files():
+                self._update_catalog_tab()
+                self.status_var.set("数据加载完成")
+            else:
+                self.status_var.set("数据加载失败")
+                messagebox.showerror("错误", "数据加载失败，请检查master目录")
+                
+            # 启动接口文件监控
             self._start_interface_monitor()
             
             # 启动主循环
