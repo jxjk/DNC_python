@@ -282,7 +282,8 @@ class MainWindow:
         self.catalog_tab.columnconfigure(0, weight=1)
         self.catalog_tab.rowconfigure(0, weight=1)
         
-    """创建状态栏"""
+    def _create_status_bar(self):
+        """创建状态栏"""
         self.status_var = tk.StringVar()
         self.status_var.set("就绪")
         
