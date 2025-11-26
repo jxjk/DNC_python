@@ -703,6 +703,13 @@ DNC 参数计算系统
                     if type_value and search_string == type_value:
                         self.logger.info(f"找到匹配型号: {type_value} (从输入 {input_model} 匹配)")
                         return type_value
+                    
+                    # 额外尝试将连字符替换为下划线进行匹配
+                    # 这处理输入格式与数据库格式不一致的情况（如 "GPT25GT3060-A-H8" 与 "GPT25GT3060_A"）
+                    normalized_search = search_string.replace('-', '_')
+                    if type_value and normalized_search == type_value:
+                        self.logger.info(f"找到匹配型号: {type_value} (从输入 {input_model} 通过连字符转下划线匹配)")
+                        return type_value
 
                 # 删除最后一个字符，继续搜索
                 search_string = search_string[:-1]
@@ -713,6 +720,12 @@ DNC 参数计算系统
                 type_value = row.get('TYPE', '')
                 if type_value and input_model == type_value:
                     self.logger.info(f"找到完全匹配型号: {type_value}")
+                    return type_value
+                
+                # 额外尝试将连字符替换为下划线进行完全匹配
+                normalized_input = input_model.replace('-', '_')
+                if type_value and normalized_input == type_value:
+                    self.logger.info(f"找到完全匹配型号: {type_value} (从输入 {input_model} 通过连字符转下划线匹配)")
                     return type_value
 
             return None
